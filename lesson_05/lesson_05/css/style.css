@@ -1,0 +1,188 @@
+@import url("reset.css");
+@import url("fonts.css");
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #333;
+  color: white;
+}
+.header {
+  background-color: #5e5372;
+  margin-bottom: 30px;
+}
+.head-title {
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.main {
+  margin-bottom: 30px;
+}
+.header,
+.footer {
+  text-align: center;
+  padding: 30px;
+}
+.first-task-container {
+  max-width: 500px;
+  margin: 0 auto;
+  font-size: 0;
+  padding: 40px;
+  background-color: #ebe692;
+  margin-bottom: 30px;
+}
+.first-task-item {
+  background-color: #5e5372;
+  max-width: 50%;
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+  text-align: center;
+}
+.first-task-items {
+  display: inline-block;
+  max-width: 100px;
+  width: 100%;
+  font-size: 16px;
+  background-color: #34b5a4;
+  padding: 5px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+.last-item {
+  margin-bottom: 0; /* Прибираю відступ у відповідності до набутих знань*/
+}
+.second-task-container {
+  background-color: rgba(255, 255, 255, 0.785);
+  height: 300px; /* спеціально обмежив, щоб використати overflow: hidden;*/
+  padding: 30px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.car-exhibition-title {
+  font-size: 20px;
+  color: #333;
+  text-decoration: underline;
+  margin-bottom: 60px; /* Зроблено спеціально, щоб використати overflow: hidden;*/
+}
+.second-task-item {
+  min-height: 200px;
+  padding: 30px;
+  background-color: rgb(191, 247, 247);
+}
+.items-container {
+  width: 50%;
+  margin: 0 auto;
+}
+.second-task-items {
+  height: 100px;
+  width: 170px; /* тут я обмежую висоту та ширину спеціально*/
+  margin-right: 25px;
+}
+.third-task-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: beige;
+  color: black;
+  margin-bottom: 30px;
+}
+.third-task-container span {
+  display: inline-block;
+  max-width: 400px;
+}
+.car-png {
+  width: 300px;
+  vertical-align: top;
+}
+.layout {
+  background-color: #231f8b;
+  font-family: "CircularStd", sans-serif;
+  padding: 112px 0;
+}
+.container {
+  max-width: 1050px;
+  margin: 0 auto;
+}
+.section-head {
+  max-width: 765px;
+  margin-bottom: 70px;
+}
+.title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  color: #5a54f2;
+  font-weight: 700;
+  line-height: 1.71;
+  letter-spacing: 0.2px;
+  margin-bottom: 10px;
+}
+.main-title {
+  font-size: 36px;
+  font-weight: 700;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 10px;
+}
+.content {
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0.2px;
+}
+.cards {
+  font-size: 0px;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.card-content-container {
+  display: inline-block;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 25%;
+  vertical-align: top;
+}
+.card-content {
+  padding: 35px 40px;
+  background-color: #fff;
+}
+.bottom-card {
+  margin-top: 48px;
+}
+.card-img {
+  margin-bottom: 20px;
+}
+.card-title {
+  color: #252b42;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.another-color {
+  background-color: #5a54f2;
+}
+.another-color .card-title,
+.another-color .card-text {
+  color: #fff;
+}
+.another-color .card-decoration {
+  background-color: #fff;
+}
+.card-decoration {
+  width: 50px;
+  height: 2px;
+  background-color: #e74040;
+  margin-bottom: 20px;
+}
+.card-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #737373;
+  line-height: 1.4;
+  letter-spacing: 0.2px;
+}
+.footer {
+  background-color: #34b5a4;
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Second_HW</title>
+  </head>
+
+  <body>
+    <header>
+      <ul class="nav">
+        <li><a href="#hero">Україна</a></li>
+        <li class="yellow-item"><a href="#capital">Столиця</a></li>
+        <li><a href="#nature">Природа</a></li>
+        <li class="yellow-item"><a href="#сulture">Культура</a></li>
+        <li class="add-task">
+          <a href="#addition-task">Додаткове завдання</a>
+        </li>
+      </ul>
+    </header>
+    <main>
+      <div class="hero-title" id="hero">
+        <h1>Укра<span>їна</span></h1>
+        <h2>Розположення</h2>
+        <p>
+          Україна — це велика країна в Східній Європі, яка межує з Польщею,
+          <span>( недодержави білоруссю, росією,)</span> Молдовою, Румунією,
+          Угорщиною та Словаччиною. Вона має багату історію, культуру та
+          природні ресурси.
+        </p>
+        <img
+          src="img/ukraine-position.jpg"
+          alt="Територія України, зображена на карті зеленим кольором та держави з якими вона межує: Польща, Румунія, Молдова, Угорщина, Словаччина, а також недодержавами - білорусь та держава-терорист росія" />
+      </div>
+      <div class="ukraine-capital" id="capital">
+        <h2>Столиця</h2>
+        <p>
+          Київ — це найбільше місто України та її столиця. Воно відоме своєю
+          архітектурою, пам'ятками та культурною спадщиною.
+        </p>
+        <img
+          src="img/kyiv.jpg"
+          alt="Один з центральних районів Києва, зображений з висоти" />
+      </div>
+      <div class="ukraine-nature" id="nature">
+        <h2>Природа</h2>
+        <p>
+          Україна має різноманітні природні ландшафти: від Карпатських гір на
+          заході до Чорного моря на півдні. Річка Дніпро є однією з найбільших
+          річок Європи.
+        </p>
+        <img
+          src="img/ukr-nature.jpeg"
+          alt="Природа українських Карпат з конем, що їсть траву" />
+      </div>
+      <div class="ukraine-сulture" id="сulture">
+        <h2>Культура</h2>
+        <p class="culture-information">
+          Українська культура багата на традиції, музику та літературу.
+          Вишиванка є одним із найвідоміших символів української культури.
+        </p>
+        <img
+          src="img/ukraine-culture.jpeg"
+          alt="Дідусь у класичній українській вишиванці з виконаною у традиціних концепціях кофтою на плечах та з бандурою в руках" />
+      </div>
+      <div id="addition-task">
+        <!-- 1 рівень вкладеності => перший li має бути червоного кольору, всі інші пункти зеленого кольору
+2 рівень вкладеності => перший li має бути синього кольору, всі інші li 2 рівня вкладеності помаранчевого
+3 рівень вкладеності => перший li має бути #4597f7кольору, всі інші li 3 рівня вкладеності #5d5d5d
+span в який загорнутий текст на лише 2 рівні вкладеності має бути кольору #a0f0fc
+P.S. - Додав умову: без використання класів спробуйте стилізувати -->
+        <ul class="list-with-text">
+          <li>
+            text...
+            <ul>
+              <li>text...</li>
+              <li>
+                text...
+                <ol>
+                  <li>text...</li>
+                  <li><span>text...</span></li>
+                  <li>text...</li>
+                </ol>
+              </li>
+              <li><span>text...</span></li>
+            </ul>
+          </li>
+          <li>text...</li>
+          <li>text...</li>
+          <li>text...</li>
+        </ul>
+      </div>
+    </main>
+    <footer>
+      <ul class="nav">
+        <li><a href="#hero">Україна</a></li>
+        <li class="yellow-item"><a href="#capital">Столиця</a></li>
+        <li><a href="#nature">Природа</a></li>
+        <li class="yellow-item"><a href="#сulture">Культура</a></li>
+        <li class="add-task">
+          <a href="#addition-task">Додаткове завдання</a>
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,82 @@
+@import url("reset.css");
+.nav li {
+  color: rgb(86, 86, 234);
+}
+.nav [class*="yellow"] {
+  color: rgb(172, 172, 30);
+}
+.nav .add-task {
+  color: red;
+}
+h1 {
+  color: rgb(86, 86, 234);
+}
+h1 > span {
+  color: rgb(172, 172, 30);
+}
+h1 + h2,
+p {
+  color: rgb(86, 86, 234);
+}
+h2 ~ p span {
+  color: red;
+}
+.ukraine-capital h2,
+p {
+  color: rgb(86, 86, 234);
+}
+.ukraine-nature h2 {
+  color: rgb(172, 172, 30);
+}
+.ukraine-nature p {
+  color: rgb(172, 172, 30);
+}
+.ukraine-сulture {
+  color: rgb(172, 172, 30);
+}
+.culture-information {
+  color: rgb(172, 172, 30);
+}
+/* --------------------------- */
+/* .list-with-text > li {
+  color: red;
+}
+.list-with-text > li ~ li {
+  color: green;
+}
+.list-with-text > li ul li {
+  color: blue;
+}
+.list-with-text > li ul li ~ li {
+  color: orange;
+}
+.list-with-text > li ul li ol li {
+  color: #4597f7;
+}
+.list-with-text > li ul li ol li ~ li {
+  color: #5d5d5d;
+}
+.list-with-text > li ul li > span {
+  color: #a0f0fc;
+} */
+.list-with-text > li {
+  color: red;
+}
+.list-with-text > li ~ li {
+  color: green;
+}
+.list-with-text > li > ul > li {
+  color: blue;
+}
+.list-with-text > li > ul li ~ li {
+  color: orange;
+}
+.list-with-text > li > ul li > ol li {
+	color: #4597f7;
+}
+.list-with-text > li > ul li > ol li ~ li{
+	color: #5d5d5d;
+}
+.list-with-text > li > ul >li > span{
+	color: #a0f0fc;
+}

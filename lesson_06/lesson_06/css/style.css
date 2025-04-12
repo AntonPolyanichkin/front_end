@@ -1,0 +1,274 @@
+@import url("reset.css");
+.wrapper {
+  min-height: 100%;
+  overflow: clip;
+}
+.header,
+.footer {
+  background-color: #5e5372;
+  padding: 40px;
+  font-size: 30px;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+.header {
+  margin-bottom: 30px;
+}
+body {
+  background-color: gray;
+}
+.section {
+  margin-bottom: 30px;
+}
+.container {
+  max-width: 1200px;
+  margin: 0px auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.item-container {
+  width: 100%;
+}
+.items {
+  background-color: #1da492;
+  padding: 40px;
+  margin-left: -10px;
+  margin-right: -10px;
+  font-size: 0;
+}
+.item {
+  display: inline-block;
+  width: 20%;
+  font-size: 16px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 20px;
+}
+.inner {
+  height: 200px;
+  background-color: #ebe691;
+}
+.border {
+  border: 5px solid #5e5372;
+  /* border: 5px dotted #5e5372; */
+  /* border: 5px dashed #5e5372; */
+  /* border: 5px double #5e5372; */
+  /* border-top: 5px solid #2fb9e4;
+  border-bottom: 6px dotted #2fb9e4;
+  border-right: 8px dashed #2fb9e4;
+  border-left: 10px double #2fb9e4; */
+}
+.outline {
+  /* outline-style: solid; тут можуть бути такі ж стилі, як і в border
+	outline-width: 5px;
+	outline-color: #2fb9e4; */
+  outline: 5px solid #2fb9e4;
+  /* outline-offset: 6px; */
+  /* outline-offset: -10px; */
+}
+.radius {
+  /* border-radius: 10px; */
+  /* border-radius: 10px 5px 20px 50px ; */
+  border-radius: 50%;
+}
+.shadow {
+  /* box-shadow: 5px 5px 30px black ;
+	box-shadow:  inset 5px 30px black ; */
+  box-shadow: 0px 0px 20px black, inset 0px 0px 5px black;
+}
+.opacity {
+  opacity: 0.5;
+}
+.visibility {
+  visibility: hidden;
+}
+
+.second-section .container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 0;
+}
+.second-section .container .item {
+  width: 100%;
+  min-height: 800px;
+  font-size: 16px;
+  padding: 40px;
+  /* background-color: #ebe691; */
+  box-shadow: inset 0px 0px 20px black;
+  border-radius: 20px;
+  /* background-image:linear-gradient(90deg, rgba(2,0,36,1) 9%, rgba(72,72,207,1) 20%, rgba(17,17,198,1) 59%, rgba(0,212,255,1) 100%); */
+  /* background-image: url("../img/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: center;
+  background-attachment: fixed; */
+  /* background-position: 100 200; */
+  /* background-position: top right; */
+  /* background-position: bottom center; */
+  /* background-position: bottom left; */
+  /* background-repeat: repeat-x; */
+  /* background-repeat: repeat-y; */
+  /* background-repeat: repeat; */
+  background: #ebe691 url("../img/bg.jpg") center / 80% no-repeat fixed;
+}
+
+.ecobazar-container {
+  max-width: 648px;
+  margin: 0 auto;
+  font-size: 0;
+  padding-left: 15px;
+  padding-right: 15px;
+  background: #ffffff;
+}
+.content-container,
+.main-paragrapg {
+  margin-bottom: 20px;
+}
+.card-footer {
+  margin-bottom: 0;
+}
+.content,
+.list-item {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  color: #808080;
+  line-height: 1.5;
+}
+.list-container {
+  margin-bottom: 20px;
+}
+.list-item {
+  min-height: 20px;
+  line-height: 1.4;
+  margin-bottom: 14px;
+  padding-left: 28px;
+  background: url("../img/check.png") 0 0 / 20px 20px no-repeat;
+}
+.home-task {
+  margin-bottom: 20px;
+}
+.hydra-section {
+  background-color: #302c42;
+  padding: 100px 0 100px 0;
+}
+.hydra-container {
+  max-width: 1302px;
+  margin: 0 auto;
+  padding: 20px 15px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0;
+  background: url(../img/v-7.png) no-repeat center 50px,
+    url(../img/v-8.png) no-repeat center 340px;
+}
+.hydra-container .content-container {
+  display: inline-block;
+  width: 630px;
+  vertical-align: middle;
+}
+.hydra-img {
+  margin-right: 110px;
+}
+.main-title,
+.title {
+  text-transform: uppercase;
+  font-size: 36px;
+  line-height: 1.2;
+}
+.main-title {
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.title {
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 300;
+  margin-bottom: 36px;
+}
+.text-content {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.25;
+  margin-bottom: 30px; /* по макету 28, але в деяких статтях зазанчається, що можна округляти, якщо обговорити з дизайнером*/
+}
+.link {
+  line-height: 1.2;
+  padding: 17px 40px;
+  border-radius: 40px;
+  background: linear-gradient(90deg, #8176af 0%, #c0b7e8 100%);
+  text-transform: uppercase;
+  color: #343045;
+  font-size: 12px;
+  font-weight: 700;
+}
+.hydra-contacts {
+  background-color: #302c42;
+}
+.hydra-contacts-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 20px 15px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0;
+}
+.contacts {
+  max-width: 1310px;
+  min-height: 167px;
+  padding: 58px 40px;
+  margin: 0 auto;
+  background: radial-gradient(
+    2900.76% 50.13% at 50% 53.89%,
+    rgba(58, 52, 86, 0.95) 0%,
+    #211e2e 100%
+  );
+  border-radius: 90px;
+  box-shadow: 0px 4px 4px 0px rgba(192, 183, 232, 0.01);
+}
+.contacts-menu li {
+  display: inline-block;
+  min-height: 110px;
+  max-width: 410px;
+  width: 100%;
+  padding-left: 25px;
+  padding-right: 25px;
+  border-right: 1px solid rgba(192, 183, 232, 0.33);
+}
+.item-link {
+  padding-left: 70px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+.item-link .item-title,
+.item-text {
+  color: #fff;
+  line-height: 1.2;
+}
+.item-link .item-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.item-link .item-text {
+  font-size: 14px;
+  font-weight: 400;
+}
+.location {
+  background: url("../img/location-icon.svg");
+  background-size: 70px 70px;
+}
+.phone-number {
+  background: url("../img/phone-call.svg");
+  background-size: 59px 59px;
+}
+.contacts-menu .email {
+  background: url("../img/mail.svg");
+  background-size: 65px 65px;
+  border-right: none;
+}
+.contacts-menu .menu-item {
+  background-position: 25px center;
+  background-repeat: no-repeat;
+}
