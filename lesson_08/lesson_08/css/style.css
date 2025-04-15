@@ -27,7 +27,7 @@ body {
   background-color: #ebe691;
 }
 .container {
-  max-width: 70%;
+  max-width: 80%;
   margin: 0 auto;
   padding: 40px 15px 40px 15px;
 }
@@ -37,14 +37,13 @@ body {
 .item:not(:last-child) {
   margin-bottom: 30px;
 }
-.item .img-container {
+.img-container {
   display: inline-block;
   width: 50%;
   margin-right: 30px;
+
 }
-.img-container img {
-  max-width: 100%;
-}
+
 .item p {
   display: inline-block;
   font-size: 30px;
