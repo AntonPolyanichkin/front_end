@@ -1,0 +1,73 @@
+@import url("reset.css");
+body {
+  background-color: #33b5a3;
+}
+.wrapper {
+  min-height: 100%;
+  font-size: 0;
+  overflow: clip;
+  font-family: "Inter", sans-serif;
+}
+.header,
+.footer {
+  color: white;
+  font-size: 30px;
+  padding: 40px;
+  text-align: center;
+  background-color: #5e5372;
+}
+.header,
+.main-section {
+  margin-bottom: 20px;
+}
+.footer {
+  font-size: 25px;
+}
+.main-section {
+  background-color: #ebe691;
+}
+.container {
+  max-width: 60%;
+  margin: 0 auto;
+  padding: 40px 15px 40px 15px;
+}
+.item:not(:last-child) {
+  margin-bottom: 30px;
+}
+.item .img-container {
+  display: inline-block;
+  width: 50%;
+  margin-right: 30px;
+}
+.img-container img {
+  max-width: 100%;
+}
+.item p {
+  display: inline-block;
+  font-size: 30px;
+  font-weight: 700;
+  color: white;
+  vertical-align: middle;
+}
+.item p::after {
+  content: "";
+  display: block;
+  padding: 2px;
+  margin-top: 7px;
+  width: 25%;
+  background-color: #5e5372;
+  transition: 0.3s ease;
+}
+.item p:hover::after {
+  width: 100%;
+}
+.img-radius {
+  border-radius: 28% 0px;
+}
+.logo {
+  width: 100%;
+}
+.magnifying-glass-logo {
+  width: 40px;
+  height: 40px;
+}
