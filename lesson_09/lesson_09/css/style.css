@@ -1,0 +1,5 @@
+@import url("reset.css");
+.wrapper{
+	min-height: 100%;
+	overflow: clip;
+}
