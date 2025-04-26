@@ -1,0 +1,244 @@
+@import url("reset.css");
+body {
+  background-color: rgb(74, 72, 72);
+}
+.wrapper {
+  min-height: 100%;
+  overflow: clip;
+}
+[class*="__container"] {
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.header {
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  max-height: 100px;
+  background-color: #ffe066;
+  font-size: 0;
+  padding: 20px;
+}
+.header__navigation {
+  color: #2c2c2c;
+  font-size: 25px;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+}
+.list-navigation__item {
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  z-index: 100;
+}
+.list-navigation__link {
+  border-radius: 20px;
+  padding: 10px;
+}
+.list-navigation__link::after {
+  content: "";
+  display: block;
+  margin-top: 5px;
+  background-color: #ffffff;
+  height: 3px;
+  width: 10%;
+  opacity: 0;
+  visibility: hidden;
+}
+.list-navigation__item:hover .list-navigation__link {
+  background-color: #ffcc33;
+  color: #ffffff;
+}
+.list-navigation__link:hover::after {
+  visibility: visible;
+  opacity: 1;
+  transition: 0.7s ease;
+  width: 100%;
+}
+.list-navigation__item:not(:last-child) {
+  margin-right: 10px;
+}
+.list-navigation__submenu {
+  position: absolute;
+  top: 70px;
+  left: -10px;
+  z-index: 1;
+  border-radius: 0 0 10px 10px;
+}
+.submenu-list::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  height: 20px;
+  width: 100%;
+  /* background-color: red; */
+}
+.submenu-list {
+  background-color: #ffe066;
+  max-width: 200px;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s ease;
+}
+.list-navigation__item--submenu:hover .submenu-list {
+  opacity: 1;
+  visibility: visible;
+}
+.submenu-list__item:not(:last-child) {
+  margin-bottom: 15px;
+}
+.submenu-list__item:hover {
+  color: #ffffff;
+  transition: 0.3s ease;
+}
+.featured-products {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: #fff;
+}
+.featured-products__container {
+  width: 1350px;
+  font-family: "Poppins", sans-serif;
+  font-size: 0;
+}
+.featured-products__container .cards-container__card {
+  display: inline-block;
+}
+.featured-products__title {
+  color: #002603;
+  font-size: 40px;
+  text-align: center;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 50px;
+}
+.card {
+  max-width: 265px;
+}
+.cards-container__card {
+  position: relative;
+}
+.card__link-img {
+  margin: 5px;
+}
+.information-card__content-container {
+  width: 60%;
+  vertical-align: middle;
+}
+.information-card {
+  line-height: 1.5;
+  padding: 12px;
+}
+.information-card__title {
+  color: #4d4d4d;
+  font-size: 14px;
+}
+.information-card__price,.information-card__sale{
+  position: relative;
+  color: #002603;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+.information-card__sale--first-price {
+  color: #999;
+  font-weight: 400;
+  text-decoration: line-through;
+}
+.card__information > * {
+  display: inline-block;
+}
+
+.card__eye-hover,
+.card__like-hover {
+  opacity: 0;
+  visibility: hidden;
+}
+.card__eye--white,
+.card__like--white {
+  opacity: 0;
+  visibility: hidden;
+}
+.card:hover {
+  outline: 1px solid #2c742f;
+  box-shadow: 0px 0px 12px 0px rgba(32, 181, 38, 0.32);
+}
+.card:hover .information-card__title {
+  color: #2c742f;
+}
+.basket-card__link,
+.card__eye-hover,
+.card__like-hover {
+  position: relative;
+  top: 20px;
+  left: 45px;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: #f2f2f2;
+}
+.card__eye-hover,
+.card__like-hover {
+  position: absolute;
+}
+.card__like-hover,
+.card__eye-hover {
+  top: 5%;
+  left: 80%;
+}
+.card__eye-hover {
+  top: 20%;
+}
+.basket-card__link > *,
+.card__eye-hover > *,
+.card__like-hover > * {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+}
+.card__eye-hover:hover,
+.card__like-hover:hover {
+  background-color: #00b207;
+  transition: 0.3s;
+}
+.card__eye-hover:hover .card__eye--white,
+.card__like-hover:hover .card__like--white {
+  opacity: 1;
+  visibility: visible;
+  transition: 0.1s;
+}
+.card:hover .card__eye-hover,
+.card:hover .card__like-hover {
+  opacity: 1;
+  visibility: visible;
+}
+.basket-card__icon--green {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.basket-card__link:hover {
+  background-color: #00b207;
+  transition: 0.3s;
+}
+
+.basket-card__link:hover .basket-card__icon--green {
+  opacity: 1;
+  visibility: visible;
+  transition: 0.1s;
+}
+.card__sale {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  display: inline-block;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 3px 8px;
+  background-color: #ea4b48;
+  border-radius: 4px;
+}
