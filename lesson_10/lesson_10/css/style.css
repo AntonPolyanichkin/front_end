@@ -1,4 +1,5 @@
 @import url("reset.css");
+@import url("fonts.css");
 body {
   background-color: rgb(74, 72, 72);
 }
@@ -13,12 +14,15 @@ body {
 }
 .header {
   position: fixed;
-  z-index: 10;
-  width: 100%;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  z-index: 100;
   max-height: 100px;
   background-color: #ffe066;
   font-size: 0;
   padding: 20px;
+  border-radius: 20px;
 }
 .header__navigation {
   color: #2c2c2c;
@@ -94,8 +98,11 @@ body {
   color: #ffffff;
   transition: 0.3s ease;
 }
+section {
+  padding-bottom: 20px;
+}
 .featured-products {
-  padding-top: 100px;
+  padding-top: 150px;
   padding-bottom: 100px;
   background-color: #fff;
 }
@@ -136,7 +143,8 @@ body {
   color: #4d4d4d;
   font-size: 14px;
 }
-.information-card__price,.information-card__sale{
+.information-card__price,
+.information-card__sale {
   position: relative;
   color: #002603;
   font-size: 16px;
@@ -241,4 +249,164 @@ body {
   padding: 3px 8px;
   background-color: #ea4b48;
   border-radius: 4px;
+}
+.business {
+  background-color: #5a54f2;
+  position: relative;
+}
+.business::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  border: 20px solid #fff;
+  border-radius: 0 0 50% 50%;
+}
+.business::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  border: 20px solid #231f8b;
+  border-radius: 100% 100% 0 0;
+}
+.business__container {
+  max-width: 1540px;
+  font-size: 0;
+}
+.content__picture {
+  position: relative;
+}
+.picture-container__img {
+  position: relative;
+  z-index: 10;
+  width: 430px;
+  border-radius: 20px;
+  margin-right: 70px;
+  box-shadow: 22px 42px 44px 0px rgba(0, 0, 0, 0.3);
+}
+.picture-container__img--purple-shadow {
+  box-shadow: -25px 20px 44px 0px rgba(84, 48, 209, 0.4);
+}
+.about-container__content {
+  max-width: 600px;
+  vertical-align: middle;
+}
+.about-content__title,
+.about-content__text {
+  color: #fff;
+  font-family: "Circular Std", sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+.about-content__text,
+.about-content__link {
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+.about-content__text {
+  margin-bottom: 40px;
+}
+.about-content__link {
+  color: #fff;
+  max-width: 260px;
+  font-weight: 500;
+  line-height: 1.2;
+  padding: 22px 26px;
+  background-color: #f35b09;
+  border-radius: 60px;
+}
+.about-content__link:hover {
+  background-color: #d94f04;
+}
+.business__content-container * {
+  display: inline-block;
+}
+.picture-container__img--margin-left {
+  margin-left: 70px;
+  margin-right: 0;
+}
+.business__content-container:not(:last-child) {
+  margin-bottom: 90px;
+}
+.business__content-container {
+  position: relative;
+}
+.business__content-container--right {
+  left: 250px;
+}
+.business__content-container--elips03::before {
+  content: "";
+  width: 65px;
+  height: 65px;
+  border: 5px solid #ffba49;
+  border-radius: 100%;
+  position: absolute;
+  top: 20%;
+  left: -6%;
+}
+.business__content-container--elips04::before {
+  content: "";
+  width: 65px;
+  height: 65px;
+  border: 5px solid #ffba49;
+  border-radius: 100%;
+  position: absolute;
+  top: -6%;
+  left: 50%;
+  z-index: 11;
+}
+.content__picture--points01::before {
+  content: "";
+  position: absolute;
+  top: 75%;
+  right: 75%;
+  z-index: 1;
+  width: 214px;
+  height: 475px;
+  background: url("../img/points-01.webp") no-repeat;
+}
+.content__picture--points02::before {
+  content: "";
+  position: absolute;
+  bottom: 25%;
+  left: 95%;
+  z-index: 1;
+  width: 214px;
+  height: 220px;
+  background: url("../img/points-02.webp") no-repeat;
+}
+.content__picture--elips01::after {
+  content: "";
+  width: 401px;
+  height: 401px;
+  border-radius: 100%;
+  border: 5px solid #ffba49;
+  z-index: 1;
+  position: absolute;
+  top: 37%;
+  right: 40%;
+}
+.content__picture--elips02::after {
+  content: "";
+  width: 262px;
+  height: 262px;
+  border-radius: 100%;
+  border: 5px solid #ffba49;
+  z-index: 1;
+  position: absolute;
+  bottom: 56%;
+  left: 73%;
+}
+.footer {
+  font-family: "Inter", sans-serif;
+  font-size: 30px;
+  color: #2c2c2c;
+  text-align: center;
+  padding: 40px;
+  background-color: #ffe066;
 }
