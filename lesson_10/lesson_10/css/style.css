@@ -122,7 +122,7 @@ section {
   margin-bottom: 50px;
 }
 .card {
-  max-width: 265px;
+  width: 20%;
 }
 .cards-container__card {
   position: relative;
