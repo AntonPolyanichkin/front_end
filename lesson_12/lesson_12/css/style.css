@@ -5,16 +5,16 @@
 }
 .header,
 .footer {
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
   font-size: 25px;
   font-weight: 500;
   padding: 40px;
   text-align: center;
   background-color: #ffe066;
-  margin-bottom: 50px;
+  padding-bottom: 50px;
 }
 .footer {
-  margin-top: 50px;
+  margin-top: 350px;
 }
 [class*="__container"] {
   margin: 0 auto;
@@ -22,15 +22,97 @@
   padding-right: 15px;
 }
 section {
-  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+.section-practice {
+  background-color: rgb(35, 34, 34);
+  padding: 50px;
+}
+.section-practice__container {
+  max-width: 80%;
+}
+.container-practice__element {
+  display: inline-block;
+  width: 100%;
+  background-color: #ffe066;
+  border-radius: 10px;
+  padding: 100px;
+  transition: all 0.5s;
+}
+.section-practice__container:hover .container-practice__element {
+  background-color: #9652df;
+  color: black;
+  width: 50%;
+  transition: background-color 1s 0s linear,
+    width 5s 1s cubic-bezier(0, 1.38, 0.88, -0.39);
+}
+.section-car {
+  position: relative;
+  background-color: black;
+  transform-style: preserve-3d;
+}
+.section-car__title,
+.element__title {
+  color: white;
+  font-size: 40px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+.section-car::before,
+.section-car::after {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  top: 20px;
+  left: 0;
+  background-color: rgb(255, 255, 255);
+  transform-origin: center center;
+}
+.section-car::after {
+  content: "";
+  top: 20px;
+  left: 40px;
+  background-color: black;
+  transform: rotate(-60deg);
+  animation: rotate 5s linear infinite;
 }
 
+.section-car__star {
+  position: relative;
+}
+.star__item {
+  display: inline-block;
+  margin-left: 50px;
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  top: 80px;
+  left: 200px;
+  background-color: azure;
+  animation: twink 10s linear infinite;
+}
+.star__item:nth-child(3n + 1) {
+  top: 50px;
+  left: 100px;
+}
+.star__item:nth-child(3n + 2) {
+  top: 200px;
+  left: 300;
+}
+.star__item:nth-child(3n) {
+  top: 350px;
+  left: 200px;
+}
 .section-car__container {
   width: 2030px;
-  perspective: 800px;
+  perspective: 600px;
   perspective-origin: top center;
   transform-style: preserve-3d;
   padding: 100px;
+  padding-top: 300px;
 }
 @keyframes road-move {
   0% {
@@ -110,6 +192,50 @@ section {
     background-color: rgb(179, 208, 208);
   }
 }
+@keyframes rotate {
+  0% {
+    transform: translate(0, 10px);
+  }
+  50% {
+    transform: translate(0, 0px);
+  }
+  100% {
+    transform: translate(0, 10px);
+  }
+}
+@keyframes twink {
+  0% {
+    opacity: 0.3;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  20% {
+    opacity: 0.7;
+  }
+  30% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  60% {
+    opacity: 0.3;
+  }
+  70% {
+    opacity: 0.5;
+  }
+  80% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .container__road {
   position: relative;
   overflow: hidden;
@@ -117,7 +243,7 @@ section {
   height: 400px;
   padding: 40px;
   background-color: rgb(45, 41, 41);
-  transform: rotate3d(1, 0, 0, 30deg) translateZ(180px);
+  transform: rotate3d(1, 0, 0, 25deg) translateZ(180px);
   z-index: 0;
 }
 .road__markup {
