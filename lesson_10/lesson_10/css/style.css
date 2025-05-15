@@ -97,11 +97,14 @@ body {
   color: #ffffff;
   transition: 0.3s ease;
 }
+.page {
+  margin-top: 100px;
+}
 section {
   padding-bottom: 20px;
 }
 .featured-products {
-  padding-top: 150px;
+  padding-top: 100px;
   padding-bottom: 100px;
   background-color: #fff;
 }
@@ -119,6 +122,8 @@ section {
   text-align: center;
   font-weight: 600;
   line-height: 1.2;
+}
+.featured-products__title:not(:last-child) {
   margin-bottom: 50px;
 }
 .card {
@@ -245,9 +250,14 @@ section {
   color: #fff;
   font-size: 14px;
   line-height: 1.5;
+}
+.card__sale p {
   padding: 3px 8px;
   background-color: #ea4b48;
   border-radius: 4px;
+}
+.card__sale p:not(:last-child) {
+  margin-bottom: 5px;
 }
 .business {
   background-color: #5a54f2;
@@ -298,8 +308,11 @@ section {
   font-size: 36px;
   font-weight: 700;
   line-height: 1.2;
+}
+.about-content__title:not(:last-child) {
   margin-bottom: 14px;
 }
+
 .about-content__text,
 .about-content__link {
   font-family: "Roboto";
@@ -307,9 +320,16 @@ section {
   font-weight: 400;
   line-height: 1.6;
 }
-.about-content__text {
+.about-content__text:not(:last-child) {
   margin-bottom: 40px;
 }
+.about-content {
+  padding-top: 40px;
+}
+.about-content--bottom {
+	padding-bottom: 40px;
+ }
+
 .about-content__link {
   color: #fff;
   max-width: 260px;

@@ -100,7 +100,7 @@ section {
 }
 .star__item:nth-child(3n + 2) {
   top: 200px;
-  left: 300;
+  left: 300px;
 }
 .star__item:nth-child(3n) {
   top: 350px;
@@ -134,7 +134,6 @@ section {
   }
   75% {
     left: 800px;
-    animation: light 1s linear infinite;
   }
   100% {
     left: -600px;
