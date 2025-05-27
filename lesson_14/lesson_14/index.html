@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	 <link rel="preconnect" href="https://fonts.googleapis.com">
-	 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
     <title>Hw 14</title>
   </head>
@@ -26,11 +26,11 @@
                 <input type="email" autocomplete="off" required placeholder="Введіть пошту" name="form[email]" class="form-practice__form" />
                 <input type="tel" required placeholder="Введіть телефон" name="form[tel]" class="form-practice__form" />
                 <label class="form-practice__chekbox">
-                  <input type="checkbox" class="form-practice__input-chekbox" name="form[delivery]"/>
+                  <input type="checkbox" class="form-practice__input-chekbox" name="form[delivery]" />
                   <span class="form-practice__label">Доставка додому</span>
                 </label>
                 <label class="form-practice__chekbox">
-                  <input type="checkbox" class="form-practice__input-chekbox" name="form[wrapper]"/>
+                  <input type="checkbox" class="form-practice__input-chekbox" name="form[wrapper]" />
                   <span class="form-practice__label">Додаткова обгортка</span>
                 </label>
                 <label class="form-practice__chekbox">
@@ -38,18 +38,155 @@
                   <span class="form-practice__label">Захисна плівка</span>
                 </label>
                 <label class="form-practice__chekbox">
-                  <input type="checkbox" class="form-practice__input-chekbox" name="form[packaging]"/>
+                  <input type="checkbox" class="form-practice__input-chekbox" name="form[packaging]" />
                   <span class="form-practice__label">Подарункова упаковка</span>
                 </label>
                 <label class="form-practice__radio">
-                  <input type="radio" class="form-practice__input-radio" name="form[discount]" value="discount"/>
+                  <input type="radio" class="form-practice__input-radio" name="form[discount]" value="discount" />
                   <span class="form-practice__label-radio">Випадкова знижка</span>
                 </label>
                 <label class="form-practice__radio">
-                  <input type="radio" class="form-practice__input-radio" name="form[discount]" value="discount"/>
+                  <input type="radio" class="form-practice__input-radio" name="form[discount]" value="gift" />
                   <span class="form-practice__label-radio">Випадковий подарунок</span>
                 </label>
+                <button class="form-practice__button">Відправити</button>
               </form>
+            </div>
+          </div>
+        </section>
+        <!-- -------------------------------------------------- HW ----------------------------------------->
+        <section class="order-form">
+          <div class="order-form__container">
+            <div class="order-form__content content-form">
+              <div class="content-form__billing billing">
+                <h2 class="billing__title">Billing Information</h2>
+                <div class="billing__wrapper">
+                  <label class="billing__label">
+                    <p class="billing__text">First name</p>
+                    <input name="form[name]" required type="text" placeholder="Your first name" class="billing__form-element" />
+                  </label>
+                  <label class="billing__label">
+                    <p class="billing__text">Last name</p>
+                    <input name="form[surname]" required type="text" placeholder="Your last name" class="billing__form-element" />
+                  </label>
+                  <label class="billing__label">
+                    <p class="billing__text">
+                      Company Name
+                      <span class="billing__span">(optional)</span>
+                    </p>
+                    <input name="form[company]" type="text" placeholder="Company name" class="billing__form-element" />
+                  </label>
+                </div>
+                <label class="billing__label billing__label--address">
+                  <p class="billing__text">Street Address</p>
+                  <input name="form[address]" type="text" placeholder="Email" class="billing__form-element billing__form-element--address" />
+                </label>
+                <div class="billing__wrapper">
+                  <label class="billing__region-label">
+                    <p class="billing__text">Country / Region</p>
+                    <select name="form[region]" class="billing__region-select">
+                      <option value="">Selects</option>
+                      <option value="ukraine">Україна</option>
+                      <option value="poland">Польща</option>
+                      <option value="germany">Німеччина</option>
+                      <option value="france">Франція</option>
+                      <option value="italy">Італія</option>
+                      <option value="spain">Іспанія</option>
+                      <option value="usa">США</option>
+                      <option value="canada">Канада</option>
+                      <option value="uk">Велика Британія</option>
+                      <option value="czechia">Чехія</option>
+                    </select>
+                  </label>
+                  <label class="billing__region-label">
+                    <p class="billing__text">States</p>
+                    <select name="form[state]" class="billing__region-select">
+                      <option value="">Selects</option>
+                      <option value="none">Штат відсутній</option>
+                      <option value="california">Каліфорнія</option>
+                      <option value="texas">Техас</option>
+                      <option value="florida">Флорида</option>
+                      <option value="new-york">Нью-Йорк</option>
+                      <option value="illinois">Іллінойс</option>
+                    </select>
+                  </label>
+                  <label class="billing__label">
+                    <p class="billing__text">Zip Code</p>
+                    <input name="form[zip]" type="text" placeholder="Zip Code" class="billing__form-element" />
+                  </label>
+                </div>
+                <div class="billing__wrapper">
+                  <label class="billing__label billing__label--width">
+                    <p class="billing__text">Email</p>
+                    <input name="form[email]" required type="email" placeholder="Email Address" class="billing__form-element" />
+                  </label>
+                  <label class="billing__label billing__label--width">
+                    <p class="billing__text">Phone</p>
+                    <input name="form[phone]" required type="tel" placeholder="Phone number" class="billing__form-element" />
+                  </label>
+                </div>
+                <label class="billing__label billing__label--different-address">
+                  <input name="form[different-address]" type="checkbox" class="billing__form-element billing__form-element--different-address" />
+                  <p class="billing__text billing__text--different-address">Ship to a different address</p>
+                </label>
+                <div class="billing__line"></div>
+                <div class="billing__info additional-info">
+                  <h2 class="additional-info__title">Additional Info</h2>
+                  <label class="additional-info__label">
+                    <p class="additional-info__text">Order Notes (Optional)</p>
+                    <textarea name="form[additional-info]" class="additional-info__textarea" placeholder="Notes about your order, e.g. special notes for delivery"></textarea>
+                  </label>
+                </div>
+              </div>
+              <div class="content-form__order order">
+                <h2 class="order__title">Order Summery</h2>
+                <div class="summery-order__product">
+                  <div class="product">
+                    <img src="img/pepper-01.webp" alt="some alt" class="product__img" />
+                    <p class="product__name">Green Capsicum</p>
+                    <span class="product__quantity">x5</span>
+                  </div>
+                  <p class="summery-order__price">$70.00</p>
+                </div>
+                <div class="summery-order__product">
+                  <div class="product">
+                    <img src="img/pepper-02.webp" alt="some alt" class="product__img" />
+                    <p class="product__name">Green Capsicum</p>
+                    <span class="product__quantity">x1</span>
+                  </div>
+                  <p class="summery-order__price">$14.00</p>
+                </div>
+                <div class="order__price price-order">
+                  <div class="price-order__wrapper">
+                    <p class="price-order__paragraph">Subtotal:</p>
+                    <p class="price-order__subtotal-price">$84.00</p>
+                  </div>
+                  <div class="price-order__wrapper">
+                    <p class="price-order__paragraph">Shipping:</p>
+                    <p class="price-order__subtotal-price">Free</p>
+                  </div>
+                  <div class="price-order__wrapper">
+                    <p class="price-order__paragraph">Total:</p>
+                    <p class="price-order__subtotal-price price-order__subtotal-price--total">$84.00</p>
+                  </div>
+                </div>
+                <div class="order__payment payment">
+                  <h2 class="payment__title">Payment Method</h2>
+                  <label class="payment__label">
+                    <p class="payment__label-text">Cash on Delivery</p>
+                    <input type="radio" name="form[payment]" class="payment__radio" value="cash" />
+                  </label>
+                  <label class="payment__label">
+                    <p class="payment__label-text">Paypal</p>
+                    <input type="radio" name="form[payment]" class="payment__radio" value="cash" />
+                  </label>
+                  <label class="payment__label">
+                    <p class="payment__label-text">Amazon Pay</p>
+                    <input type="radio" name="form[payment]" class="payment__radio" value="cash" />
+                  </label>
+                </div>
+                <button class="order__button">Place Order</button>
+              </div>
             </div>
           </div>
         </section>
