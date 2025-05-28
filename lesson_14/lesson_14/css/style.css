@@ -545,4 +545,9 @@
   line-height: 1.2;
   cursor: pointer;
   border: none;
+  transition: background-color 0.3s;
+}
+.payment__button:hover{
+	background-color: #077f0b;
+	transition: background-color 0.5s;
 }
