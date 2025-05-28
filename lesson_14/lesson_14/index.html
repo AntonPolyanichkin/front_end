@@ -54,7 +54,7 @@
             </div>
           </div>
         </section>
-        <!-- -------------------------------------------------- HW ----------------------------------------->
+
         <section class="order-form">
           <div class="order-form__container">
             <div class="order-form__content content-form">
@@ -62,28 +62,28 @@
                 <h2 class="billing__title">Billing Information</h2>
                 <div class="billing__wrapper">
                   <label class="billing__label">
-                    <p class="billing__text">First name</p>
+                    <span class="billing__text">First name</span>
                     <input name="form[name]" required type="text" placeholder="Your first name" class="billing__form-element" />
                   </label>
                   <label class="billing__label">
-                    <p class="billing__text">Last name</p>
+                    <span class="billing__text">Last name</span>
                     <input name="form[surname]" required type="text" placeholder="Your last name" class="billing__form-element" />
                   </label>
                   <label class="billing__label">
-                    <p class="billing__text">
+                    <span class="billing__text">
                       Company Name
                       <span class="billing__span">(optional)</span>
-                    </p>
+                    </span>
                     <input name="form[company]" type="text" placeholder="Company name" class="billing__form-element" />
                   </label>
                 </div>
                 <label class="billing__label billing__label--address">
-                  <p class="billing__text">Street Address</p>
+                  <span class="billing__text">Street Address</span>
                   <input name="form[address]" type="text" placeholder="Email" class="billing__form-element billing__form-element--address" />
                 </label>
                 <div class="billing__wrapper">
                   <label class="billing__region-label">
-                    <p class="billing__text">Country / Region</p>
+                    <span class="billing__text">Country / Region</span>
                     <select name="form[region]" class="billing__region-select">
                       <option value="">Selects</option>
                       <option value="ukraine">Україна</option>
@@ -99,7 +99,7 @@
                     </select>
                   </label>
                   <label class="billing__region-label">
-                    <p class="billing__text">States</p>
+                    <span class="billing__text">States</span>
                     <select name="form[state]" class="billing__region-select">
                       <option value="">Selects</option>
                       <option value="none">Штат відсутній</option>
@@ -111,36 +111,37 @@
                     </select>
                   </label>
                   <label class="billing__label">
-                    <p class="billing__text">Zip Code</p>
+                    <span class="billing__text">Zip Code</span>
                     <input name="form[zip]" type="text" placeholder="Zip Code" class="billing__form-element" />
                   </label>
                 </div>
                 <div class="billing__wrapper">
                   <label class="billing__label billing__label--width">
-                    <p class="billing__text">Email</p>
+                    <span class="billing__text">Email</span>
                     <input name="form[email]" required type="email" placeholder="Email Address" class="billing__form-element" />
                   </label>
                   <label class="billing__label billing__label--width">
-                    <p class="billing__text">Phone</p>
+                    <span class="billing__text">Phone</span>
                     <input name="form[phone]" required type="tel" placeholder="Phone number" class="billing__form-element" />
                   </label>
                 </div>
                 <label class="billing__label billing__label--different-address">
                   <input name="form[different-address]" type="checkbox" class="billing__form-element billing__form-element--different-address" />
-                  <p class="billing__text billing__text--different-address">Ship to a different address</p>
+                  <span class="billing__text billing__text--different-address">Ship to a different address</span>
                 </label>
                 <div class="billing__line"></div>
                 <div class="billing__info additional-info">
                   <h2 class="additional-info__title">Additional Info</h2>
                   <label class="additional-info__label">
-                    <p class="additional-info__text">Order Notes (Optional)</p>
+                    <span class="additional-info__text">Order Notes (Optional)</span>
                     <textarea name="form[additional-info]" class="additional-info__textarea" placeholder="Notes about your order, e.g. special notes for delivery"></textarea>
                   </label>
                 </div>
               </div>
               <div class="content-form__order order">
                 <h2 class="order__title">Order Summery</h2>
-                <div class="summery-order__product">
+					
+                <div class="summery-order">
                   <div class="product">
                     <img src="img/pepper-01.webp" alt="some alt" class="product__img" />
                     <p class="product__name">Green Capsicum</p>
@@ -148,7 +149,7 @@
                   </div>
                   <p class="summery-order__price">$70.00</p>
                 </div>
-                <div class="summery-order__product">
+                <div class="summery-order">
                   <div class="product">
                     <img src="img/pepper-02.webp" alt="some alt" class="product__img" />
                     <p class="product__name">Green Capsicum</p>
@@ -170,22 +171,30 @@
                     <p class="price-order__subtotal-price price-order__subtotal-price--total">$84.00</p>
                   </div>
                 </div>
-                <div class="order__payment payment">
-                  <h2 class="payment__title">Payment Method</h2>
-                  <label class="payment__label">
-                    <p class="payment__label-text">Cash on Delivery</p>
-                    <input type="radio" name="form[payment]" class="payment__radio" value="cash" />
-                  </label>
-                  <label class="payment__label">
-                    <p class="payment__label-text">Paypal</p>
-                    <input type="radio" name="form[payment]" class="payment__radio" value="cash" />
-                  </label>
-                  <label class="payment__label">
-                    <p class="payment__label-text">Amazon Pay</p>
-                    <input type="radio" name="form[payment]" class="payment__radio" value="cash" />
-                  </label>
-                </div>
-                <button class="order__button">Place Order</button>
+                <div class="payment">
+						<h2 class="payment__title">Payment Method</h2>
+						<ul class="payment__list">
+						  <li class="payment__item">
+							 <label class="payment__label">
+								<input type="radio" name="form[payment]" class="payment__radio" value="cash" />
+								<span class="payment__text">Cash on Delivery</span>
+							 </label>
+						  </li>
+						  <li class="payment__item">
+							 <label class="payment__label">
+								<input type="radio" name="form[payment]" class="payment__radio" value="paypal" />
+								<span class="payment__text">Paypal</span>
+							 </label>
+						  </li>
+						  <li class="payment__item">
+							 <label class="payment__label">
+								<input type="radio" name="form[payment]" class="payment__radio" value="amazon" />
+								<span class="payment__text">Amazon Pay</span>
+							 </label>
+						  </li>
+						</ul>
+						<button class="payment__button">Place Order</button>
+					 </div>
               </div>
             </div>
           </div>
