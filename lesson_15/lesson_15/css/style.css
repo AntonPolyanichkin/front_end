@@ -24,10 +24,12 @@
   color: white;
   padding: 20px;
 }
+.page section {
+  padding-bottom: 60px;
+}
 .featured {
   background-color: #fff;
   padding-top: 60px;
-  padding-bottom: 60px;
 }
 .content-featured__head {
   display: flex;
@@ -37,7 +39,8 @@
   gap: 10px 80px;
   margin-bottom: 32px;
 }
-.content-featured__title {
+.content-featured__title,
+.content-news__title {
   color: #1a1a1a;
   font-size: 32px;
   font-weight: 600;
@@ -53,7 +56,8 @@
 .content-featured__view:hover {
   text-decoration: underline;
 }
-.content-featured__view::after {
+.content-featured__view::after,
+.content-card-news__link::after {
   content: "";
   width: 15px;
   height: 13px;
@@ -76,8 +80,6 @@
   transition: box-shadow 0.3s;
 }
 .card-featured__img {
-  width: 100%;
-  height: 100%;
   aspect-ratio: 254 / 230;
   object-fit: contain;
 }
@@ -273,5 +275,160 @@
   }
   .card-featured__label {
     font-size: 14px;
+  }
+}
+@media (max-width: 330.98px) {
+  .card-featured__product-title {
+    font-size: 16px;
+  }
+  .card-featured__product-price,
+  .card-featured__product-sale {
+    font-size: 18px;
+  }
+}
+.news {
+  background-color: #fff;
+}
+.content-news__title {
+  text-align: center;
+  margin-bottom: 32px;
+  text-transform: capitalize;
+}
+.cards-news {
+  display: flex;
+  gap: 24px;
+}
+.card-news {
+  flex: 0 1 424px;
+  /* box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.08); */
+  transition: box-shadow 0.3s;
+}
+.card-news:hover {
+  box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.5s;
+} /* Зробив для себе, бо дуже сподобалось*/
+.card-news:hover .card-news__date {
+  opacity: 1;
+}
+.card-news__img {
+  aspect-ratio: 424 / 324;
+  object-fit: cover;
+  border-radius: 8px 8px 0px 0px;
+  /* border: 1px solid #000;  Вибачте, дуже мозолить очі, закоментую*/
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.card-news__img-container {
+  position: relative;
+}
+.card-news__date {
+  position: absolute;
+  width: 58px;
+  height: 58px;
+  bottom: 24px;
+  left: 24px;
+  padding: 0.5em 1em 0.7em 1em;
+  border-radius: 4px;
+  background-color: #fff;
+  text-align: center;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+.card-news__number-date {
+  color: #1a1a1a;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.card-news__month-date {
+  color: #808080;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+.content-card-news {
+  padding: 24px;
+}
+.content-card-news__statistic {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.content-card-news__element-link {
+  color: #4d4d4d;
+  font-size: 14px;
+  line-height: 1.5;
+  text-transform: capitalize;
+}
+.content-card-news__element-link:hover {
+  text-decoration: underline;
+}
+.content-card-news__element-img {
+  aspect-ratio: 20 / 20;
+  object-fit: contain;
+}
+.content-card-news__article {
+  color: #2c742f;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.content-card-news__article:hover {
+  text-decoration: underline;
+}
+.content-card-news__link {
+  color: #00b207;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+.content-card-news__link:hover {
+  text-decoration: underline;
+}
+@media (max-width: 1349px) {
+  .cards-news {
+    overflow-x: auto;
+  }
+  .card-news {
+    flex-shrink: 0;
+  }
+}
+@media (max-width: 767.98px) {
+  .cards-news {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .card-news {
+    flex-basis: 300px;
+  }
+  .content-card-news__statistic {
+    justify-content: center;
+  }
+  .content-card-news__article {
+    font-size: 16px;
+  }
+  .content-card-news {
+    text-align: center;
+  }
+  .card-news__date {
+    width: 45px;
+    height: 45px;
+    bottom: 15px;
+    left: 15px;
+  }
+  .card-news__number-date {
+    font-size: 14px;
+  }
+  .card-news__month-date {
+    font-size: 8px;
+  }
+}
+@media (max-width: 449.98px) {
+  .card-news {
+    flex-basis: 100%;
   }
 }
