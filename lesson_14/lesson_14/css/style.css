@@ -244,7 +244,7 @@
   background-color: #fff;
   padding-left: 16px;
   padding-right: 16px;
-  transition: border 0.3s, opacity 0.3s;
+  transition: border 0.5s, opacity 0.5s;
 }
 .billing__span {
   color: #808080;
@@ -280,6 +280,13 @@
   background-color: #fff;
   background: url("../img/arrow.svg") no-repeat 248px 16px / 16px 16px;
 }
+.billing__region-select option{
+	color: black;
+}
+.billing__region-select:valid{
+	color: black;
+}
+
 .billing__label--width {
   max-width: 430px;
   width: 100%;
@@ -409,6 +416,7 @@
 .summery-order {
   display: flex;
   justify-content: space-between;
+  gap: 10px;
 }
 .product {
   display: flex;
@@ -427,9 +435,19 @@
 .summery-order__price {
   font-size: 14px;
 }
+.product__name:hover{
+	text-decoration: underline;
+}
+.product__quantity{
+width: 25px;
+}
+.product__quantity:focus{
+	outline: 1px solid #00b207;
+}
 .price-order__wrapper {
   display: flex;
   justify-content: space-between;
+  gap: 10px;
   padding: 12px 0 12px 0;
 }
 .order__price {
@@ -529,7 +547,7 @@
 
 .payment__text {
   font-size: 14px;
-  color: #1a1a1a;
+  color: #4D4D4D;
 }
 
 .payment__button {

@@ -138,22 +138,22 @@
                   </label>
                 </div>
               </div>
-              <div class="content-form__order order">
+              <form  action="#" enctype="multipart/form-data" method="post" class="content-form__order order">
                 <h2 class="order__title">Order Summery</h2>
 					
                 <div class="summery-order">
                   <div class="product">
                     <img src="img/pepper-01.webp" alt="some alt" class="product__img" />
-                    <p class="product__name">Green Capsicum</p>
-                    <span class="product__quantity">x5</span>
+                    <a href="#" class="product__name">Green Capsicum</a>
+                    <input type="number" class="product__quantity"></input>
                   </div>
                   <p class="summery-order__price">$70.00</p>
                 </div>
                 <div class="summery-order">
                   <div class="product">
                     <img src="img/pepper-02.webp" alt="some alt" class="product__img" />
-                    <p class="product__name">Green Capsicum</p>
-                    <span class="product__quantity">x1</span>
+                    <a href="#" class="product__name">Green Capsicum</a>
+                    <input type="number" class="product__quantity"></input>
                   </div>
                   <p class="summery-order__price">$14.00</p>
                 </div>
@@ -193,9 +193,9 @@
 							 </label>
 						  </li>
 						</ul>
-						<button class="payment__button">Place Order</button>
+						<button type="submit" class="payment__button">Place Order</button>
 					 </div>
-              </div>
+              </form>
             </div>
           </div>
         </section>
