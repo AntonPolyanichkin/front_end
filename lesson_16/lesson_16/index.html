@@ -5,222 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
-    <title>Hw 15</title>
+    <title>Hw 16</title>
   </head>
   <body>
     <div class="wrapper">
       <header class="header">
-        <div class="header__top">
-          <div class="header__container">
-            <a href="#" target="_blank" class="header__link-map">Store Location: Lincoln- 344, Illinois, Chicago, USA</a>
-				<a href="#" target="_blank" class="header__link-map header__link-map--text-none"></a>
-            <div class="header__actions actions-header">
-              <form action="#" class="actions-header__items">
-                <select name="form[]" class="actions-header__select">
-                  <option value="ua">Ua</option>
-                  <option value="en">Eng</option>
-                </select>
-                <select name="form[]" class="actions-header__select">
-                  <option value="uah">UAH</option>
-                  <option value="usd">USD</option>
-                </select>
-              </form>
-              <div class="actions-header__items">
-                <a href="#" class="actions-header__link">Sign In</a>
-                /
-                <a href="#" class="actions-header__link">Sign Up</a>
-              </div>
+        <div class="header__container">
+          <div class="header__content content-header">
+            <div class="content-header__logo logo-header">
+					<div class="logo-header__img"><img src="img/icon/icon.svg" alt="some alt"  /></div>
+              <a href="#" class="logo-header__link">Education Pro</a>
             </div>
-          </div>
-        </div>
-        <div class="header__center">
-          <div class="header__container">
-            <div class="header__logo logo-header">
-              <img src="img/icons/logo.svg" alt="some alt" class="logo-header__img" />
-              <a href="#" class="logo-header__text">Ecobazar</a>
+            <div class="content-header__menu menu-header">
+					<div class="menu-header__body">
+						<ul class="menu-header__list list-header">
+							<li class="list-header__item">
+								<a href="#" class="list-header__link">About</a>
+							</li>
+							<li class="list-header__item">
+								<a href="#" class="list-header__link">Services</a>
+							</li>
+							<li class="list-header__item">
+								<a href="#" class="list-header__link">Quality Policy</a>
+							</li>
+							<li class="list-header__item">
+								<a href="#" class="list-header__link">Languages</a>
+							</li>
+							<li class="list-header__item">
+								<a href="#" class="list-header__link">Contact</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+            <div class="content-header__button button-header">
+              <a href="#" class="button-header__link">Get Quote</a>
             </div>
-            <form action="#" name="form[]" class="header__search search-header">
-              <input type="search" class="search-header__input" placeholder="Search" />
-              <button class="search-header__button" type="submit">Search</button>
-            </form>
-            <div class="header__acts acts">
-					
-              <div class="acts__product-act">
-					<a href="#" target="_blank" class="acts__link-map acts__link-map--text-none">
-						<svg xmlns="http://www.w3.org/2000/svg" width="17" height="20" viewBox="0 0 17 20" fill="none">
-							<path d="M16 8.36364C16 14.0909 8.5 19 8.5 19C8.5 19 1 14.0909 1 8.36364C1 6.41068 1.79018 4.53771 3.1967 3.15676C4.60322 1.77581 6.51088 1 8.5 1C10.4891 1 12.3968 1.77581 13.8033 3.15676C15.2098 4.53771 16 6.41068 16 8.36364Z" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
-							<path d="M8.5 10.8182C9.88071 10.8182 11 9.71925 11 8.36364C11 7.00803 9.88071 5.90909 8.5 5.90909C7.11929 5.90909 6 7.00803 6 8.36364C6 9.71925 7.11929 10.8182 8.5 10.8182Z" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
-							</svg>
-					</a>
-                <a href="#" class="acts__link-like">
-                  <img src="img/icons/like.svg" alt="some alt" class="acts__img-like" />
-                </a>
-                <div class="acts__line"></div>
-                <a href="#" class="acts__buy">
-                  <img src="img/icons/bag.svg" alt="some alt" class="acts__bag" />
-                  <span class="acts__product-quantity">2</span>
-                </a>
-                <a href="tel:2195550114" class="acts__phone-link">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
-                    <path d="M17.4359 4.375C18.9193 4.77396 20.2718 5.55567 21.358 6.64184C22.4441 7.72801 23.2258 9.08051 23.6248 10.5639" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M16.5306 7.75687C17.4205 7.99625 18.2318 8.46521 18.8833 9.11678C19.5349 9.76835 20.0039 10.5797 20.2433 11.4695" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                      d="M10.115 13.6517C11.0224 15.5074 12.5263 17.0049 14.3859 17.9042C14.522 17.9688 14.6727 17.9966 14.8229 17.9851C14.9731 17.9736 15.1178 17.9231 15.2425 17.8386L17.9812 16.0134C18.1022 15.9326 18.2414 15.8833 18.3862 15.8698C18.5311 15.8564 18.677 15.8793 18.8107 15.9364L23.9339 18.1326C24.1079 18.2065 24.2532 18.335 24.3479 18.4987C24.4426 18.6623 24.4815 18.8523 24.4589 19.04C24.2967 20.307 23.6784 21.4714 22.7196 22.3154C21.7608 23.1593 20.5273 23.6249 19.25 23.625C15.3049 23.625 11.5214 22.0578 8.73179 19.2682C5.94218 16.4786 4.375 12.6951 4.375 8.75C4.37512 7.47279 4.84074 6.23941 5.68471 5.28077C6.52867 4.32213 7.6931 3.70396 8.96 3.542C9.14771 3.51936 9.33769 3.55832 9.50134 3.653C9.66499 3.74769 9.79345 3.89298 9.86738 4.067L12.0654 9.1945C12.1219 9.32698 12.1449 9.47137 12.1322 9.61485C12.1195 9.75833 12.0716 9.89647 11.9928 10.017L10.1728 12.7977C10.0901 12.923 10.0414 13.0675 10.0313 13.2171C10.0212 13.3668 10.05 13.5165 10.115 13.6517V13.6517Z"
-                      stroke="black"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg>
-                </a>
-                <button class="acts__menu burger-menu">
-                  <span></span>
-                </button>
-              </div>
-              <div class="acts__total">
-                <a href="#" class="acts__cart">Shopping cart:</a>
-                <span class="acts__check">$57.00</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="header__bottom">
-          <div class="header__container">
-            <div class="header__menu">
-              <div class="header__list-body">
-                <ul class="header__list list-header">
-                  <li class="list-header__item item-list">
-                    <a href="#" class="item-list__link">Home</a>
-                    <button class="item-list__button">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none">
-                        <path d="M1.33332 1.66667L5.99999 6.33334L10.6667 1.66667" stroke="#999999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                      </svg>
-                    </button>
-                    <ul class="item-list__sub-menu sub-menu-list">
-                      <li class="sub-menu-list__item">
-                        <a href="#" class="sub-menu-list__link">some text</a>
-                      </li>
-                      <li class="sub-menu-list__item">
-                        <a href="#" class="sub-menu-list__link">some text</a>
-                      </li>
-                      <li class="sub-menu-list__item">
-                        <a href="#" class="sub-menu-list__link">some text</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="list-header__item item-list">
-                    <a href="#" class="item-list__link">Shop</a>
-                    <button class="item-list__button">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none">
-                        <path d="M1.33332 1.66667L5.99999 6.33334L10.6667 1.66667" stroke="#999999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                      </svg>
-                    </button>
-                    <ul class="item-list__sub-menu sub-menu-list">
-                      <li class="sub-menu-list__item">
-                        <a href="#" class="sub-menu-list__link">some text</a>
-                      </li>
-                      <li class="sub-menu-list__item">
-                        <a href="#" class="sub-menu-list__link">some text</a>
-                      </li>
-                      <li class="sub-menu-list__item">
-                        <a href="#" class="sub-menu-list__link">some text</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="list-header__item item-list">
-                    <a href="#" class="item-list__link">Pages</a>
-                    <button class="item-list__button">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none">
-                        <path d="M1.33332 1.66667L5.99999 6.33334L10.6667 1.66667" stroke="#999999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                      </svg>
-                    </button>
-                    <ul class="item-list__sub-menu sub-menu-list">
-                      <li class="sub-menu-list__item">
-                        <a href="#" class="sub-menu-list__link">some text</a>
-                      </li>
-                      <li class="sub-menu-list__item">
-                        <a href="#" class="sub-menu-list__link">some text</a>
-                      </li>
-                      <li class="sub-menu-list__item">
-                        <a href="#" class="sub-menu-list__link">some text</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="list-header__item item-list">
-                    <a href="#" class="item-list__link">Blog</a>
-                    <button class="item-list__button">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none">
-                        <path d="M1.33332 1.66667L5.99999 6.33334L10.6667 1.66667" stroke="#999999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                      </svg>
-                    </button>
-                    <ul class="item-list__sub-menu sub-menu-list">
-                      <li class="sub-menu-list__item">
-                        <a href="#" class="sub-menu-list__link">some text</a>
-                      </li>
-                      <li class="sub-menu-list__item">
-                        <a href="#" class="sub-menu-list__link">some text</a>
-                      </li>
-                      <li class="sub-menu-list__item">
-                        <a href="#" class="sub-menu-list__link">some text</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="list-header__item item-list">
-                    <a href="#" class="item-list__link">About Us</a>
-                    <ul class="item-list__sub-menu sub-menu-list">
-                      <li class="sub-menu-list__item">
-                        <a href="#" class="sub-menu-list__link">some text</a>
-                      </li>
-                      <li class="sub-menu-list__item">
-                        <a href="#" class="sub-menu-list__link">some text</a>
-                      </li>
-                      <li class="sub-menu-list__item">
-                        <a href="#" class="sub-menu-list__link">some text</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="list-header__item item-list">
-                    <a href="#" class="item-list__link">Contact Us</a>
-                    <ul class="item-list__sub-menu sub-menu-list">
-                      <li class="sub-menu-list__item">
-                        <a href="#" class="sub-menu-list__link">some text</a>
-                      </li>
-                      <li class="sub-menu-list__item">
-                        <a href="#" class="sub-menu-list__link">some text</a>
-                      </li>
-                      <li class="sub-menu-list__item">
-                        <a href="#" class="sub-menu-list__link">some text</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-					 <div class="header__actions actions-header">
-						<form action="#" class="actions-header__items">
-						  <select name="form[]" class="actions-header__select actions-header__select--menu">
-							 <option value="ua">Ua</option>
-							 <option value="en">Eng</option>
-						  </select>
-						  <select name="form[]" class="actions-header__select actions-header__select--menu">
-							 <option value="uah">UAH</option>
-							 <option value="usd">USD</option>
-						  </select>
-						</form>
-						<div class="actions-header__items">
-						  <a href="#" class="actions-header__link actions-header__link--menu">Sign In</a>
-						  /
-						  <a href="#" class="actions-header__link actions-header__link--menu">Sign Up</a>
-						</div>
-					 </div>
-              </div>
-            </div>
-
-            <a href="tel:2195550114" class="header__phone-link">(219) 555-0114</a>
           </div>
         </div>
       </header>
       <main class="page"></main>
-      <footer class="footer"></footer>
+      <footer class="footer">
+        <div class="footer__container"><p class="footer__text">I'm footer</p></div>
+      </footer>
     </div>
   </body>
 </html>
