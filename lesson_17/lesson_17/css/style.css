@@ -609,7 +609,7 @@
   gap: 6px;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3px;
+  transition: all 0.3s;
 }
 .card-product__user-act *,
 .card-sale-hot__reviewed,
@@ -738,12 +738,12 @@
   .card-product:hover {
     box-shadow: 0px 0px 12px 0px rgba(32, 181, 38, 0.32);
     outline: 1px solid #2c742f;
-    transition: all 0.5px;
+    transition: all 0.5s;
   }
   .card-product:hover .card-product__user-act {
     opacity: 1;
     visibility: visible;
-    transition: all 0.5px;
+    transition: all 0.5s;
   }
   .card-product__user-act *:hover,
   .card-sale-hot__reviewed:hover,
