@@ -231,7 +231,7 @@
   gap: 14px;
   max-width: 370px;
 }
-.card-flora__open-link {
+.content-flora-catalog__open-link{
   max-width: 184px;
   max-height: 41px;
   color: #2c2c2c;
@@ -377,7 +377,7 @@
     text-align: center;
     font-size: 35px;
   }
-  .card-flora__open-link {
+  .content-flora-catalog__open-link{
     display: block;
     width: 100%;
   }
@@ -784,11 +784,11 @@ visibility: visible;
 	cursor: pointer;
  }
  .card-flora__action a:hover,
- .card-flora__open-link:hover {
+ .content-flora-catalog__open-link:hover {
 	background-color: #dbccba;
 	transition: background-color 0.5s;
  }
- .card-flora__open-link:hover {
+ .content-flora-catalog__open-link:hover {
 	background-color: #c19661;
  }
 }
