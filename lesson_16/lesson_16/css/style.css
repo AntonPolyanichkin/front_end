@@ -74,6 +74,8 @@ body{
 .list-header{
 	display: flex;
 	column-gap: 30px;
+	row-gap: 10px;
+	flex-wrap: wrap;
 }
 .list-header__link{
 	font-size: 13px;
@@ -120,7 +122,7 @@ body{
     gap: 10px;
   }
 }
-@media (max-width: 869.98px) {
+@media (max-width: 880.98px) {
   .logo-header__link {
     font-size: 15px;
   }
@@ -134,15 +136,8 @@ body{
     font-size: 12px;
   }
 }
+
 @media (max-width: 767.98px) {
-  .logo-header__link {
-    display: none;
-  }
-  .list-header__link{
-    font-size: 13px;
-  }
-}
-@media (max-width: 647.98px) {
 	.menu-header__body{
 		opacity: 0;
 		visibility: hidden;

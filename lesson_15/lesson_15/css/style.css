@@ -51,7 +51,6 @@
   color: #00b207;
   font-weight: 500;
   line-height: 1.5;
-  margin-bottom: 5px;
 }
 .content-featured__view:hover {
   text-decoration: underline;
@@ -79,8 +78,12 @@
   gap: 6px;
   transition: box-shadow 0.3s;
 }
+.card-featured__img-container{
+	aspect-ratio: 254 / 230;
+	max-width: 254px;
+}
 .card-featured__img {
-  aspect-ratio: 254 / 230;
+	height: 100%;
   object-fit: contain;
 }
 .card-featured__product-title {
@@ -88,7 +91,7 @@
   font-size: 14px;
   line-height: 1.5;
   margin-bottom: 5px;
-  transition: color 0, 5s;
+  transition: color 0.5s;
 }
 .card-featured__product-title:hover {
   text-decoration: underline;
@@ -127,8 +130,8 @@
 
 .card-featured__info {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
   gap: 10px 30px;
 }
 .card-featured:hover {
@@ -137,7 +140,7 @@
 }
 .card-featured:hover .card-featured__product-title {
   color: #2c742f;
-  transition: color 0, 5s;
+  transition: color 0.5s;
 }
 .card-featured:hover .card-featured__product-bag {
   background-color: #00b207;
@@ -311,7 +314,7 @@
   opacity: 1;
 }
 .card-news__img {
-  aspect-ratio: 424 / 324;
+ height: 100%;
   object-fit: cover;
   border-radius: 8px 8px 0px 0px;
   /* border: 1px solid #000;  Вибачте, дуже мозолить очі, закоментую*/
@@ -319,6 +322,8 @@
 }
 .card-news__img-container {
   position: relative;
+  aspect-ratio: 424 / 324;
+  max-width: 454px;
 }
 .card-news__date {
   position: absolute;
