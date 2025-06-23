@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Carme:wght@400&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <title>Hw 18</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <p class="header__title">I'm header</p>
+      </header>
+      <main class="page">
+        <article class="single-blog">
+          <div class="single-blog__container">
+            <div class="single-blog__img-wrapper">
+              <img src="#" alt=" some alt" class="single-blog__main-img" />
+            </div>
+            <div class="single-blog__actions link-actions">
+              <a href="#" class="link-actions__food"></a>
+              <a href="#" class="link-actions__admin"></a>
+              <a href="#" class="link-actions__comments"></a>
+            </div>
+            <h1 class="single-blog__title">Maecenas tempor urna sed quam mollis, a placerat dui fringill Suspendisse.</h1>
+            <div class="single-blog__worker-information information-worker">
+				<div class="information-worker__wrapper">
+					<figure class="information-worker__name">
+						<img src="#" alt="some alt" class="information-worker__img" />
+						<figcaption class="information-worker__full-name">Cameron Williamson</figcaption>
+					 </figure>
+					 <time datetime="2021-04-04T22:34:00+0300" class="information-worker__date">6 min read</time>
+				</div>
+              <div class="information-worker__social-media media-social">
+                <a href="#" class="media-social__link"></a>
+                <a href="#" class="media-social__link"></a>
+                <a href="#" class="media-social__link"></a>
+                <a href="#" class="media-social__link"></a>
+                <a href="#" class="media-social__link"></a>
+                <a href="#" class="media-social__link"></a>
+              </div>
+            </div>
+            <section class="single-blog__content content-blog">
+              <h2 class="content-blog__title">Maecenas lacinia felis nec placerat sollicitudin. Quisque placerat dolor at scelerisque imperdiet. Phasellus tristique felis dolor.</h2>
+              <p class="content-blog__text">
+                Maecenas elementum in risus sed condimentum. Duis convallis ante ac tempus maximus. Fusce malesuada sed velit ut dictum. Morbi faucibus vitae orci at euismod. Integer auctor augue in erat vehicula, quis fermentum ex finibus.
+              </p>
+              <p class="content-blog__text">
+                Mauris pretium elit a dui pulvinar, in ornare sapien euismod. Nullam interdum nisl ante, id feugiat quam euismod commodo. Sed ultrices lectus ut iaculis rhoncus. Aenean non dignissim justo, at fermentum turpis. Sed molestie, ligula ut
+                molestie ultrices, tellus ligula viverra neque, malesuada consectetur diam sapien volutpat risus. Quisque eget tortor lobortis, facilisis metus eu, elementum est. Nunc sit amet erat quis ex convallis suscipit. ur ridiculus mus.
+              </p>
+              <div class="content-blog__img-wrapper">
+                <img src="#" alt="some alt" />
+              </div>
+              <div class="content-blog__img-wrapper">
+                <img src="#" alt="some alt" />
+              </div>
+              <p class="content-blog__text">
+                Sed dictum non nulla eu imperdiet. Duis elit libero, vulputate quis vehicula ut, vestibulum ut mauris. Nullam non felis varius dui rutrum rutrum in a nisi. Suspendisse elementum rutrum lorem sed luctus. Proin iaculis euismod metus non
+                sollicitudin. Duis vel luctus lacus. Nullam faucibus iaculis convallis. In ullamcorper nibh ipsum, eget lacinia eros pulvinar a. Integer accumsan arcu nec faucibus ultricies.
+              </p>
+            </section>
+            <section class="single-blog__fresh-frut frut-fresh">
+              <div class="frut-fresh__title">
+                <p>Summer Sales</p>
+                <h2>Fresh Fruit</h2>
+              </div>
+              <a href="#" class="frut-fresh__shop-link">Shop Now</a>
+            </section>
+            <section class="single-blog__leave-comments comments-leave">
+              <h2 class="comments-leave__title">Leave a Comment</h2>
+              <form action="#" method="post" enctype="multipart/form-data" class="comments-leave__form form-leave-comments">
+                <fieldset class="form-leave-comments__personal">
+                  <label class="form-leave-comments__name">
+                    <span>Full Name</span>
+                    <input type="text" required placeholder="Full Name" name="form[fullName]" />
+                  </label>
+                  <label class="form-leave-comments__email">
+                    <span>Email</span>
+                    <input type="email" required placeholder="Email" name="form[email]" />
+                  </label>
+                </fieldset>
+                <fieldset class="form-leave-comments__messege">
+                  <label class="form-leave-comments__information">
+                    <span>Message</span>
+                    <textarea name="form[message]" placeholder="Write your comment here…"></textarea>
+                  </label>
+                  <label class="form-leave-comments__save">
+                    <span>Save my name and email in this browser for the next time I comment.</span>
+                    <input type="checkbox" class="" name="form[checked]" />
+                  </label>
+                </fieldset>
+                <button class="form-leave-comments__button">Post Comments</button>
+              </form>
+            </section>
+            <section class="single-blog__left-comments comments">
+              <h2 class="comments__title">Comments</h2>
+              <div class="comments__list list-comments">
+				<div class="list-comments__comment comment">
+					<figure class="comment__author">
+                  <img src="#" alt="some alt" class="comment__img" />
+                  <figcaption class="comment__user-name">Annette Black</figcaption>
+                </figure>
+					 <p class="comment__text">In a nisi commodo, porttitor ligula consequat, tincidunt dui. Nulla volutpat, metus eu aliquam malesuada, elit libero venenatis urna, consequat maximus arcu diam non diam.</p>
+                <time datetime="2021-04-26" class="comment__time-left">26 Apr, 2021</time>
+				</div>
+				<div class="list-comments__comment comment">
+					<figure class="comment__author">
+                  <img src="#" alt="some alt" class="comment__img" />
+                  <figcaption class="comment__user-name">Annette Black</figcaption>
+                </figure>
+					 <p class="comment__text">In a nisi commodo, porttitor ligula consequat, tincidunt dui. Nulla volutpat, metus eu aliquam malesuada, elit libero venenatis urna, consequat maximus arcu diam non diam.</p>
+                <time datetime="2021-04-26" class="comment__time-left">26 Apr, 2021</time>
+				</div>
+				
+				<div class="list-comments__comment comment">
+					<figure class="comment__author">
+                  <img src="#" alt="some alt" class="comment__img" />
+                  <figcaption class="comment__user-name">Annette Black</figcaption>
+                </figure>
+					 <p class="comment__text">In a nisi commodo, porttitor ligula consequat, tincidunt dui. Nulla volutpat, metus eu aliquam malesuada, elit libero venenatis urna, consequat maximus arcu diam non diam.</p>
+                <time datetime="2021-04-26" class="comment__time-left">26 Apr, 2021</time>
+				</div>
+				
+				<div class="list-comments__comment comment">
+					<figure class="comment__author">
+                  <img src="#" alt="some alt" class="comment__img" />
+                  <figcaption class="comment__user-name">Annette Black</figcaption>
+                </figure>
+					 <p class="comment__text">In a nisi commodo, porttitor ligula consequat, tincidunt dui. Nulla volutpat, metus eu aliquam malesuada, elit libero venenatis urna, consequat maximus arcu diam non diam.</p>
+                <time datetime="2021-04-26" class="comment__time-left">26 Apr, 2021</time>
+				</div>
+				
+				<div class="list-comments__comment comment">
+					<figure class="comment__author">
+                  <img src="#" alt="some alt" class="comment__img" />
+                  <figcaption class="comment__user-name">Annette Black</figcaption>
+                </figure>
+					 <p class="comment__text">In a nisi commodo, porttitor ligula consequat, tincidunt dui. Nulla volutpat, metus eu aliquam malesuada, elit libero venenatis urna, consequat maximus arcu diam non diam.</p>
+                <time datetime="2021-04-26" class="comment__time-left">26 Apr, 2021</time>
+				</div>
+				
+				<div class="list-comments__comment comment">
+					<figure class="comment__author">
+                  <img src="#" alt="some alt" class="comment__img" />
+                  <figcaption class="comment__user-name">Annette Black</figcaption>
+                </figure>
+					 <p class="comment__text">In a nisi commodo, porttitor ligula consequat, tincidunt dui. Nulla volutpat, metus eu aliquam malesuada, elit libero venenatis urna, consequat maximus arcu diam non diam.</p>
+                <time datetime="2021-04-26" class="comment__time-left">26 Apr, 2021</time>
+				</div>
+              </div>
+              <a href="#" class="comments__more">Load More</a>
+            </section>
+            <aside class="single-blog__categories categories-aside">
+					<div class="categories-aside__container">
+						<form action="#" method="post" enctype="multipart/form-data" class="categories-aside__form">
+							<input type="search" autocomplete="off" class="categories-aside__search" />
+						 </form>
+						 <section class="categories-aside__category category-aside">
+							<h2 class="category-aside__title">Top Categories</h2>
+							<div class="category-aside__item">
+							  <a href="#" class="category-aside__link">Fresh Fruit</a>
+							  <p class="category-aside__quantity">(134)</p>
+							</div>
+							<div class="category-aside__item">
+							  <a href="#" class="category-aside__link">Vegetables</a>
+							  <p class="category-aside__quantity">(150)</p>
+							</div>
+							<div class="category-aside__item">
+							  <a href="#" class="category-aside__link">Cooking</a>
+							  <p class="category-aside__quantity">(54)</p>
+							</div>
+							<div class="category-aside__item">
+							  <a href="#" class="category-aside__link">Snacks</a>
+							  <p class="category-aside__quantity">(47)</p>
+							</div>
+							<div class="category-aside__item">
+							  <a href="#" class="category-aside__link">Beverages</a>
+							  <p class="category-aside__quantity">(43)</p>
+							</div>
+							<div class="category-aside__item">
+							  <a href="#" class="category-aside__link">Beauty & Health</a>
+							  <p class="category-aside__quantity">(38)</p>
+							</div>
+							<div class="category-aside__item">
+							  <a href="#" class="category-aside__link">Bread & Bakery</a>
+							  <p class="category-aside__quantity">(15)</p>
+							</div>
+						 </section>
+						 <section class="categories-aside__tag tag-aside">
+							<h2 class="tag-aside__title">Popular Tag</h2>
+							<div class="tag-aside__links links-aside">
+							  <a href="#" class="links-aside__link">Healthy</a>
+							  <a href="#" class="links-aside__link">Low fat</a>
+							  <a href="#" class="links-aside__link">Vegetarian</a>
+							  <a href="#" class="links-aside__link">Bread</a>
+							  <a href="#" class="links-aside__link">Kid foods</a>
+							  <a href="#" class="links-aside__link">Vitamins</a>
+							  <a href="#" class="links-aside__link">Snacks</a>
+							  <a href="#" class="links-aside__link">Tiffin</a>
+							  <a href="#" class="links-aside__link">Meat</a>
+							  <a href="#" class="links-aside__link">Launch</a>
+							  <a href="#" class="links-aside__link">Dinner</a>
+							</div>
+						 </section>
+						 <section class="categories-aside__gallery gallery-aside">
+							<h2 class="gallery-aside__title">Our Gallery</h2>
+							<div class="gallery-aside__pictures pictures-aside">
+							  <img src="#" alt="some alt" class="pictures-aside__img">
+							  <img src="#" alt="some alt" class="pictures-aside__img">
+							  <img src="#" alt="some alt" class="pictures-aside__img">
+							  <img src="#" alt="some alt" class="pictures-aside__img">
+							  <img src="#" alt="some alt" class="pictures-aside__img">
+							  <img src="#" alt="some alt" class="pictures-aside__img">
+							  <img src="#" alt="some alt" class="pictures-aside__img">
+							  <img src="#" alt="some alt" class="pictures-aside__img">
+							</div>
+						 </section>
+						 <section class="categories-aside__added added-aside ">
+						  <h2 class="added-aside__tile">Recently Added</h2>
+						  <div class="added-aside__card card-added-aside">
+							  <figure class="card-added-aside__info">
+								  <img src="#" alt="some alt" class="card-added-aside__img">
+								  <figcaption class="card-added-aside__about">Curabitur porttitor orci eget nequ accumsan.</figcaption>
+							  </figure>
+							  <time datetime="2021-04-25" class="card-added-aside__time-add">Apr 25, 2021</time>
+						  </div>
+						  <div class="added-aside__card card-added-aside">
+							  <figure class="card-added-aside__info">
+								  <img src="#" alt="some alt" class="card-added-aside__img">
+								  <figcaption class="card-added-aside__about">Donec mattis arcu faucibus suscipit viverra.</figcaption>
+							  </figure>
+							  <time datetime="2021-04-25" class="card-added-aside__time-add">Apr 25, 2021</time>
+						  </div>
+						  <div class="added-aside__card card-added-aside">
+							  <figure class="card-added-aside__info">
+								  <img src="#" alt="some alt" class="card-added-aside__img">
+								  <figcaption class="card-added-aside__about">Quisque posuere tempus rutrum. Integer velit ex.</figcaption>
+							  </figure>
+							  <time datetime="2021-04-25" class="card-added-aside__time-add">Apr 25, 2021</time>
+						  </div>
+					  
+						 </section>
+					</div>
+            </aside>
+          </div>
+        </article>
+      </main>
+      <footer class="footer"></footer>
+    </div>
+  </body>
+</html>
