@@ -43,8 +43,7 @@
 // function getDivisionNumbers(a = 0, b = 0, validFunc) {
 // 	let firstNum = validFunc(a)
 // 	let secondNum = validFunc(b)
-// 	let result
-// 	result = firstNum / secondNum
+// 	let result = firstNum / secondNum
 // 	if(result === Infinity || result === -Infinity){
 // 		throw new Error ("Ай, ай, ай, не треба ділити на нуль") //програма "впала", це погано, я знаю, зроблено навмисно
 // 	}
@@ -52,10 +51,24 @@
 // 		return result
 // 	}
 // }
-// console.log(getDivisionNumbers(a = "hello", b = 2, validationFunc));
-// console.log(getDivisionNumbers(a = undefined, b = 2, validationFunc));
-// console.log(getDivisionNumbers(a = 10, b = 2, validationFunc));
-// console.log(getDivisionNumbers(a = 5, b = 0, validationFunc));
+// console.log(getDivisionNumbers( "hello",  2, validationFunc));
+// console.log(getDivisionNumbers( undefined,  2, validationFunc));
+// console.log(getDivisionNumbers( 10,  2, validationFunc));
+// console.log(getDivisionNumbers( 5,  0, validationFunc));
+
+// function getDivisionNumbers(a = 0, b = 0) {
+// 	let result = a / b
+// 	if (!isFinite(result) || Number.isNaN(result)) {
+// 		return "Ви ввели не коректні значення";
+// 	}
+// 	else{
+// 		return `Результат ділення : ${result}`;
+// 	}
+// }
+// console.log(getDivisionNumbers("hello", 2));
+// console.log(getDivisionNumbers(undefined, 2));
+// console.log(getDivisionNumbers(10, 2));
+// console.log(getDivisionNumbers(5,0));
 //--------------------------------------------------------------------------------------------------------------
 // Задача №5
 // Створіть масив даних - 5 елементів, один з яких число 10
