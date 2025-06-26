@@ -1,0 +1,121 @@
+@import url("reset.css");
+:root {
+  --primary-card-bg: #fff;
+  --title-size: clamp(0.875rem, 0.511rem + 1.82vw, 1.875rem);
+  --title-color: #fff;
+  --card-text: clamp(0.75rem, 0.568rem + 0.91vw, 1.25rem);
+  --text-card-color: #141414;
+  --link-bg: rgb(39, 37, 37);
+  --link-hover-bg: rgb(148, 148, 148);
+  --link-text-color: #fff;
+  --link-size: calc(100% - 6.25rem);
+  --link-font-size: clamp(0.625rem, 0.489rem + 0.68vw, 1rem);
+}
+.wrapper {
+  overflow: clip;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+  background-color: gray;
+}
+[class*="__container"] {
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+  margin: 0 auto;
+}
+.page {
+  flex-grow: 1;
+}
+.header,
+.footer {
+  padding: 1.875rem;
+  background-color: #1e1e1e;
+  color: #fff;
+  text-align: center;
+  font-size: 1.875rem;
+}
+.card {
+  color: var(--text-card-color);
+  padding-block: 2.5rem;
+}
+.card__container {
+  max-width: 75rem;
+}
+.block-card {
+	min-height: 65svh;
+  padding-block: 1.25rem;
+  padding-inline: 0.625rem;
+  background-color: var(--primary-card-bg);
+  border-radius: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.875rem;
+  align-items: center;
+}
+.block-card__img {
+  aspect-ratio: 1 / 1;
+  max-width: 18.75rem;
+  
+}
+.block-card__img img {
+  border-radius: 50%;
+  height: 100%;
+  object-fit: contain;
+}
+.card__title {
+  font-size: var(--title-size);
+  color: var(--title-color);
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.2;
+  margin-bottom: 1.875rem;
+}
+.block-card__full-name {
+  font-size: var(--title-size);
+  font-weight: 600;
+  text-transform: capitalize;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  text-align: center;
+  pointer-events: none;
+}
+.block-card__about{
+	flex-grow: 1;
+	
+}
+.block-card__explanation {
+  font-size: var(--card-text);
+  text-align: center;
+  line-height: 1.2;
+}
+.block-card__more-information {
+  padding-block: 1.25rem;
+  width: var(--link-size);
+  font-size: var(--link-font-size) ;
+  text-align: center;
+  border-radius: 1.25rem;
+  background-color: var(--link-bg);
+  color: var(--link-text-color);
+  transition: all 0.5s;
+}
+
+@media (any-hover: hover) {
+  .block-card__more-information:hover {
+    background-color: var(--link-hover-bg);
+    color: var(--link-text-color);
+	 transform:scale(1.1);
+  }
+  .block-card__img:hover{
+	cursor: not-allowed;
+  }
+  .block-card__about:hover{
+	cursor: text;
+  }
+}
+/* @media (max-width: 33.125rem) {
+	.block-card__more-information{
+		max-width: 100%;
+	}
+} */
