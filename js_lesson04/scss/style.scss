@@ -1,0 +1,35 @@
+// html {
+//   .some-block {
+//     width: 100px;
+//     height: 100px;
+//     opacity: 0;
+//     visibility: hidden;
+//     transition: all 10s;
+//   }
+// }
+// html {
+//   &.visible {
+//     .some-block {
+//       opacity: 1;
+//       visibility: visible;
+//       background-color: #000;
+//       border-radius: 10px;
+//       transform: rotate(360deg);
+//     }
+//   }
+// }
+
+// .header{
+// 	background-color: lightblue;
+// 	height: 12.5rem;
+// }
+// .footer{
+// 	background-color: lightyellow;
+// 	height: 12.5rem;
+// }
+.item{
+	padding: 3.125rem 0 3.125rem 0;
+	background-color: lightyellow;
+	font-size: 1.875rem;
+	text-align: center;
+}
