@@ -1,0 +1,460 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+html,
+body {
+  line-height: 1;
+  height: 100%;
+}
+
+/* FORM */
+input,
+button,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+input,
+textarea {
+  width: 100%;
+}
+
+button,
+select,
+option {
+  cursor: pointer;
+}
+
+input[type=text],
+input[type=email],
+input[type=tel],
+textarea {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+@property --gradient-start-color-main-btn {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #8176AF;
+}
+@property --gradient-end-color-main-btn {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #C0B7E8;
+}
+@property --gradient-start-color-contacts-btn {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #302C42;
+}
+@property --gradient-midd-color-contacts-btn {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #1e1a29;
+}
+@property --gradient-end-color-contacts-btn {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #302C42;
+}
+.button {
+  background: -webkit-gradient(linear, left top, right top, from(var(--gradient-start-color-main-btn)), to(var(--gradient-end-color-main-btn)));
+  background: linear-gradient(90deg, var(--gradient-start-color-main-btn) 0%, var(--gradient-end-color-main-btn) 100%);
+  text-transform: uppercase;
+  text-align: center;
+  border-radius: 2.5rem;
+  color: #302C42;
+  transition-property: --gradient-start-color-main-btn, --gradient-end-color-main-btn;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+@media (min-width: 81.375em) {
+  .button {
+    min-width: 9.6875rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 81.375em) {
+  .button {
+    min-width: clamp(6.25rem, calc(5.1298370672rem + 5.600814664vw), 9.6875rem);
+  }
+}
+@media (max-width: 20em) {
+  .button {
+    min-width: 6.25rem;
+  }
+}
+@media (min-width: 81.375em) {
+  .button {
+    padding-block: 1.0625rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 81.375em) {
+  .button {
+    padding-block: clamp(0.625rem, calc(0.4824338086rem + 0.7128309572vw), 1.0625rem);
+  }
+}
+@media (max-width: 20em) {
+  .button {
+    padding-block: 0.625rem;
+  }
+}
+@media (min-width: 81.375em) {
+  .button {
+    font-size: 0.75rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 81.375em) {
+  .button {
+    font-size: clamp(0.625rem, calc(0.5842668024rem + 0.2036659878vw), 0.75rem);
+  }
+}
+@media (max-width: 20em) {
+  .button {
+    font-size: 0.625rem;
+  }
+}
+.button:focus-visible {
+  outline: 0.125rem solid #7d72ad !important;
+  outline-offset: 0.3125rem;
+  border-radius: 2.5rem;
+}
+@media (any-hover: hover) and (pointer: fine) {
+  .button:hover {
+    --gradient-start-color-main-btn: #585174 ;
+    --gradient-end-color-main-btn: #a99de1 ;
+    transition-property: --gradient-start-color-main-btn, --gradient-end-color-main-btn;
+    -webkit-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+  }
+}
+
+.header {
+  background-color: #302C42;
+  padding-top: 3.125rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #fff;
+  position: fixed;
+  left: 0;
+  right: 0;
+}
+@media (min-width: 81.375em) {
+  .header {
+    font-size: 0.75rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 81.375em) {
+  .header {
+    font-size: clamp(0.625rem, calc(0.5842668024rem + 0.2036659878vw), 0.75rem);
+  }
+}
+@media (max-width: 20em) {
+  .header {
+    font-size: 0.625rem;
+  }
+}
+.header .header__container {
+  max-width: 81.375rem;
+}
+.header .header__hydra-logo {
+  max-width: 12.0625rem;
+  aspect-ratio: 193/103;
+  cursor: pointer;
+}
+.header .header__hydra-logo:focus-visible {
+  outline: 0.125rem solid #7d72ad;
+  outline-offset: 0.3125rem;
+  border-radius: 0.625rem;
+}
+.header .header__hydra-logo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.header .header__contentent-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 1.25rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.header .menu-header .list-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+@media (min-width: 81.375em) {
+  .header .menu-header .list-menu {
+    gap: 2.625rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 81.375em) {
+  .header .menu-header .list-menu {
+    gap: clamp(0.625rem, calc(-0.0267311609rem + 3.2586558045vw), 2.625rem);
+  }
+}
+@media (max-width: 20em) {
+  .header .menu-header .list-menu {
+    gap: 0.625rem;
+  }
+}
+.header .menu-header .list-menu .list-menu__link {
+  text-transform: uppercase;
+  padding-block: 2.5rem;
+  position: relative;
+}
+.header .menu-header .list-menu .list-menu__link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 0.1875rem;
+  bottom: 30%;
+  left: 0;
+  background-color: #fff;
+  -webkit-transition: width 0.3s;
+  transition: width 0.3s;
+}
+@media (any-hover: hover) and (pointer: fine) {
+  .header .menu-header .list-menu .list-menu__link:hover::after {
+    width: 100%;
+    -webkit-transition: width 0.5s;
+    transition: width 0.5s;
+  }
+}
+.header .menu-header .list-menu .list-menu__link:focus-visible {
+  outline: 0.125rem solid #7d72ad;
+  outline-offset: 0rem;
+  border-radius: 0.625rem;
+}
+.header .menu-header .button-burger {
+  display: none;
+}
+.header .header__action-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 2.375rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.header .header__action-button .button-action__contacts {
+  color: #fff;
+  background: linear-gradient(135deg, var(--gradient-start-color-contacts-btn) 0%, var(--gradient-midd-color-contacts-btn) 50%, var(--gradient-end-color-contacts-btn) 100%);
+  background-size: 300%;
+  background-position: left;
+  outline: 2px solid #fff;
+  transition-property: --gradient-start-color-contacts-btn, --gradient-midd-color-contacts-btn, --gradient-end-color-contacts-btn, background-position;
+  -webkit-transition-duration: 0.6s;
+          transition-duration: 0.6s;
+}
+@media (any-hover: hover) and (pointer: fine) {
+  .header .header__action-button .button-action__contacts:hover {
+    background: -webkit-gradient(linear, left top, right top, from(var(--gradient-start-color-main-btn)), to(var(--gradient-end-color-main-btn)));
+    background: linear-gradient(90deg, var(--gradient-start-color-main-btn) 0%, var(--gradient-end-color-main-btn) 100%);
+    background-size: 100%;
+    background-position: right;
+    transition-property: --gradient-start-color-main-btn, --gradient-end-color-main-btn, background-position, background-size;
+    -webkit-transition-duration: 0.6s;
+            transition-duration: 0.6s;
+  }
+}
+@media (max-width: 59.43625em) {
+  .header .menu-header__list-wrapper {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    top: 6.5625rem;
+    left: -100%;
+    border-radius: 100%;
+    background-color: #302C42;
+    width: 100%;
+    height: calc(100% - 6.875rem);
+    padding: 3.125rem 1.875rem 3.125rem 1.875rem;
+    -webkit-transition: opacity 0.3s, visibility 0.3s 0s, left 0.5s, border-radius 0.5s;
+    transition: opacity 0.3s, visibility 0.3s 0s, left 0.5s, border-radius 0.5s;
+  }
+  .header .menu-header__list-wrapper .list-menu {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 2.5rem;
+  }
+  .header .menu-header__list-wrapper .list-menu .list-menu__link {
+    padding-block: 0;
+    font-size: 1.25rem;
+  }
+  .header .header__hydra-logo {
+    max-width: 6.4375rem;
+    aspect-ratio: 103/60;
+  }
+  .header .button-burger {
+    display: inline-block !important;
+    position: relative;
+    width: 2.1875rem;
+    height: 1.5625rem;
+    cursor: pointer;
+  }
+  .header .button-burger .button-burger__element {
+    position: absolute;
+    width: 75%;
+    height: 0.1875rem;
+    top: 45%;
+    right: 0;
+    background: -webkit-gradient(linear, left top, right top, from(var(--gradient-start-color-main-btn)), to(var(--gradient-end-color-main-btn)));
+    background: linear-gradient(90deg, var(--gradient-start-color-main-btn) 0%, var(--gradient-end-color-main-btn) 100%);
+    border-radius: 1.25rem;
+    -webkit-transition: width 0.3s;
+    transition: width 0.3s;
+  }
+  .header .button-burger::before, .header .button-burger::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0.1875rem;
+    right: 0;
+    background: -webkit-gradient(linear, left top, right top, from(var(--gradient-start-color-main-btn)), to(var(--gradient-end-color-main-btn)));
+    background: linear-gradient(90deg, var(--gradient-start-color-main-btn) 0%, var(--gradient-end-color-main-btn) 100%);
+    border-radius: 1.25rem;
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+    transition: transform 0.5s, -webkit-transform 0.5s;
+  }
+  .header .button-burger::before {
+    top: 0;
+  }
+  .header .button-burger::after {
+    bottom: 0;
+  }
+}
+
+body.active .header__action-button .button-burger .button-burger__element {
+  width: 0%;
+  -webkit-transition: width 0.5s;
+  transition: width 0.5s;
+}
+body.active .header__action-button .button-burger::before {
+  -webkit-transform: translate(0rem, 0.6875rem) rotate(130deg);
+      -ms-transform: translate(0rem, 0.6875rem) rotate(130deg);
+          transform: translate(0rem, 0.6875rem) rotate(130deg);
+}
+body.active .header__action-button .button-burger::after {
+  -webkit-transform: translate(0rem, -0.6875rem) rotate(-130deg);
+      -ms-transform: translate(0rem, -0.6875rem) rotate(-130deg);
+          transform: translate(0rem, -0.6875rem) rotate(-130deg);
+}
+body.active .header__action-button .button-burger::before, body.active .header__action-button .button-burger::after {
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+body.active .menu-header__list-wrapper {
+  opacity: 1;
+  left: 0%;
+  visibility: visible;
+  border-radius: 0%;
+  -webkit-transition: opacity 0.5s, left 0.5s, border-radius 0.5s;
+  transition: opacity 0.5s, left 0.5s, border-radius 0.5s;
+}
+
+@media (max-width: 34.43625em) {
+  .menu-header__list-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 1.25rem;
+  }
+  .menu-header__list-wrapper .list-menu {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+  }
+}
+@media (max-width: 34.43625em) and (min-width: 81.375em) {
+  .menu-header__list-wrapper .list-menu .list-menu__link {
+    font-size: 0.75rem;
+  }
+}
+@media (max-width: 34.43625em) and (min-width: 20em) and (max-width: 81.375em) {
+  .menu-header__list-wrapper .list-menu .list-menu__link {
+    font-size: clamp(0.625rem, calc(0.5842668024rem + 0.2036659878vw), 0.75rem);
+  }
+}
+@media (max-width: 34.43625em) and (max-width: 20em) {
+  .menu-header__list-wrapper .list-menu .list-menu__link {
+    font-size: 0.625rem;
+  }
+}
+.wrapper {
+  overflow: clip;
+  min-height: 100%;
+  font-family: "Montserrat", sans-serif;
+}
+
+[class*=__container] {
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+  margin: 0 auto;
+}

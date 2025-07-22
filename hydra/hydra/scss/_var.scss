@@ -1,0 +1,30 @@
+$mainWhiteColor: #fff;
+$mainBackgroundColor: #302C42;
+$mainTextButtonColor: #302C42;
+$focusOutline: #7d72ad;
+@property --gradient-start-color-main-btn{
+	syntax: '<color>';
+	inherits: false;
+	initial-value: #8176AF;
+}
+@property --gradient-end-color-main-btn{
+	syntax: '<color>';
+	inherits: false;
+	initial-value: #C0B7E8;
+}
+@property --gradient-start-color-contacts-btn{
+	syntax: '<color>';
+	inherits: false;
+	initial-value: #302C42;
+}
+@property --gradient-midd-color-contacts-btn{
+	syntax: '<color>';
+	inherits: false;
+	initial-value: #1e1a29;
+}
+@property --gradient-end-color-contacts-btn{
+	syntax: '<color>';
+	inherits: false;
+	initial-value: #302C42;
+}
+

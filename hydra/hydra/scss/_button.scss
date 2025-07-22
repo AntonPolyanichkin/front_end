@@ -1,0 +1,27 @@
+@use "_mixins.scss" as *;
+@use "_var.scss" as *;
+.button{
+	@include adaptiveValue("min-width", 155 , 100);
+	@include adaptiveValue("padding-block", 17 , 10);
+	background: linear-gradient(90deg, var(--gradient-start-color-main-btn) 0%, var(--gradient-end-color-main-btn) 100%);
+	@include adaptiveValue("font-size", 12, 10);
+	text-transform: uppercase;
+	text-align: center;
+	border-radius: toRem(40);
+	color: $mainTextButtonColor;
+	transition-property:--gradient-start-color-main-btn,--gradient-end-color-main-btn;
+	transition-duration: 0.3s;
+	&:focus-visible{
+			outline: toRem(2) solid $focusOutline !important; 
+			outline-offset: toRem(5);
+			border-radius: toRem(40);
+	}
+	@media (any-hover: hover) and (pointer: fine){
+		&:hover{
+			--gradient-start-color-main-btn: #585174 ; 
+			--gradient-end-color-main-btn: #a99de1 ;
+			transition-property:--gradient-start-color-main-btn,--gradient-end-color-main-btn;
+			transition-duration: 0.5s;
+		}
+	}
+}

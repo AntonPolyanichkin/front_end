@@ -1,0 +1,14 @@
+@use "_reset.scss" ;
+@use "_header.scss";
+@use "_var.scss" as *;
+@use 'sass:math';
+.wrapper {
+	overflow: clip;
+	min-height: 100%;
+	font-family: "Montserrat",sans-serif;
+}
+[class*="__container"]{
+	padding-left: .9375rem;
+	padding-right: .9375rem;
+	margin: 0 auto;
+}
