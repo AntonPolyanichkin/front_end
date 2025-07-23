@@ -173,6 +173,7 @@ textarea {
 
 .header {
   padding-block: 3.125rem;
+  background-color: #302C42;
   font-weight: 700;
   line-height: 1.2;
   color: #fff;
@@ -320,7 +321,7 @@ textarea {
     visibility: hidden;
     position: fixed;
     z-index: 51;
-    top: 10rem;
+    top: 7rem;
     left: -100%;
     border-radius: 100%;
     background-color: #302C42;
@@ -461,8 +462,7 @@ body.active .menu-header__list-wrapper {
   }
 }
 .footer {
-  background: url("../img/footer-vector-group.svg") no-repeat;
-  background-position: center bottom;
+  background: url("img/footer-vector-group.svg") no-repeat center top/cover;
   padding-top: 5.625rem;
   padding-bottom: 3.75rem;
   font-weight: 700;
@@ -523,6 +523,10 @@ body.active .menu-header__list-wrapper {
   .footer .bottom-footer__container {
     font-size: 0.625rem;
   }
+}
+.footer .bottom-footer__container .bottom-footer__copyright {
+  letter-spacing: 0.11375rem;
+  line-height: 2;
 }
 .footer .main-footer__line {
   width: 0.3125rem;
@@ -712,7 +716,12 @@ body.active .menu-header__list-wrapper {
     display: none;
   }
 }
-@media (max-width: 39.74875em) {
+@media (max-width: 43.18625em) {
+  .footer .list-main-footer {
+    display: none;
+  }
+}
+@media (max-width: 28.12375em) {
   .footer .main-footer__content-wrapper {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -721,11 +730,22 @@ body.active .menu-header__list-wrapper {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
-  .footer .main-footer__content-wrapper .social-media-footer {
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+  .footer .main-footer__content-wrapper .social-media-footer__title {
+    text-align: center;
+  }
+  .footer .main-footer__content-wrapper .social-media-footer__icon-wrapper {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .footer .main-footer__content-wrapper .social-media-footer__link {
+    -ms-flex-item-align: center;
+        align-self: center;
+    min-width: 18.75rem;
   }
 }
 

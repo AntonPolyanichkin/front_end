@@ -3,7 +3,7 @@
 @use "_button.scss" as *;
 .header{
 	padding-block: toRem(50);
-	
+	background-color: $mainBackgroundColor;
 	@include adaptiveValue("font-size", 12, 10);
 	font-weight: 700;
 	line-height: 1.2;
@@ -104,7 +104,7 @@
 			visibility: hidden;
 			position: fixed;
 			z-index: 51;
-			top: toRem(160);
+			top: toRem(112);
 			left: -100%;
 			border-radius: 100%;
 			background-color: $mainBackgroundColor;
