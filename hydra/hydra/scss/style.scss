@@ -1,11 +1,20 @@
 @use "_reset.scss" ;
-@use "_header.scss";
 @use "_var.scss" as *;
 @use 'sass:math';
+@use "_header.scss";
+@use "_footer.scss";
+body{
+	background-color: $mainBackgroundColor;
+}
 .wrapper {
 	overflow: clip;
 	min-height: 100%;
 	font-family: "Montserrat",sans-serif;
+	display: flex;
+	flex-direction: column;
+	& .page{
+		flex-grow: 1;
+	}
 }
 [class*="__container"]{
 	padding-left: .9375rem;

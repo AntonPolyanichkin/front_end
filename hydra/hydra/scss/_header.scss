@@ -2,7 +2,6 @@
 @use "_var.scss" as *;
 @use "_button.scss" as *;
 .header{
-	background-color: $mainBackgroundColor;
 	padding-block: toRem(50);
 	
 	@include adaptiveValue("font-size", 12, 10);
@@ -17,7 +16,7 @@
 		max-width:  toRem(1302);
 	}
 	& .header__hydra-logo{
-		max-width: toRem(193);
+		width: toRem(193);
 		aspect-ratio: 193 / 103;
 		cursor: pointer;
 		&:focus-visible{
@@ -52,7 +51,7 @@
 					position: absolute;
 					width: 0%;
 					height: toRem(3);
-					bottom: 30%;
+					bottom: 36%;
 					left: 0;
 					background-color: $mainWhiteColor;
 					transition: width 0.3s;
@@ -123,7 +122,7 @@
 			}
 		}
 		.header__hydra-logo{
-			max-width: toRem(103);
+			width: toRem(103);
 			aspect-ratio: 103 / 60;
 		}
 		& .button-burger{

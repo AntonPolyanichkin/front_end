@@ -5,7 +5,7 @@ const burgerMenu = document.querySelector(".button-burger");
 const actionButton = document.querySelector(".header__action-button");
 const headerMenu = document.querySelector(".menu-header");
 const menuWrapper = document.querySelector(".menu-header__list-wrapper");
-const headerWrapper = document.querySelector(".header__contentent-wrapper")
+const headerWrapper = document.querySelector(".header__contentent-wrapper");
 function dynamicAdap(adaptingFunc, media) {
   media.addEventListener("change", () => {
     adaptingFunc(media);
@@ -29,12 +29,12 @@ function moveActionBtn(mql) {
       menuWrapper.insertAdjacentElement("beforeend", actionButton);
     }
   } else {
-    if (actionButton.parentElement !== headerWrapper ) {
-      headerWrapper .insertAdjacentElement("beforeend", actionButton);
+    if (actionButton.parentElement !== headerWrapper) {
+      headerWrapper.insertAdjacentElement("beforeend", actionButton);
     }
   }
-  if(burgerMenu.parentElement === actionButton ){
-	headerWrapper .insertAdjacentElement("beforeend", burgerMenu);
+  if (burgerMenu.parentElement === actionButton) {
+    headerWrapper.insertAdjacentElement("beforeend", burgerMenu);
   }
   actionButton.classList.toggle("button-burger--changePos", mql.matches);
 }
