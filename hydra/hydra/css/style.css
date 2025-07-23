@@ -173,13 +173,14 @@ textarea {
 
 .header {
   background-color: #302C42;
-  padding-top: 3.125rem;
+  padding-block: 3.125rem;
   font-weight: 700;
   line-height: 1.2;
   color: #fff;
   position: fixed;
   left: 0;
   right: 0;
+  z-index: 50;
 }
 @media (min-width: 81.375em) {
   .header {
@@ -319,7 +320,8 @@ textarea {
     opacity: 0;
     visibility: hidden;
     position: fixed;
-    top: 6.5625rem;
+    z-index: 51;
+    top: 10rem;
     left: -100%;
     border-radius: 100%;
     background-color: #302C42;
@@ -385,22 +387,22 @@ textarea {
   }
 }
 
-body.active .header__action-button .button-burger .button-burger__element {
+body.active .header__action-button .button-burger .button-burger__element, body.active .header__contentent-wrapper .button-burger .button-burger__element {
   width: 0%;
   -webkit-transition: width 0.5s;
   transition: width 0.5s;
 }
-body.active .header__action-button .button-burger::before {
+body.active .header__action-button .button-burger::before, body.active .header__contentent-wrapper .button-burger::before {
   -webkit-transform: translate(0rem, 0.6875rem) rotate(130deg);
       -ms-transform: translate(0rem, 0.6875rem) rotate(130deg);
           transform: translate(0rem, 0.6875rem) rotate(130deg);
 }
-body.active .header__action-button .button-burger::after {
+body.active .header__action-button .button-burger::after, body.active .header__contentent-wrapper .button-burger::after {
   -webkit-transform: translate(0rem, -0.6875rem) rotate(-130deg);
       -ms-transform: translate(0rem, -0.6875rem) rotate(-130deg);
           transform: translate(0rem, -0.6875rem) rotate(-130deg);
 }
-body.active .header__action-button .button-burger::before, body.active .header__action-button .button-burger::after {
+body.active .header__action-button .button-burger::before, body.active .header__action-button .button-burger::after, body.active .header__contentent-wrapper .button-burger::before, body.active .header__contentent-wrapper .button-burger::after {
   -webkit-transition: -webkit-transform 0.5s;
   transition: -webkit-transform 0.5s;
   transition: transform 0.5s;
@@ -445,6 +447,18 @@ body.active .menu-header__list-wrapper {
 @media (max-width: 34.43625em) and (max-width: 20em) {
   .menu-header__list-wrapper .list-menu .list-menu__link {
     font-size: 0.625rem;
+  }
+}
+@media (max-width: 34.43625em) {
+  .header__contentent-wrapper .button-burger .button-burger__element {
+    -webkit-transition: width 0.3s;
+    transition: width 0.3s;
+  }
+  .header__contentent-wrapper .button-burger::before, .header__contentent-wrapper .button-burger::after {
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+    transition: transform 0.5s, -webkit-transform 0.5s;
   }
 }
 .wrapper {
