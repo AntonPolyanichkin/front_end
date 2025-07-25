@@ -46,5 +46,6 @@ const body = document.body;
 document.body.addEventListener("click", (e) => {
   if (e.target === burgerMenu) {
     body.classList.toggle("active");
+    body.classList.toggle("scroll-lock");
   }
 });

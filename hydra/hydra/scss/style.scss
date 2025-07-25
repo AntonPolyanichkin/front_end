@@ -5,6 +5,11 @@
 @use "_footer.scss";
 body{
 	background-color: $mainBackgroundColor;
+	& .scroll-lock{
+		overflow: hidden;
+		touch-action: none;
+		overscroll-behavior: none;
+	}
 }
 .wrapper {
 	overflow: clip;
