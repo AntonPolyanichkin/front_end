@@ -792,7 +792,7 @@ main .hero-section .hero-section__container {
 body {
   background-color: #302C42;
 }
-body .scroll-lock {
+body.scroll-lock {
   overflow: hidden;
   -ms-touch-action: none;
       touch-action: none;

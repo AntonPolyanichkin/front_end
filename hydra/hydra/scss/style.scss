@@ -6,7 +6,7 @@
 @use "_main.scss";
 body{
 	background-color: $mainBackgroundColor;
-	& .scroll-lock{
+	&.scroll-lock{
 		overflow: hidden;
 		touch-action: none;
 		overscroll-behavior: none;
