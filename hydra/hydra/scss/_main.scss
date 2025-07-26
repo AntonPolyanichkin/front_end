@@ -8,6 +8,112 @@ main {
 		& .hero-section__container {
 			max-width: toRem(1302);
 		}
+		& .hero-section__content-wrapper {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			column-gap: toRem(30);
+			row-gap: toRem(20);
+			position: relative;
+			&::before {
+				content: "";
+				@include adaptiveValue("width", 238, 150);
+				@include adaptiveValue("height", 561, 450);
+				right: 90%;
+				top: 0;
+				background: url("../img/main-section-vector.svg") no-repeat;
+				background-position: left left;
+				background-size: contain;
+				position: absolute;
+			}
+			align-items: center;
+			& .hero-section__img-wrapper {
+				@include adaptiveValue("width", 490, 290);
+				aspect-ratio: 490 / 426;
+				position: relative;
+				&::before {
+					content: "";
+					position: absolute;
+					bottom: -100px;
+					left: -100px;
+					@include adaptiveValue("width", 735, 500);
+					@include adaptiveValue("height", 845, 600);
+					background: url("../img/main-photo-vector.svg") no-repeat center;
+					background-size: cover;
+					z-index: -1;
+				}
+
+				& img {
+					border: toRem(1) solid #000;
+					background: #a3a3a3;
+					box-shadow: 0 toRem(4) toRem(4) 0 rgba(0, 0, 0, 0.25);
+					border-radius: toRem(100) toRem(100) toRem(100) toRem(240);
+					width: 100%;
+					height: 100%;
+				}
+			}
+			& .hero-section__text-wrapper {
+				flex-basis: toRem(460);
+				flex-grow: 0;
+				color: $mainWhiteColor;
+				font-weight: 700;
+				line-height: 1.2;
+				& .hero-section__title {
+					text-transform: capitalize;
+					@include adaptiveValue("font-size", 40, 24);
+					margin-bottom: toRem(36);
+					& span {
+						@include adaptiveValue("font-size", 46, 30);
+						background: $textGradient;
+						-webkit-background-clip: text;
+						-webkit-text-fill-color: transparent;
+					}
+				}
+				& .hero-section__text {
+					@include adaptiveValue("font-size", 16, 12);
+					font-weight: 400;
+					margin-bottom: toRem(66);
+				}
+				& .hero-section__button {
+					min-width: toRem(214);
+					position: relative;
+					&::before {
+						content: "";
+						position: absolute;
+						width: toRem(100);
+						height: toRem(100);
+						top: -59%;
+						left: 100%;
+						background: url("../img/arrow.svg") no-repeat;
+						pointer-events: none;
+						transition: left 0.5s;
+					}
+					@media (any-hover: hover) and (pointer: fine) {
+						&:hover::before {
+							left: 90%;
+						}
+					}
+				}
+			}
+		}
+	}
+	@media (max-width: toEm(960.98)) {
+		& .hero-section__content-wrapper {
+			flex-direction: column-reverse;
+			&::before{
+				display: none;
+			}
+		}
+		& .hero-section__text-wrapper {
+			text-align: center;
+			& .hero-section__button {
+				align-self: center;
+				width: 80%;
+				&::before {
+					display: none;
+				}
+			}
+		}
 	}
 	@media (max-width: toEm(950.98)) {
 		& {
