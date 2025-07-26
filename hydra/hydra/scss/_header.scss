@@ -2,7 +2,7 @@
 @use "_var.scss" as *;
 @use "_button.scss" as *;
 .header{
-	padding-block: toRem(50);
+	padding-top: toRem(50);
 	background-color: $mainBackgroundColor;
 	@include adaptiveValue("font-size", 12, 10);
 	font-weight: 700;
@@ -18,7 +18,6 @@
 	& .header__hydra-logo{
 		width: toRem(193);
 		aspect-ratio: 193 / 103;
-		cursor: pointer;
 		&:focus-visible{
 			outline: toRem(2) solid $focusOutline;
 			outline-offset: toRem(5);
@@ -46,6 +45,7 @@
 				text-transform: uppercase;
 				padding-block: toRem(40);
 				position: relative;
+				// cursor: pointer;
 				&::after{
 					content: "";
 					position: absolute;
@@ -104,7 +104,7 @@
 			visibility: hidden;
 			position: fixed;
 			z-index: 51;
-			top: toRem(112);
+			top: toRem(110);
 			left: -100%;
 			border-radius: 100%;
 			background-color: $mainBackgroundColor;
@@ -130,7 +130,7 @@
 			position: relative;
 			width: toRem(35);
 			height: toRem(25);
-			cursor: pointer;
+			// cursor: pointer;
 			& .button-burger__element{
 				position: absolute;
 				width: 75%;

@@ -1,0 +1,17 @@
+@use "_mixins.scss" as *;
+@use "_var.scss" as *;
+@use "_button.scss" as *;
+main {
+	padding-top: toRem(153);
+	& .hero-section {
+		padding-top: toRem(124);
+		& .hero-section__container {
+			max-width: toRem(1302);
+		}
+	}
+	@media (max-width: toEm(950.98)) {
+		& {
+			padding-top: toRem(110);
+		}
+	}
+}

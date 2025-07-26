@@ -62,7 +62,8 @@ textarea {
 
 button,
 select,
-option {
+option,
+a {
   cursor: pointer;
 }
 
@@ -172,7 +173,7 @@ textarea {
 }
 
 .header {
-  padding-block: 3.125rem;
+  padding-top: 3.125rem;
   background-color: #302C42;
   font-weight: 700;
   line-height: 1.2;
@@ -203,7 +204,6 @@ textarea {
 .header .header__hydra-logo {
   width: 12.0625rem;
   aspect-ratio: 193/103;
-  cursor: pointer;
 }
 .header .header__hydra-logo:focus-visible {
   outline: 0.125rem solid #7d72ad;
@@ -321,7 +321,7 @@ textarea {
     visibility: hidden;
     position: fixed;
     z-index: 51;
-    top: 7rem;
+    top: 6.875rem;
     left: -100%;
     border-radius: 100%;
     background-color: #302C42;
@@ -351,7 +351,6 @@ textarea {
     position: relative;
     width: 2.1875rem;
     height: 1.5625rem;
-    cursor: pointer;
   }
   .header .button-burger .button-burger__element {
     position: absolute;
@@ -596,25 +595,25 @@ body.active .menu-header__list-wrapper {
             column-gap: 0.625rem;
   }
 }
-.footer .main-footer__content-wrapper .main-footer__logo-wrapper .main-footer__logo {
+.footer .main-footer__content-wrapper .main-footer__logo {
   aspect-ratio: 1/1;
 }
 @media (min-width: 81.375em) {
-  .footer .main-footer__content-wrapper .main-footer__logo-wrapper .main-footer__logo {
+  .footer .main-footer__content-wrapper .main-footer__logo {
     width: 11.5625rem;
   }
 }
 @media (min-width: 20em) and (max-width: 81.375em) {
-  .footer .main-footer__content-wrapper .main-footer__logo-wrapper .main-footer__logo {
+  .footer .main-footer__content-wrapper .main-footer__logo {
     width: clamp(6.25rem, calc(4.5188391039rem + 8.6558044807vw), 11.5625rem);
   }
 }
 @media (max-width: 20em) {
-  .footer .main-footer__content-wrapper .main-footer__logo-wrapper .main-footer__logo {
+  .footer .main-footer__content-wrapper .main-footer__logo {
     width: 6.25rem;
   }
 }
-.footer .main-footer__content-wrapper .main-footer__logo-wrapper .main-footer__logo img {
+.footer .main-footer__content-wrapper .main-footer__logo img {
   width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
@@ -772,6 +771,21 @@ body.active .menu-header__list-wrapper {
     -ms-flex-item-align: center;
         align-self: center;
     min-width: 18.75rem;
+  }
+}
+
+main {
+  padding-top: 9.5625rem;
+}
+main .hero-section {
+  padding-top: 7.75rem;
+}
+main .hero-section .hero-section__container {
+  max-width: 81.375rem;
+}
+@media (max-width: 59.43625em) {
+  main {
+    padding-top: 6.875rem;
   }
 }
 

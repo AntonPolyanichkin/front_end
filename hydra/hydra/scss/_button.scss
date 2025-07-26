@@ -6,6 +6,7 @@
 	background: linear-gradient(90deg, var(--gradient-start-color-main-btn) 0%, var(--gradient-end-color-main-btn) 100%);
 	@include adaptiveValue("font-size", 12, 10);
 	text-transform: uppercase;
+	// cursor: pointer;
 	text-align: center;
 	border-radius: toRem(40);
 	color: $mainTextButtonColor;

@@ -3,6 +3,7 @@
 @use 'sass:math';
 @use "_header.scss";
 @use "_footer.scss";
+@use "_main.scss";
 body{
 	background-color: $mainBackgroundColor;
 	& .scroll-lock{
