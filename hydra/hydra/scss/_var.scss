@@ -4,6 +4,7 @@ $mainTextButtonColor: #302C42;
 $gradient: linear-gradient(90deg, #8176AF 0%, #C0B7E8 100%);
 $focusOutline: #7d72ad;
 $textGradient: linear-gradient(269deg, #C0B7E8 -3.72%, #8176AF 82.17%);
+$darkGradient: radial-gradient(2900.76% 50.13% at 50% 53.89%, rgba(58, 52, 86, 0.95) 0%, #211E2E 100%) ;
 @property --gradient-start-color-main-btn{
 	syntax: '<color>';
 	inherits: false;
