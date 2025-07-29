@@ -1,6 +1,7 @@
 "use strict";
 let mediaDynamicBurger = window.matchMedia("(max-width: 950.98px)");
 let mediaHeaderActionBtn = window.matchMedia("(max-width: 550.98px)");
+let swiperAppear = mediaHeaderActionBtn;
 const burgerMenu = document.querySelector(".button-burger");
 const actionButton = document.querySelector(".header__action-button");
 const headerMenu = document.querySelector(".menu-header");
@@ -49,3 +50,25 @@ document.body.addEventListener("click", (e) => {
     body.classList.toggle("scroll-lock");
   }
 });
+
+// const swiper = document.querySelector(".swiper");
+// let createSwiper
+// function showSwiper(media) {
+//   if (media.matches) {
+//     swiper.classList.add("swiper-active");
+// 	 createSwiper = new Swiper(".swiper", {
+// 		slidesPerView: 1,
+// 		speed: 400,
+// 		spaceBetween: 20,
+// 		navigation: {
+// 			nextEl: '.swiper-button-next',
+// 			prevEl: '.swiper-button-prev',
+// 		 }
+// 	 });
+//   }
+//   else{
+// 	swiper.classList.remove("swiper-active");
+//   }
+// }
+// dynamicAdap(showSwiper, swiperAppear);
+
