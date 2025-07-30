@@ -125,106 +125,143 @@ main {
 	}
 	.contacts-information {
 		padding-bottom: toRem(94);
-		.contacts-information__container {
+		& .contacts-information__container {
 			max-width: toRem(1302);
-			min-width: 0;
-			.contacts-information__content {
-				height: 167px;
+			& .contacts-information__content {
+				display: flex;
+				justify-content: center;
 				position: relative;
 				z-index: 40;
 				background: $darkGradient;
 				border-radius: toRem(90);
 				box-shadow: 0 toRem(4) toRem(4) 0 rgba(192, 183, 232, 0.01);
-				display: flex;
-				overflow: auto;
-				justify-content: space-between;
-				column-gap: toRem(20);
-				row-gap: toRem(10);
-				align-items: center;
-				@include adaptiveValue("padding-block", 25, 10);
-				@include adaptiveValue("padding-inline", 40, 10);
 				color: $mainWhiteColor;
-				.element-information {
+				overflow: auto;
+				& .contacts-information__slider-wrapper {
+					width: 100%;
 					display: flex;
-					flex-direction: row-reverse;
-					align-items: center;
-					@include adaptiveValue("column-gap", 25, 5);
+					justify-content: space-between;
+					column-gap: toRem(20);
 					row-gap: toRem(10);
-					&:not(:last-child)::before {
-						content: "";
-						@include adaptiveValue("height", 116.5, 100);
-						width: toRem(1);
-						border-radius: toRem(2);
-						background-color: #c0b7e8;
-						background-color: rgba(192, 183, 232, 0.33);
+					align-items: center;
+					@include adaptiveValue("padding-block", 25, 10);
+					@include adaptiveValue("padding-inline", 40, 10);
+					& .element-information {
+						display: flex;
+						flex-direction: row-reverse;
+						align-items: center;
+						@include adaptiveValue("column-gap", 25, 5);
+						row-gap: toRem(10);
+						&:not(:last-of-type)::before {
+							content: "";
+							@include adaptiveValue("height", 116.5, 100);
+							width: toRem(1);
+							border-radius: toRem(2);
+							background-color: #c0b7e8;
+							background-color: rgba(192, 183, 232, 0.33);
+						}
+						.element-information__title {
+							@include adaptiveValue("font-size", 24, 10);
+							font-weight: 700;
+							margin-bottom: toRem(10);
+							line-height: 1.2;
+						}
+						.element-information__link {
+							@include adaptiveValue("font-size", 14, 7);
+							font-weight: 400;
+							line-height: 1.2;
+						}
+						.element-information__icon {
+							@include adaptiveValue("width", 70, 30);
+							aspect-ratio: 1/1;
+							& img {
+								width: 100%;
+								height: 100%;
+								object-fit: contain;
+							}
+						}
 					}
-					.element-information__title {
-						@include adaptiveValue("font-size", 24, 10);
-						font-weight: 700;
-						margin-bottom: toRem(10);
-						line-height: 1.2;
-					}
-					.element-information__link {
-						@include adaptiveValue("font-size", 14, 7);
-						font-weight: 400;
-						line-height: 1.2;
-					}
-					.element-information__icon {
-						@include adaptiveValue("width", 70, 30);
-						aspect-ratio: 1/1;
-						& img {
-							width: 100%;
-							height: 100%;
-							object-fit: contain;
+				}
+				& .contacts-information__next-btn,
+				& .contacts-information__prev-btn {
+					opacity: 0;
+					visibility: hidden;
+					cursor: not-allowed;
+				}
+			}
+		}
+		@media (max-width: toEm(1065.98)) {
+			.element-information::before {
+				display: none;
+			}
+		}
+		@media (max-width: toEm(949.98)) {
+			.contacts-information__content {
+				& .contacts-information__slider-wrapper {
+					justify-content: flex-start;
+					& .element-information {
+						justify-content: center;
+						flex-basis: toRem(300);
+						flex-shrink: 0;
+						padding-left: toRem(20);
+						&:last-of-type {
+							padding-right: toRem(20);
 						}
 					}
 				}
 			}
 		}
-		@media (max-width: toEm(942.98)) {
-			.element-information::before {
-				display: none;
-			}
-		}
-		@media (max-width: toEm(840.98)) {
-			.contacts-information__content {
-				overflow: auto;
-				justify-content: flex-start;
-				.element-information {
-					justify-content: center;
-					flex-basis: toRem(290);
-					flex-shrink: 0;
-					margin-inline: toRem(-20);
-					padding-left: toRem(20);
-					&:last-of-type {
-						padding-right: toRem(20);
-					}
-				}
-			}
-		}
 		@media (max-width: toEm(550.98)) {
-			.contacts-information__content {
-				max-height: toRem(109);
-				justify-content: center;
-				.element-information {
-					flex-basis: 100%;
-					margin-inline: 0;
-					padding-left: 0;
-					&:last-of-type {
-						padding-right: 0;
+			.contacts-information__container {
+				& .contacts-information__content {
+					max-height: toRem(109);
+					overflow: hidden;
+					& .contacts-information__slider-wrapper {
+						width: 100%;
+						transition: all 0.5s;
 					}
-					.element-information__title {
-						display: none;
+					& .contacts-information__next-btn,
+					& .contacts-information__prev-btn {
+						position: absolute;
+						top: 40%;
+						opacity: 1;
+						visibility: visible;
+						cursor: pointer;
+						width: toRem(30);
+						height: toRem(30);
 					}
-					.element-information__icon {
-						width: toRem(70) !important;
+					& .contacts-information__prev-btn {
+						background: url("../img/arrow-contacts-icon.svg") no-repeat;
+						background-size: cover;
+						left: toRem(11);
 					}
-					.element-information__link {
-						font-size: toRem(14) !important;
+					& .contacts-information__next-btn {
+						right: toRem(11);
+						background: url("../img/arrow-contacts-icon2.svg") no-repeat;
+						background-size: cover;
+					}
+
+					.element-information {
+						flex-basis: 100%;
+						margin-inline: 0;
+						padding-left: 0;
+						align-self: center;
+
+						&:last-of-type {
+							padding-right: 0;
+						}
+						.element-information__title {
+							display: none;
+						}
+						.element-information__icon {
+							width: toRem(70);
+						}
+						.element-information__link {
+							font-size: toRem(14);
+						}
 					}
 				}
 			}
 		}
 	}
 }
-

@@ -1060,20 +1060,28 @@ main .contacts-information {
 }
 main .contacts-information .contacts-information__container {
   max-width: 81.375rem;
-  min-width: 0;
 }
 main .contacts-information .contacts-information__container .contacts-information__content {
-  height: 167px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   position: relative;
   z-index: 40;
   background: radial-gradient(2900.76% 50.13% at 50% 53.89%, rgba(58, 52, 86, 0.95) 0%, #211E2E 100%);
   border-radius: 5.625rem;
   -webkit-box-shadow: 0 0.25rem 0.25rem 0 rgba(192, 183, 232, 0.01);
           box-shadow: 0 0.25rem 0.25rem 0 rgba(192, 183, 232, 0.01);
+  color: #fff;
+  overflow: auto;
+}
+main .contacts-information .contacts-information__container .contacts-information__content .contacts-information__slider-wrapper {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  overflow: auto;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -1084,39 +1092,38 @@ main .contacts-information .contacts-information__container .contacts-informatio
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: #fff;
 }
 @media (min-width: 81.375em) {
-  main .contacts-information .contacts-information__container .contacts-information__content {
+  main .contacts-information .contacts-information__container .contacts-information__content .contacts-information__slider-wrapper {
     padding-block: 1.5625rem;
   }
 }
 @media (min-width: 20em) and (max-width: 81.375em) {
-  main .contacts-information .contacts-information__container .contacts-information__content {
+  main .contacts-information .contacts-information__container .contacts-information__content .contacts-information__slider-wrapper {
     padding-block: clamp(0.625rem, calc(0.3195010183rem + 1.5274949084vw), 1.5625rem);
   }
 }
 @media (max-width: 20em) {
-  main .contacts-information .contacts-information__container .contacts-information__content {
+  main .contacts-information .contacts-information__container .contacts-information__content .contacts-information__slider-wrapper {
     padding-block: 0.625rem;
   }
 }
 @media (min-width: 81.375em) {
-  main .contacts-information .contacts-information__container .contacts-information__content {
+  main .contacts-information .contacts-information__container .contacts-information__content .contacts-information__slider-wrapper {
     padding-inline: 2.5rem;
   }
 }
 @media (min-width: 20em) and (max-width: 81.375em) {
-  main .contacts-information .contacts-information__container .contacts-information__content {
+  main .contacts-information .contacts-information__container .contacts-information__content .contacts-information__slider-wrapper {
     padding-inline: clamp(0.625rem, calc(0.0140020367rem + 3.0549898167vw), 2.5rem);
   }
 }
 @media (max-width: 20em) {
-  main .contacts-information .contacts-information__container .contacts-information__content {
+  main .contacts-information .contacts-information__container .contacts-information__content .contacts-information__slider-wrapper {
     padding-inline: 0.625rem;
   }
 }
-main .contacts-information .contacts-information__container .contacts-information__content .element-information {
+main .contacts-information .contacts-information__container .contacts-information__content .contacts-information__slider-wrapper .element-information {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1130,27 +1137,27 @@ main .contacts-information .contacts-information__container .contacts-informatio
   row-gap: 0.625rem;
 }
 @media (min-width: 81.375em) {
-  main .contacts-information .contacts-information__container .contacts-information__content .element-information {
+  main .contacts-information .contacts-information__container .contacts-information__content .contacts-information__slider-wrapper .element-information {
     -webkit-column-gap: 1.5625rem;
        -moz-column-gap: 1.5625rem;
             column-gap: 1.5625rem;
   }
 }
 @media (min-width: 20em) and (max-width: 81.375em) {
-  main .contacts-information .contacts-information__container .contacts-information__content .element-information {
+  main .contacts-information .contacts-information__container .contacts-information__content .contacts-information__slider-wrapper .element-information {
     -webkit-column-gap: clamp(0.3125rem, calc(-0.0948319756rem + 2.0366598778vw), 1.5625rem);
        -moz-column-gap: clamp(0.3125rem, calc(-0.0948319756rem + 2.0366598778vw), 1.5625rem);
             column-gap: clamp(0.3125rem, calc(-0.0948319756rem + 2.0366598778vw), 1.5625rem);
   }
 }
 @media (max-width: 20em) {
-  main .contacts-information .contacts-information__container .contacts-information__content .element-information {
+  main .contacts-information .contacts-information__container .contacts-information__content .contacts-information__slider-wrapper .element-information {
     -webkit-column-gap: 0.3125rem;
        -moz-column-gap: 0.3125rem;
             column-gap: 0.3125rem;
   }
 }
-main .contacts-information .contacts-information__container .contacts-information__content .element-information:not(:last-child)::before {
+main .contacts-information .contacts-information__container .contacts-information__content .contacts-information__slider-wrapper .element-information:not(:last-of-type)::before {
   content: "";
   width: 0.0625rem;
   border-radius: 0.125rem;
@@ -1158,134 +1165,161 @@ main .contacts-information .contacts-information__container .contacts-informatio
   background-color: rgba(192, 183, 232, 0.33);
 }
 @media (min-width: 81.375em) {
-  main .contacts-information .contacts-information__container .contacts-information__content .element-information:not(:last-child)::before {
+  main .contacts-information .contacts-information__container .contacts-information__content .contacts-information__slider-wrapper .element-information:not(:last-of-type)::before {
     height: 7.28125rem;
   }
 }
 @media (min-width: 20em) and (max-width: 81.375em) {
-  main .contacts-information .contacts-information__container .contacts-information__content .element-information:not(:last-child)::before {
+  main .contacts-information .contacts-information__container .contacts-information__content .contacts-information__slider-wrapper .element-information:not(:last-of-type)::before {
     height: clamp(6.25rem, calc(5.9139511202rem + 1.6802443992vw), 7.28125rem);
   }
 }
 @media (max-width: 20em) {
-  main .contacts-information .contacts-information__container .contacts-information__content .element-information:not(:last-child)::before {
+  main .contacts-information .contacts-information__container .contacts-information__content .contacts-information__slider-wrapper .element-information:not(:last-of-type)::before {
     height: 6.25rem;
   }
 }
-main .contacts-information .contacts-information__container .contacts-information__content .element-information .element-information__title {
+main .contacts-information .contacts-information__container .contacts-information__content .contacts-information__slider-wrapper .element-information .element-information__title {
   font-weight: 700;
   margin-bottom: 0.625rem;
   line-height: 1.2;
 }
 @media (min-width: 81.375em) {
-  main .contacts-information .contacts-information__container .contacts-information__content .element-information .element-information__title {
+  main .contacts-information .contacts-information__container .contacts-information__content .contacts-information__slider-wrapper .element-information .element-information__title {
     font-size: 1.5rem;
   }
 }
 @media (min-width: 20em) and (max-width: 81.375em) {
-  main .contacts-information .contacts-information__container .contacts-information__content .element-information .element-information__title {
+  main .contacts-information .contacts-information__container .contacts-information__content .contacts-information__slider-wrapper .element-information .element-information__title {
     font-size: clamp(0.625rem, calc(0.3398676171rem + 1.4256619145vw), 1.5rem);
   }
 }
 @media (max-width: 20em) {
-  main .contacts-information .contacts-information__container .contacts-information__content .element-information .element-information__title {
+  main .contacts-information .contacts-information__container .contacts-information__content .contacts-information__slider-wrapper .element-information .element-information__title {
     font-size: 0.625rem;
   }
 }
-main .contacts-information .contacts-information__container .contacts-information__content .element-information .element-information__link {
+main .contacts-information .contacts-information__container .contacts-information__content .contacts-information__slider-wrapper .element-information .element-information__link {
   font-weight: 400;
   line-height: 1.2;
 }
 @media (min-width: 81.375em) {
-  main .contacts-information .contacts-information__container .contacts-information__content .element-information .element-information__link {
+  main .contacts-information .contacts-information__container .contacts-information__content .contacts-information__slider-wrapper .element-information .element-information__link {
     font-size: 0.875rem;
   }
 }
 @media (min-width: 20em) and (max-width: 81.375em) {
-  main .contacts-information .contacts-information__container .contacts-information__content .element-information .element-information__link {
+  main .contacts-information .contacts-information__container .contacts-information__content .contacts-information__slider-wrapper .element-information .element-information__link {
     font-size: clamp(0.4375rem, calc(0.2949338086rem + 0.7128309572vw), 0.875rem);
   }
 }
 @media (max-width: 20em) {
-  main .contacts-information .contacts-information__container .contacts-information__content .element-information .element-information__link {
+  main .contacts-information .contacts-information__container .contacts-information__content .contacts-information__slider-wrapper .element-information .element-information__link {
     font-size: 0.4375rem;
   }
 }
-main .contacts-information .contacts-information__container .contacts-information__content .element-information .element-information__icon {
+main .contacts-information .contacts-information__container .contacts-information__content .contacts-information__slider-wrapper .element-information .element-information__icon {
   aspect-ratio: 1/1;
 }
 @media (min-width: 81.375em) {
-  main .contacts-information .contacts-information__container .contacts-information__content .element-information .element-information__icon {
+  main .contacts-information .contacts-information__container .contacts-information__content .contacts-information__slider-wrapper .element-information .element-information__icon {
     width: 4.375rem;
   }
 }
 @media (min-width: 20em) and (max-width: 81.375em) {
-  main .contacts-information .contacts-information__container .contacts-information__content .element-information .element-information__icon {
+  main .contacts-information .contacts-information__container .contacts-information__content .contacts-information__slider-wrapper .element-information .element-information__icon {
     width: clamp(1.875rem, calc(1.0603360489rem + 4.0733197556vw), 4.375rem);
   }
 }
 @media (max-width: 20em) {
-  main .contacts-information .contacts-information__container .contacts-information__content .element-information .element-information__icon {
+  main .contacts-information .contacts-information__container .contacts-information__content .contacts-information__slider-wrapper .element-information .element-information__icon {
     width: 1.875rem;
   }
 }
-main .contacts-information .contacts-information__container .contacts-information__content .element-information .element-information__icon img {
+main .contacts-information .contacts-information__container .contacts-information__content .contacts-information__slider-wrapper .element-information .element-information__icon img {
   width: 100%;
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
 }
-@media (max-width: 58.93625em) {
+main .contacts-information .contacts-information__container .contacts-information__content .contacts-information__next-btn, main .contacts-information .contacts-information__container .contacts-information__content .contacts-information__prev-btn {
+  opacity: 0;
+  visibility: hidden;
+  cursor: not-allowed;
+}
+@media (max-width: 66.62375em) {
   main .contacts-information .element-information::before {
     display: none;
   }
 }
-@media (max-width: 52.56125em) {
-  main .contacts-information .contacts-information__content {
-    overflow: auto;
+@media (max-width: 59.37375em) {
+  main .contacts-information .contacts-information__content .contacts-information__slider-wrapper {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
   }
-  main .contacts-information .contacts-information__content .element-information {
+  main .contacts-information .contacts-information__content .contacts-information__slider-wrapper .element-information {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    -ms-flex-preferred-size: 18.125rem;
-        flex-basis: 18.125rem;
+    -ms-flex-preferred-size: 18.75rem;
+        flex-basis: 18.75rem;
     -ms-flex-negative: 0;
         flex-shrink: 0;
-    margin-inline: -1.25rem;
     padding-left: 1.25rem;
   }
-  main .contacts-information .contacts-information__content .element-information:last-of-type {
+  main .contacts-information .contacts-information__content .contacts-information__slider-wrapper .element-information:last-of-type {
     padding-right: 1.25rem;
   }
 }
 @media (max-width: 34.43625em) {
-  main .contacts-information .contacts-information__content {
+  main .contacts-information .contacts-information__container .contacts-information__content {
     max-height: 6.8125rem;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    overflow: hidden;
   }
-  main .contacts-information .contacts-information__content .element-information {
+  main .contacts-information .contacts-information__container .contacts-information__content .contacts-information__slider-wrapper {
+    width: 100%;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+  main .contacts-information .contacts-information__container .contacts-information__content .contacts-information__next-btn, main .contacts-information .contacts-information__container .contacts-information__content .contacts-information__prev-btn {
+    position: absolute;
+    top: 40%;
+    opacity: 1;
+    visibility: visible;
+    cursor: pointer;
+    width: 1.875rem;
+    height: 1.875rem;
+  }
+  main .contacts-information .contacts-information__container .contacts-information__content .contacts-information__prev-btn {
+    background: url("../img/arrow-contacts-icon.svg") no-repeat;
+    background-size: cover;
+    left: 0.6875rem;
+  }
+  main .contacts-information .contacts-information__container .contacts-information__content .contacts-information__next-btn {
+    right: 0.6875rem;
+    background: url("../img/arrow-contacts-icon2.svg") no-repeat;
+    background-size: cover;
+  }
+  main .contacts-information .contacts-information__container .contacts-information__content .element-information {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
     margin-inline: 0;
     padding-left: 0;
+    -ms-flex-item-align: center;
+        align-self: center;
   }
-  main .contacts-information .contacts-information__content .element-information:last-of-type {
+  main .contacts-information .contacts-information__container .contacts-information__content .element-information:last-of-type {
     padding-right: 0;
   }
-  main .contacts-information .contacts-information__content .element-information .element-information__title {
+  main .contacts-information .contacts-information__container .contacts-information__content .element-information .element-information__title {
     display: none;
   }
-  main .contacts-information .contacts-information__content .element-information .element-information__icon {
-    width: 4.375rem !important;
+  main .contacts-information .contacts-information__container .contacts-information__content .element-information .element-information__icon {
+    width: 4.375rem;
   }
-  main .contacts-information .contacts-information__content .element-information .element-information__link {
-    font-size: 0.875rem !important;
+  main .contacts-information .contacts-information__container .contacts-information__content .element-information .element-information__link {
+    font-size: 0.875rem;
   }
 }
 
