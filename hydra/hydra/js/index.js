@@ -43,49 +43,78 @@ dynamicAdap(moveBurgerButton, mediaDynamicBurger);
 moveBurgerButton(mediaDynamicBurger);
 dynamicAdap(moveActionBtn, mediaHeaderActionBtn);
 moveActionBtn(mediaHeaderActionBtn);
-const body = document.body;
-document.body.addEventListener("click", (e) => {
-  if (e.target === burgerMenu) {
-    body.classList.toggle("active");
-    body.classList.toggle("scroll-lock");
+function getBurgerActive() {
+  const body = document.body;
+  document.body.addEventListener("click", (e) => {
+    if (e.target === burgerMenu) {
+      body.classList.toggle("active");
+      body.classList.toggle("scroll-lock");
+    }
+  });
+}
+getBurgerActive();
+
+function createSlider() {
+  const sliderWrapper = document.querySelector(".contacts-information__slider-wrapper");
+  const sliderElements = document.querySelectorAll(".element-information");
+  const nextSliderBtn = document.querySelector(".contacts-information__next-btn");
+  const prevSliderBtn = document.querySelector(".contacts-information__prev-btn");
+  // Зібрав необхідні елементи
+  if (!sliderWrapper || !sliderElements || !nextSliderBtn || !prevSliderBtn) {
+    return;
+    //Якщо хоч один з елементів відсутній - покинути функцію
+  } else {
+    const breakpoint = 550;
+    let curIndex = 0;
+    function getSlideWidthWithGap() {
+      let slideWidth = sliderElements[0].offsetWidth; // ширина одного із елементів слайдера
+      let sliderWrapperStyles = window.getComputedStyle(sliderWrapper); // беремо стилі враппера
+      let gap = parseFloat(sliderWrapperStyles.columnGap || sliderWrapperStyles.gap || 0);
+      // через флоат беремо можливі гепи або повертаємо 0. Чому флоат, бо перетворить рядок в число, проігнорує px. Через parseInt не варіант, бо тоді виключаємо можливість дробових чисел
+      return slideWidth + gap;
+    }
+    function getMaxIndex() {
+      const wrapperWidth = sliderWrapper.getBoundingClientRect().width;
+      //ширина враппера
+
+      const slideWithGap = getSlideWidthWithGap();
+      // ширина одного елемента з гепом
+
+      const visibleSlides = Math.floor(wrapperWidth / slideWithGap);
+      // скільки влізе слайдв в область видимості
+
+      const totalSlide = sliderElements.length;
+      // загальна кількість слайдів
+      return Math.max(0, totalSlide - visibleSlides); //повартаємо наскільки слайдів можна зсунутись або взагалі не можна
+    }
+    function updateSliderPosition() {
+      const windowWidth = window.innerWidth; //взяли ширину вʼюпорта
+      const slideWithGap = getSlideWidthWithGap(); //отримали слайдер із урахуванням гепу
+      let shift;
+      if (windowWidth > breakpoint) {
+        shift = 0;
+        return shift;
+      } else {
+        shift = curIndex * slideWithGap; //отримали зсув слайду
+      }
+      sliderWrapper.style.transform = `translateX(-${shift}px)`;
+    }
+    // вішаємо події на кнопки
+    nextSliderBtn.addEventListener("click", () => {
+      const maxIndex = getMaxIndex();
+      if (curIndex < maxIndex) {
+        curIndex++;
+        updateSliderPosition();
+      }
+    });
+    prevSliderBtn.addEventListener("click", () => {
+      if (curIndex > 0) {
+        curIndex--;
+        updateSliderPosition();
+      }
+    });
+    window.addEventListener("resize", updateSliderPosition);
   }
-});
-
-const sliderWrapper = document.querySelector(".contacts-information__slider-wrapper");
-const sliderElement = document.querySelectorAll(".element-information");
-const nextSliderBtn = document.querySelector(".contacts-information__next-btn");
-const prevSliderBtn = document.querySelector(".contacts-information__prev-btn");
-
-function getMaxOffset() {
-  return sliderWrapper.scrollWidth - sliderWrapper.getBoundingClientRect().width;
 }
 
-let shift = 0;
-function getSlideWidth(sliderElement) {
-  return sliderElement[0].offsetWidth;
-}
-
-nextSliderBtn.addEventListener("click", () => {
-  const slideWidth = getSlideWidth(sliderElement);
-  const maxOffset = getMaxOffset();
-
-  if (shift + slideWidth <= maxOffset) {
-    shift += slideWidth;
-    sliderWrapper.style.transform = `translateX(-${shift}px)`;
-  }
-});
-prevSliderBtn.addEventListener("click", () => {
-  const slideWidth = getSlideWidth(sliderElement);
-  const maxOffset = getMaxOffset();
-
-  if (shift - slideWidth >= 0) {
-    shift -= slideWidth;
-    sliderWrapper.style.transform = `translateX(-${shift}px)`;
-  }
-});
-
-window.addEventListener("resize", () => {
-  shift = 0;
-  getSlideWidth(sliderElement);
-  getMaxOffset();
-});
+createSlider();

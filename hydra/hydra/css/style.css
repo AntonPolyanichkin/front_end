@@ -1284,7 +1284,7 @@ main .contacts-information .contacts-information__container .contacts-informatio
   }
   main .contacts-information .contacts-information__container .contacts-information__content .contacts-information__next-btn, main .contacts-information .contacts-information__container .contacts-information__content .contacts-information__prev-btn {
     position: absolute;
-    top: 40%;
+    top: 30%;
     opacity: 1;
     visibility: visible;
     cursor: pointer;
