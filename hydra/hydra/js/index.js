@@ -1,6 +1,7 @@
 "use strict";
 let mediaDynamicBurger = window.matchMedia("(max-width: 950.98px)");
 let mediaHeaderActionBtn = window.matchMedia("(max-width: 550.98px)");
+let sliderActivated = window.matchMedia("(max-width: 550.98px)");
 let swiperAppear = mediaHeaderActionBtn;
 const burgerMenu = document.querySelector(".button-burger");
 const actionButton = document.querySelector(".header__action-button");
@@ -53,68 +54,83 @@ function getBurgerActive() {
   });
 }
 getBurgerActive();
-
-function createSlider() {
-  const sliderWrapper = document.querySelector(".contacts-information__slider-wrapper");
-  const sliderElements = document.querySelectorAll(".element-information");
-  const nextSliderBtn = document.querySelector(".contacts-information__next-btn");
-  const prevSliderBtn = document.querySelector(".contacts-information__prev-btn");
-  // Зібрав необхідні елементи
-  if (!sliderWrapper || !sliderElements || !nextSliderBtn || !prevSliderBtn) {
-    return;
-    //Якщо хоч один з елементів відсутній - покинути функцію
-  } else {
-    const breakpoint = 550;
-    let curIndex = 0;
-    function getSlideWidthWithGap() {
-      let slideWidth = sliderElements[0].offsetWidth; // ширина одного із елементів слайдера
-      let sliderWrapperStyles = window.getComputedStyle(sliderWrapper); // беремо стилі враппера
-      let gap = parseFloat(sliderWrapperStyles.columnGap || sliderWrapperStyles.gap || 0);
-      // через флоат беремо можливі гепи або повертаємо 0. Чому флоат, бо перетворить рядок в число, проігнорує px. Через parseInt не варіант, бо тоді виключаємо можливість дробових чисел
-      return slideWidth + gap;
-    }
-    function getMaxIndex() {
-      const wrapperWidth = sliderWrapper.getBoundingClientRect().width;
-      //ширина враппера
-
-      const slideWithGap = getSlideWidthWithGap();
-      // ширина одного елемента з гепом
-
-      const visibleSlides = Math.floor(wrapperWidth / slideWithGap);
-      // скільки влізе слайдв в область видимості
-
-      const totalSlide = sliderElements.length;
-      // загальна кількість слайдів
-      return Math.max(0, totalSlide - visibleSlides); //повартаємо наскільки слайдів можна зсунутись або взагалі не можна
-    }
-    function updateSliderPosition() {
-      const windowWidth = window.innerWidth; //взяли ширину вʼюпорта
-      const slideWithGap = getSlideWidthWithGap(); //отримали слайдер із урахуванням гепу
-      let shift;
-      if (windowWidth > breakpoint) {
-        shift = 0;
-        return shift;
-      } else {
-        shift = curIndex * slideWithGap; //отримали зсув слайду
+function createSlider(mql) {
+  if (mql.matches) {
+    const sliderWrapper = document.querySelector(".contacts-information__slider-wrapper");
+    const sliderElements = document.querySelectorAll(".element-information");
+    const nextSliderBtn = document.querySelector(".contacts-information__next-btn");
+    const prevSliderBtn = document.querySelector(".contacts-information__prev-btn");
+    // Зібрав необхідні елементи
+    if (!sliderWrapper || !sliderElements.length || !nextSliderBtn || !prevSliderBtn) {
+      return;
+      //Якщо хоч один з елементів відсутній - покинути функцію
+    } else {
+      console.log("active");
+      let curIndex = 0;
+      function getSlideWidthWithGap() {
+        let slideWidth = sliderElements[0].offsetWidth; // ширина одного із елементів слайдера
+        let sliderWrapperStyles = window.getComputedStyle(sliderWrapper); // беремо стилі враппера
+        let gap = parseFloat(sliderWrapperStyles.columnGap || sliderWrapperStyles.gap || 0);
+        // через флоат беремо можливі гепи або повертаємо 0. Чому флоат, бо перетворить рядок в число, проігнорує px. Через parseInt не варіант, бо тоді виключаємо можливість дробових чисел
+        return slideWidth + gap;
       }
-      sliderWrapper.style.transform = `translateX(-${shift}px)`;
+      function getMaxIndex() {
+        const wrapperWidth = sliderWrapper.getBoundingClientRect().width;
+        //ширина враппера
+
+        const slideWithGap = getSlideWidthWithGap();
+        // ширина одного елемента з гепом
+
+        const visibleSlides = Math.floor(wrapperWidth / slideWithGap);
+        // скільки влізе слайдв в область видимості
+
+        const totalSlide = sliderElements.length;
+        // загальна кількість слайдів
+        return Math.max(0, totalSlide - visibleSlides); //повартаємо наскільки слайдів можна зсунутись або взагалі не можна
+      }
+      function updateSliderPosition() {
+        const windowWidth = window.innerWidth; //взяли ширину вʼюпорта
+        const slideWithGap = getSlideWidthWithGap(); //отримали слайдер із урахуванням гепу
+        let shift;
+
+        if (mql) {
+          shift = curIndex * slideWithGap; //отримали зсув слайду
+        }
+
+        sliderWrapper.style.transform = `translateX(-${shift}px)`;
+      }
+      // вішаємо події на кнопки
+      if (curIndex === 0) {
+        prevSliderBtn.classList.add("disable");
+      }
+      nextSliderBtn.addEventListener("click", () => {
+        const maxIndex = getMaxIndex();
+        if (curIndex < maxIndex) {
+          curIndex++;
+          updateSliderPosition();
+          if (prevSliderBtn.classList.contains("disable")) {
+            prevSliderBtn.classList.remove("disable");
+          }
+        }
+        if (curIndex === maxIndex) {
+          nextSliderBtn.classList.add("disable");
+        }
+      });
+      prevSliderBtn.addEventListener("click", () => {
+        if (curIndex > 0) {
+          curIndex--;
+          updateSliderPosition();
+          if (nextSliderBtn.classList.contains("disable")) {
+            nextSliderBtn.classList.remove("disable");
+          }
+        }
+        if (curIndex - 1 < 0) {
+          prevSliderBtn.classList.add("disable");
+        }
+      });
+      window.addEventListener("resize", updateSliderPosition);
     }
-    // вішаємо події на кнопки
-    nextSliderBtn.addEventListener("click", () => {
-      const maxIndex = getMaxIndex();
-      if (curIndex < maxIndex) {
-        curIndex++;
-        updateSliderPosition();
-      }
-    });
-    prevSliderBtn.addEventListener("click", () => {
-      if (curIndex > 0) {
-        curIndex--;
-        updateSliderPosition();
-      }
-    });
-    window.addEventListener("resize", updateSliderPosition);
   }
 }
-
-createSlider();
+createSlider(sliderActivated);
+dynamicAdap(createSlider, sliderActivated);

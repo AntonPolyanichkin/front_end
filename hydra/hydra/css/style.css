@@ -1247,6 +1247,10 @@ main .contacts-information .contacts-information__container .contacts-informatio
   visibility: hidden;
   cursor: not-allowed;
 }
+main .contacts-information .contacts-information__container .contacts-information__content .contacts-information__next-btn.disable, main .contacts-information .contacts-information__container .contacts-information__content .contacts-information__prev-btn.disable {
+  opacity: 0.5;
+  pointer-events: none;
+}
 @media (max-width: 66.62375em) {
   main .contacts-information .element-information::before {
     display: none;
@@ -1317,9 +1321,6 @@ main .contacts-information .contacts-information__container .contacts-informatio
   }
   main .contacts-information .contacts-information__container .contacts-information__content .element-information .element-information__icon {
     width: 4.375rem;
-  }
-  main .contacts-information .contacts-information__container .contacts-information__content .element-information .element-information__link {
-    font-size: 0.875rem;
   }
 }
 

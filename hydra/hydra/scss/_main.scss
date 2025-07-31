@@ -160,18 +160,18 @@ main {
 							background-color: #c0b7e8;
 							background-color: rgba(192, 183, 232, 0.33);
 						}
-						.element-information__title {
+						& .element-information__title {
 							@include adaptiveValue("font-size", 24, 10);
 							font-weight: 700;
 							margin-bottom: toRem(10);
 							line-height: 1.2;
 						}
-						.element-information__link {
+						& .element-information__link {
 							@include adaptiveValue("font-size", 14, 7);
 							font-weight: 400;
 							line-height: 1.2;
 						}
-						.element-information__icon {
+						& .element-information__icon {
 							@include adaptiveValue("width", 70, 30);
 							aspect-ratio: 1/1;
 							& img {
@@ -187,6 +187,11 @@ main {
 					opacity: 0;
 					visibility: hidden;
 					cursor: not-allowed;
+				}
+				& .contacts-information__next-btn.disable,
+				& .contacts-information__prev-btn.disable{
+					opacity: 0.5;
+					pointer-events: none;
 				}
 			}
 		}
@@ -250,14 +255,12 @@ main {
 						&:last-of-type {
 							padding-right: 0;
 						}
-						.element-information__title {
+						& .element-information__title {
 							display: none;
 						}
-						.element-information__icon {
+
+						& .element-information__icon {
 							width: toRem(70);
-						}
-						.element-information__link {
-							font-size: toRem(14);
 						}
 					}
 				}
