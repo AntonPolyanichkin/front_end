@@ -1,7 +1,7 @@
 @use "_mixins.scss" as *;
 @use "_var.scss" as *;
 @use "_button.scss" as *;
-.header{
+.header {
 	padding-top: toRem(50);
 	background-color: $mainBackgroundColor;
 	@include adaptiveValue("font-size", 12, 10);
@@ -12,152 +12,177 @@
 	left: 0;
 	right: 0;
 	z-index: 50;
-	& .header__container{
-		max-width:  toRem(1302);
+}
+
+// === Основні елементи ===
+
+.header__container {
+	max-width: toRem(1302);
+}
+
+.header__hydra-logo {
+	width: toRem(193);
+	aspect-ratio: 193 / 103;
+}
+
+.header__hydra-logo:focus-visible {
+	outline: toRem(2) solid $focusOutline;
+	outline-offset: toRem(5);
+	border-radius: toRem(10);
+}
+
+.header__hydra-logo img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+.header__contentent-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: toRem(20);
+	align-items: center;
+}
+
+.menu-header .list-menu {
+	display: flex;
+	flex-wrap: wrap;
+	@include adaptiveValue("gap", 42, 10);
+}
+
+.list-menu__link {
+	text-transform: uppercase;
+	padding-block: toRem(40);
+	position: relative;
+}
+
+.list-menu__link::after {
+	content: "";
+	position: absolute;
+	width: 0%;
+	height: toRem(3);
+	bottom: 36%;
+	left: 0;
+	background-color: $mainWhiteColor;
+	transition: width 0.3s;
+}
+
+@media (any-hover: hover) and (pointer: fine) {
+	.list-menu__link:hover::after {
+		width: 100%;
+		transition: width 0.5s;
 	}
-	& .header__hydra-logo{
-		width: toRem(193);
-		aspect-ratio: 193 / 103;
-		&:focus-visible{
-			outline: toRem(2) solid $focusOutline;
-			outline-offset: toRem(5);
-			border-radius: toRem(10);
-		}
-		& img{
-			width: 100%;
-			height: 100%;
-			object-fit: contain;
-		}
+}
+
+.list-menu__link:focus-visible {
+	outline: toRem(2) solid $focusOutline;
+	outline-offset: 0;
+	border-radius: toRem(10);
+}
+
+.menu-header .button-burger {
+	display: none;
+}
+
+// === Кнопки дії ===
+
+.header__action-button {
+	display: flex;
+	flex-wrap: wrap;
+	gap: toRem(38);
+	align-items: center;
+}
+
+.button-action__contacts {
+	color: $mainWhiteColor;
+	background: linear-gradient(135deg, var(--gradient-start-color-contacts-btn) 0%, var(--gradient-midd-color-contacts-btn) 50%, var(--gradient-end-color-contacts-btn) 100%);
+	background-size: 300%;
+	background-position: left;
+	outline: 2px solid $mainWhiteColor;
+	transition-property: --gradient-start-color-contacts-btn, --gradient-midd-color-contacts-btn, --gradient-end-color-contacts-btn, background-position;
+	transition-duration: 0.6s;
+}
+
+@media (any-hover: hover) and (pointer: fine) {
+	.button-action__contacts:hover {
+		background: linear-gradient(90deg, var(--gradient-start-color-main-btn) 0%, var(--gradient-end-color-main-btn) 100%);
+		background-size: 100%;
+		background-position: right;
+		transition-property: --gradient-start-color-main-btn, --gradient-end-color-main-btn, background-position, background-size;
+		transition-duration: 0.6s;
 	}
-	& .header__contentent-wrapper{
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-		gap: toRem(20);
-		align-items: center;
+}
+
+// === MEDIA QUERIES ===
+
+@media (max-width: toEm(950.98)) {
+	.menu-header__list-wrapper {
+		opacity: 0;
+		visibility: hidden;
+		position: fixed;
+		z-index: 51;
+		top: toRem(110);
+		left: -100%;
+		border-radius: 100%;
+		background-color: $mainBackgroundColor;
+		width: 100%;
+		height: calc(100% - toRem(110));
+		padding: toRem(50) toRem(30);
+		transition: opacity 0.3s, visibility 0.3s 0s, left 0.5s, border-radius 0.5s;
 	}
-	.menu-header{
-		& .list-menu{
-			display: flex;
-			flex-wrap: wrap;
-			@include adaptiveValue("gap", 42, 10);
-			& .list-menu__link{
-				text-transform: uppercase;
-				padding-block: toRem(40);
-				position: relative;
-				// cursor: pointer;
-				&::after{
-					content: "";
-					position: absolute;
-					width: 0%;
-					height: toRem(3);
-					bottom: 36%;
-					left: 0;
-					background-color: $mainWhiteColor;
-					transition: width 0.3s;
-				}
-				@media (any-hover: hover) and (pointer: fine){
-					&:hover::after {
-						width: 100%;
-						transition: width 0.5s;
-					}
-				}
-			}
-			& .list-menu__link:focus-visible{
-				outline: toRem(2) solid $focusOutline;
-				outline-offset: toRem(0);
-				border-radius: toRem(10);
-			}
-		}
-		& .button-burger{
-			display: none;
-		}
+
+	.menu-header__list-wrapper .list-menu {
+		flex-direction: column;
+		gap: toRem(40);
 	}
-	.header__action-button{
-		display: flex;
-		flex-wrap: wrap;
-		gap: toRem(38);
-		align-items: center;
-		& .button-action__contacts{
-			color: $mainWhiteColor;
-			background: linear-gradient(135deg, var(--gradient-start-color-contacts-btn) 0%, var(--gradient-midd-color-contacts-btn) 50%, var(--gradient-end-color-contacts-btn) 100%);
-			background-size: 300%;
-			background-position: left;
-			outline: 2px solid $mainWhiteColor;
-			transition-property: --gradient-start-color-contacts-btn,--gradient-midd-color-contacts-btn,--gradient-end-color-contacts-btn,background-position;
-			transition-duration: 0.6s;
-			@media (any-hover: hover) and (pointer: fine){
-				&:hover{
-					background: linear-gradient(90deg, var(--gradient-start-color-main-btn) 0%, var(--gradient-end-color-main-btn) 100%);
-					background-size: 100%;
-					background-position: right;
-					transition-property: --gradient-start-color-main-btn,--gradient-end-color-main-btn,	background-position,background-size;
-					transition-duration: 0.6s;
-				}
-			}
-		}
-		
+
+	.menu-header__list-wrapper .list-menu__link {
+		padding-block: 0;
+		font-size: toRem(20);
 	}
-	@media (max-width: toEm(950.98)) {
-		.menu-header__list-wrapper{
-			opacity: 0;
-			visibility: hidden;
-			position: fixed;
-			z-index: 51;
-			top: toRem(110);
-			left: -100%;
-			border-radius: 100%;
-			background-color: $mainBackgroundColor;
-			width: 100%;
-			height: calc(100% - toRem(110));
-			padding: toRem(50) toRem(30) toRem(50) toRem(30);
-			transition: opacity 0.3s, visibility 0.3s 0s, left 0.5s,border-radius 0.5s;
-			& .list-menu{
-				flex-direction: column;
-				gap: toRem(40);
-				& .list-menu__link{
-					padding-block: 0;
-					font-size: toRem(20);
-				}
-			}
-		}
-		.header__hydra-logo{
-			width: toRem(103);
-			aspect-ratio: 103 / 60;
-		}
-		& .button-burger{
-			display: inline-block !important;
-			position: relative;
-			width: toRem(35);
-			height: toRem(25);
-			// cursor: pointer;
-			& .button-burger__element{
-				position: absolute;
-				width: 75%;
-				height: toRem(3);
-				top: 45%;
-				right: 0;
-				background: linear-gradient(90deg, var(--gradient-start-color-main-btn) 0%, var(--gradient-end-color-main-btn) 100%);
-				border-radius: toRem(20);
-				transition: width 0.3s;
-			}
-			&::before, &::after{
-				content: "";
-				position: absolute;
-				width: 100%;
-				height: toRem(3);
-				right: 0;
-				background: linear-gradient(90deg, var(--gradient-start-color-main-btn) 0%, var(--gradient-end-color-main-btn) 100%);
-				border-radius: toRem(20);
-				transition: transform 0.5s;
-			}
-			&::before{
-				top: 0;
-			}
-			&::after{
-				bottom: 0;
-			}
-		}
+
+	.header__hydra-logo {
+		width: toRem(103);
+		aspect-ratio: 103 / 60;
+	}
+
+	.button-burger {
+		display: inline-block !important;
+		position: relative;
+		width: toRem(35);
+		height: toRem(25);
+	}
+
+	.button-burger__element {
+		position: absolute;
+		width: 75%;
+		height: toRem(3);
+		top: 45%;
+		right: 0;
+		background: linear-gradient(90deg, var(--gradient-start-color-main-btn) 0%, var(--gradient-end-color-main-btn) 100%);
+		border-radius: toRem(20);
+		transition: width 0.3s;
+	}
+
+	.button-burger::before,
+	.button-burger::after {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: toRem(3);
+		right: 0;
+		background: linear-gradient(90deg, var(--gradient-start-color-main-btn) 0%, var(--gradient-end-color-main-btn) 100%);
+		border-radius: toRem(20);
+		transition: transform 0.5s;
+	}
+
+	.button-burger::before {
+		top: 0;
+	}
+
+	.button-burger::after {
+		bottom: 0;
 	}
 }
 

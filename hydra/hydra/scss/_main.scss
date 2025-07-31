@@ -3,268 +3,342 @@
 @use "_button.scss" as *;
 main {
 	padding-top: toRem(153);
-	& .hero-section {
-		padding-top: toRem(124);
-		// padding-bottom: toRem(88);
-		@include adaptiveValue("padding-bottom", 88, 53);
-		& .hero-section__container {
-			max-width: toRem(1302);
-		}
-		& .hero-section__content-wrapper {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: space-between;
-			column-gap: toRem(30);
-			row-gap: toRem(20);
-			position: relative;
-			&::before {
-				content: "";
-				@include adaptiveValue("width", 238, 150);
-				@include adaptiveValue("height", 561, 450);
-				right: 90%;
-				top: 0;
-				background: url("../img/main-section-vector.svg") no-repeat;
-				background-position: left left;
-				background-size: contain;
-				position: absolute;
-			}
-			align-items: center;
-			& .hero-section__img-wrapper {
-				@include adaptiveValue("width", 490, 290);
-				aspect-ratio: 490 / 426;
-				position: relative;
-				&::before {
-					content: "";
-					position: absolute;
-					bottom: -100px;
-					left: -100px;
-					@include adaptiveValue("width", 735, 500);
-					@include adaptiveValue("height", 845, 600);
-					background: url("../img/main-photo-vector.svg") no-repeat center;
-					background-size: cover;
-					z-index: -1;
-				}
+}
 
-				& img {
-					border: toRem(1) solid #000;
-					background: #a3a3a3;
-					box-shadow: 0 toRem(4) toRem(4) 0 rgba(0, 0, 0, 0.25);
-					border-radius: toRem(100) toRem(100) toRem(100) toRem(240);
-					width: 100%;
-					height: 100%;
-				}
-			}
-			& .hero-section__text-wrapper {
-				// flex-basis: toRem(460);
-				@include adaptiveValue("flex-basis", 460, 260);
-				flex-grow: 0;
-				color: $mainWhiteColor;
-				font-weight: 700;
-				line-height: 1.2;
-				& .hero-section__title {
-					text-transform: capitalize;
-					@include adaptiveValue("font-size", 40, 24);
-					margin-bottom: toRem(36);
-					& span {
-						@include adaptiveValue("font-size", 46, 30);
-						background: $textGradient;
-						background-clip: text;
-						-webkit-text-fill-color: transparent;
-					}
-				}
-				& .hero-section__text {
-					@include adaptiveValue("font-size", 16, 12);
-					font-weight: 400;
-					margin-bottom: toRem(66);
-				}
-				& .hero-section__button {
-					min-width: toRem(214);
-					position: relative;
-					&::before {
-						content: "";
-						position: absolute;
-						width: toRem(100);
-						height: toRem(100);
-						top: -59%;
-						left: 100%;
-						background: url("../img/arrow.svg") no-repeat;
-						pointer-events: none;
-						transition: left 0.5s;
-					}
-					@media (any-hover: hover) and (pointer: fine) {
-						&:hover::before {
-							left: 90%;
-						}
-					}
-				}
-			}
+// ===== HERO SECTION =====
+
+.hero-section {
+	padding-top: toRem(124);
+	@include adaptiveValue("padding-bottom", 88, 53);
+}
+
+.hero-section__container {
+	max-width: toRem(1302);
+}
+
+.hero-section__content-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	column-gap: toRem(30);
+	row-gap: toRem(20);
+	position: relative;
+	align-items: center;
+
+	&::before {
+		content: "";
+		@include adaptiveValue("width", 238, 150);
+		@include adaptiveValue("height", 561, 450);
+		right: 90%;
+		top: 0;
+		background: url("../img/main-section-vector.svg") no-repeat;
+		background-position: left left;
+		background-size: contain;
+		position: absolute;
+	}
+}
+
+.hero-section__img-wrapper {
+	@include adaptiveValue("width", 490, 290);
+	aspect-ratio: 490 / 426;
+	position: relative;
+
+	&::before {
+		content: "";
+		position: absolute;
+		bottom: -100px;
+		left: -100px;
+		@include adaptiveValue("width", 735, 500);
+		@include adaptiveValue("height", 845, 600);
+		background: url("../img/main-photo-vector.svg") no-repeat center;
+		background-size: cover;
+		z-index: -1;
+	}
+
+	img {
+		width: 100%;
+		height: 100%;
+		border: toRem(1) solid #000;
+		background: #a3a3a3;
+		box-shadow: 0 toRem(4) toRem(4) 0 rgba(0, 0, 0, 0.25);
+		border-radius: toRem(100) toRem(100) toRem(100) toRem(240);
+	}
+}
+
+.hero-section__text-wrapper {
+	@include adaptiveValue("flex-basis", 460, 260);
+	flex-grow: 0;
+	color: $mainWhiteColor;
+	font-weight: 700;
+	line-height: 1.2;
+}
+
+.hero-section__title {
+	text-transform: capitalize;
+	@include adaptiveValue("font-size", 40, 24);
+	margin-bottom: toRem(36);
+
+	span {
+		@include adaptiveValue("font-size", 46, 30);
+		background: $textGradient;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+}
+
+.hero-section__text {
+	@include adaptiveValue("font-size", 16, 12);
+	font-weight: 400;
+	margin-bottom: toRem(66);
+}
+
+.hero-section__button {
+	min-width: toRem(214);
+	position: relative;
+
+	&::before {
+		content: "";
+		position: absolute;
+		width: toRem(100);
+		height: toRem(100);
+		top: -59%;
+		left: 100%;
+		background: url("../img/arrow.svg") no-repeat;
+		pointer-events: none;
+		transition: left 0.5s;
+	}
+
+	@media (any-hover: hover) and (pointer: fine) {
+		&:hover::before {
+			left: 90%;
 		}
 	}
-	@media (max-width: toEm(960.98)) {
-		& .hero-section__content-wrapper {
-			flex-direction: column-reverse;
+}
+
+// ===== CONTACTS SECTION =====
+
+.contacts-information {
+	padding-bottom: toRem(94);
+}
+
+.contacts-information__container {
+	max-width: toRem(1302);
+}
+
+.contacts-information__content {
+	display: flex;
+	position: relative;
+	z-index: 40;
+	background: $darkGradient;
+	border-radius: toRem(90);
+	box-shadow: 0 toRem(4) toRem(4) 0 rgba(192, 183, 232, 0.01);
+	color: $mainWhiteColor;
+	overflow: auto;
+}
+
+.contacts-information__slider-wrapper {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	column-gap: toRem(20);
+	row-gap: toRem(10);
+	align-items: center;
+	@include adaptiveValue("padding-block", 25, 10);
+	@include adaptiveValue("padding-inline", 40, 10);
+}
+
+.element-information {
+	display: flex;
+	flex-direction: row-reverse;
+	align-items: center;
+	@include adaptiveValue("column-gap", 25, 5);
+	row-gap: toRem(10);
+}
+
+.element-information:not(:last-of-type)::before {
+	content: "";
+	@include adaptiveValue("height", 116.5, 100);
+	width: toRem(1);
+	border-radius: toRem(2);
+	background-color: rgba(192, 183, 232, 0.33);
+}
+
+.element-information__title {
+	@include adaptiveValue("font-size", 24, 10);
+	font-weight: 700;
+	margin-bottom: toRem(10);
+	line-height: 1.2;
+}
+
+.element-information__link {
+	font-size: toRem(14);
+	font-weight: 400;
+	line-height: 1.5;
+	position: relative;
+	&::after {
+		content: "";
+		position: absolute;
+		width: 0%;
+		height: toRem(3);
+		top: 100%;
+		left: 0;
+		background-color: $mainWhiteColor;
+		transition: width 0.3s;
+	}
+
+	@media (any-hover: hover) and (pointer: fine) {
+		&:hover::after {
+			width: 100%;
+			transition: width 0.8s;
+		}
+	}
+}
+
+.element-information__icon {
+	@include adaptiveValue("width", 70, 30);
+	aspect-ratio: 1 / 1;
+	transition: transform 0.3s;
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+	@media (any-hover: hover) and (pointer: fine) {
+		&:hover {
+			transform: scale(1.2);
+			transition: transform 0.5s;
+		}
+	}
+}
+
+.contacts-information__next-btn,
+.contacts-information__prev-btn {
+	opacity: 0;
+	visibility: hidden;
+	cursor: not-allowed;
+
+	&.disable {
+		opacity: 0.5;
+		pointer-events: none;
+	}
+}
+
+// ===== MEDIA =====
+
+@media (max-width: toEm(960.98)) {
+	.hero-section__content-wrapper {
+		flex-direction: column-reverse;
+
+		&::before {
+			display: none;
+		}
+	}
+
+	.hero-section__text-wrapper {
+		text-align: center;
+
+		.hero-section__button {
+			align-self: center;
+			width: 80%;
+
 			&::before {
 				display: none;
 			}
 		}
-		& .hero-section__text-wrapper {
-			text-align: center;
-			& .hero-section__button {
-				align-self: center;
-				width: 80%;
-				&::before {
-					display: none;
-				}
-			}
+	}
+}
+
+@media (max-width: toEm(950.98)) {
+	main {
+		padding-top: toRem(110);
+	}
+}
+
+@media (max-width: toEm(1065.98)) {
+	.element-information::before {
+		display: none;
+	}
+}
+
+@media (max-width: toEm(980.98)) {
+	.contacts-information__slider-wrapper {
+		justify-content: flex-start;
+	}
+
+	.element-information {
+		justify-content: center;
+		flex-basis: toRem(320);
+		flex-shrink: 0;
+		padding-left: toRem(20);
+
+		&:last-of-type {
+			padding-right: toRem(20);
 		}
 	}
-	@media (max-width: toEm(950.98)) {
-		& {
-			padding-top: toRem(110);
+}
+
+@media (max-width: toEm(750.98)) {
+	.element-information__title {
+		display: none;
+	}
+}
+
+@media (max-width: toEm(550.98)) {
+	.contacts-information__content {
+		max-height: toRem(109);
+		overflow: hidden;
+	}
+
+	.contacts-information__slider-wrapper {
+		width: 100%;
+		transition: all 0.5s;
+	}
+
+	.contacts-information__next-btn,
+	.contacts-information__prev-btn {
+		position: absolute;
+		@include adaptiveValue("top", 45, 10);
+		opacity: 1;
+		visibility: visible;
+		cursor: pointer;
+		width: toRem(30);
+		height: toRem(30);
+	}
+
+	.contacts-information__prev-btn {
+		left: toRem(11);
+
+		background: url("../img/arrow-contacts-icon.svg") no-repeat;
+		background-size: cover;
+	}
+
+	.contacts-information__next-btn {
+		right: toRem(11);
+
+		background: url("../img/arrow-contacts-icon2.svg") no-repeat;
+		background-size: cover;
+	}
+
+	.element-information {
+		flex-basis: 100%;
+		margin-inline: 0;
+		padding-left: 0;
+		align-self: center;
+
+		&:last-of-type {
+			padding-right: 0;
 		}
 	}
-	.contacts-information {
-		padding-bottom: toRem(94);
-		& .contacts-information__container {
-			max-width: toRem(1302);
-			& .contacts-information__content {
-				display: flex;
-				justify-content: center;
-				position: relative;
-				z-index: 40;
-				background: $darkGradient;
-				border-radius: toRem(90);
-				box-shadow: 0 toRem(4) toRem(4) 0 rgba(192, 183, 232, 0.01);
-				color: $mainWhiteColor;
-				overflow: auto;
-				& .contacts-information__slider-wrapper {
-					width: 100%;
-					display: flex;
-					justify-content: space-between;
-					column-gap: toRem(20);
-					row-gap: toRem(10);
-					align-items: center;
-					@include adaptiveValue("padding-block", 25, 10);
-					@include adaptiveValue("padding-inline", 40, 10);
-					& .element-information {
-						display: flex;
-						flex-direction: row-reverse;
-						align-items: center;
-						@include adaptiveValue("column-gap", 25, 5);
-						row-gap: toRem(10);
-						&:not(:last-of-type)::before {
-							content: "";
-							@include adaptiveValue("height", 116.5, 100);
-							width: toRem(1);
-							border-radius: toRem(2);
-							background-color: #c0b7e8;
-							background-color: rgba(192, 183, 232, 0.33);
-						}
-						& .element-information__title {
-							@include adaptiveValue("font-size", 24, 10);
-							font-weight: 700;
-							margin-bottom: toRem(10);
-							line-height: 1.2;
-						}
-						& .element-information__link {
-							@include adaptiveValue("font-size", 14, 7);
-							font-weight: 400;
-							line-height: 1.2;
-						}
-						& .element-information__icon {
-							@include adaptiveValue("width", 70, 30);
-							aspect-ratio: 1/1;
-							& img {
-								width: 100%;
-								height: 100%;
-								object-fit: contain;
-							}
-						}
-					}
-				}
-				& .contacts-information__next-btn,
-				& .contacts-information__prev-btn {
-					opacity: 0;
-					visibility: hidden;
-					cursor: not-allowed;
-				}
-				& .contacts-information__next-btn.disable,
-				& .contacts-information__prev-btn.disable{
-					opacity: 0.5;
-					pointer-events: none;
-				}
-			}
-		}
-		@media (max-width: toEm(1065.98)) {
-			.element-information::before {
-				display: none;
-			}
-		}
-		@media (max-width: toEm(949.98)) {
-			.contacts-information__content {
-				& .contacts-information__slider-wrapper {
-					justify-content: flex-start;
-					& .element-information {
-						justify-content: center;
-						flex-basis: toRem(300);
-						flex-shrink: 0;
-						padding-left: toRem(20);
-						&:last-of-type {
-							padding-right: toRem(20);
-						}
-					}
-				}
-			}
-		}
-		@media (max-width: toEm(550.98)) {
-			.contacts-information__container {
-				& .contacts-information__content {
-					max-height: toRem(109);
-					overflow: hidden;
-					& .contacts-information__slider-wrapper {
-						width: 100%;
-						transition: all 0.5s;
-					}
-					& .contacts-information__next-btn,
-					& .contacts-information__prev-btn {
-						position: absolute;
-						top: 30%;
-						opacity: 1;
-						visibility: visible;
-						cursor: pointer;
-						width: toRem(30);
-						height: toRem(30);
-					}
-					& .contacts-information__prev-btn {
-						background: url("../img/arrow-contacts-icon.svg") no-repeat;
-						background-size: cover;
-						left: toRem(11);
-					}
-					& .contacts-information__next-btn {
-						right: toRem(11);
-						background: url("../img/arrow-contacts-icon2.svg") no-repeat;
-						background-size: cover;
-					}
+}
 
-					.element-information {
-						flex-basis: 100%;
-						margin-inline: 0;
-						padding-left: 0;
-						align-self: center;
+@media (max-width: toEm(455.98)) {
+	.element-information__link {
+		font-size: toRem(10);
+	}
+}
 
-						&:last-of-type {
-							padding-right: 0;
-						}
-						& .element-information__title {
-							display: none;
-						}
-
-						& .element-information__icon {
-							width: toRem(70);
-						}
-					}
-				}
-			}
-		}
+@media (max-width: toEm(360.98)) {
+	.element-information__link {
+		font-size: toRem(8);
 	}
 }
