@@ -1420,6 +1420,109 @@ main {
     font-size: 0.5rem;
   }
 }
+.introdaction-section {
+  padding-bottom: 5.875rem;
+}
+
+.introdaction-section__container {
+  max-width: 81.375rem;
+}
+
+.introdaction-section__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1.875rem;
+}
+
+.introdaction-section__title {
+  position: relative;
+  display: inline-block;
+  font-weight: 300;
+  line-height: 1.2;
+  color: #fff;
+}
+@media (min-width: 81.375em) {
+  .introdaction-section__title {
+    font-size: 2.25rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 81.375em) {
+  .introdaction-section__title {
+    font-size: clamp(1.25rem, calc(0.9241344196rem + 1.6293279022vw), 2.25rem);
+  }
+}
+@media (max-width: 20em) {
+  .introdaction-section__title {
+    font-size: 1.25rem;
+  }
+}
+.introdaction-section__title::before {
+  content: "";
+  position: absolute;
+  height: 6.25rem;
+  width: 14.25rem;
+  background: url("../img/introdaction-arrow.svg") no-repeat;
+  background-size: contain;
+  left: 100%;
+  top: 1.25rem;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.introdaction-section__title span {
+  font-weight: 700;
+}
+
+.introdaction-section__text-wrapper {
+  max-width: 40.75rem;
+  color: #fff;
+  font-weight: 400;
+  line-height: 1.5;
+}
+@media (min-width: 81.375em) {
+  .introdaction-section__text-wrapper {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 81.375em) {
+  .introdaction-section__text-wrapper {
+    font-size: clamp(0.75rem, calc(0.6685336049rem + 0.4073319756vw), 1rem);
+  }
+}
+@media (max-width: 20em) {
+  .introdaction-section__text-wrapper {
+    font-size: 0.75rem;
+  }
+}
+
+@media (any-hover: hover) and (pointer: fine) {
+  .introdaction-section__content:hover .introdaction-section__title::before {
+    left: 110%;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+}
+@media (max-width: 75.06125em) {
+  .introdaction-section__title::before {
+    display: none;
+  }
+}
+@media (max-width: 60.31125em) {
+  .introdaction-section__content {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+  }
+}
 body {
   background-color: #302C42;
 }
