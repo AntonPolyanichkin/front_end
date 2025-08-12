@@ -13,6 +13,7 @@
 
 	&::before {
 		content: "";
+		z-index: -1;
 		position: absolute;
 		@include adaptiveValue("bottom", 190, 100);
 		left: 0;

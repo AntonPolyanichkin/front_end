@@ -7,7 +7,7 @@
 	@include adaptiveValue("font-size", 12, 10);
 	text-transform: uppercase;
 	font-weight: 700;
-	// cursor: pointer;
+	cursor: pointer;
 	text-align: center;
 	border-radius: toRem(40);
 	color: $mainTextButtonColor;

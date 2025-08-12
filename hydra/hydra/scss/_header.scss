@@ -219,9 +219,6 @@ body.active{
 		gap: toRem(20);
 		& .list-menu{
 			flex-grow: 1;
-			& .list-menu__link{
-				@include adaptiveValue("font-size", 12, 10);
-			}
 		}
 	}
 	.header__contentent-wrapper{
