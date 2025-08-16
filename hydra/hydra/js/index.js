@@ -136,15 +136,19 @@ window.addEventListener("load", () => {
   createSlider(sliderActivated);
   dynamicAdap(createSlider, sliderActivated);
 
-  // function secondSliderInit() {
-  //   const advantagesSlider = new Swiper(".advantages-slider", {
-  //     // Optional parameters
-  //     loop: true,
-  //     navigation: {
-  //       nextEl: ".swiper-button-next",
-  //       prevEl: ".swiper-button-prev",
-  //     },
-  //   });
-  // }
-  // secondSliderInit()
+//   function sliderHardware() {
+//     const hardwareSlider = new Swiper(".content-hardware", {
+//       slidesPerView: "auto", // скільки влізе по ширині
+//       spaceBetween: 20, // відстань між картинками
+//       loop: true, // зациклення
+//       speed: 6000, // чим більше число → тим плавніше і повільніше
+//       autoplay: {
+//         delay: 0, // без пауз
+//         disableOnInteraction: false,
+//       },
+//       freeMode: true, // вільний рух
+//       freeModeMomentum: false, // без інерції/ривків
+//     });
+//   }
+//   sliderHardware();
 });
