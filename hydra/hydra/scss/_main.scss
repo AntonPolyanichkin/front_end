@@ -197,6 +197,11 @@ main {
 			width: 100%;
 			transition: width 0.8s;
 		}
+		&:focus {
+			outline: toRem(2) solid $focusOutline;
+			outline-offset: toRem(5);
+			border-radius: toRem(10);
+		}
 	}
 }
 
@@ -204,6 +209,11 @@ main {
 	@include adaptiveValue("width", 70, 30);
 	aspect-ratio: 1 / 1;
 	transition: transform 0.3s;
+	&:focus {
+		outline: toRem(2) solid $focusOutline;
+		outline-offset: toRem(5);
+		border-radius: toRem(10);
+	}
 	img {
 		width: 100%;
 		height: 100%;
@@ -610,6 +620,7 @@ main {
 	text-align: center;
 	border-radius: toRem(100);
 	@include adaptiveValue("margin-bottom", 60, 30);
+	box-shadow: 0 toRem(4) toRem(4) 0 rgba(0, 0, 0, 0.25);
 }
 .content-technology__title {
 	color: $mainWhiteColor;
@@ -661,11 +672,12 @@ main {
 .build-process__content {
 	margin-bottom: toRem(120);
 }
-.build-process{
-background-image: url("../img/build-process.svg");
-background-repeat: no-repeat;
-background-position: center;
-background-size: contain;
+.build-process {
+	background-image: url("../img/build-process.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	padding-bottom: toRem(112);
 }
 .list-process {
 	display: flex;
@@ -717,17 +729,16 @@ background-size: contain;
 	}
 }
 
-
 @media (max-width: toEm(1392.98)) {
 	.item-list-process__title {
-		&::before{
+		&::before {
 			opacity: 0;
 			visibility: hidden;
 		}
 	}
 }
 @media (max-width: toEm(986.98)) {
-	.build-process{
+	.build-process {
 		background-image: none;
 	}
 	.list-process {
@@ -736,7 +747,7 @@ background-size: contain;
 		align-items: center;
 	}
 	.item-list-process__title {
-		&::before{
+		&::before {
 			opacity: 1;
 			visibility: visible;
 			transform: rotate(90deg);
@@ -744,5 +755,106 @@ background-size: contain;
 	}
 	.item-list-process {
 		align-items: center;
+	}
+}
+
+// =====  JOIN-HYDRA-FORM SECTION  =====
+
+.join-hydra-form__container {
+	max-width: toRem(1302);
+}
+
+.join-hydra-form__content {
+	background: $formGradient;
+	@include adaptiveValue("border-radius", 100, 50);
+	// padding: toRem(90) toRem(108);
+	@include adaptiveValue("padding-block", 90, 60);
+	@include adaptiveValue("padding-inline", 108, 30);
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	box-shadow: 0 toRem(4) toRem(4) 0 rgba(0, 0, 0, 0.25);
+}
+.content-join-hydra__title,
+.content-join-hydra__text {
+	color: $mainWhiteColor;
+	@include adaptiveValue("font-size", 36, 18);
+	font-weight: 700;
+	line-height: 1.2;
+	margin-bottom: toRem(30);
+}
+.content-join-hydra__line {
+	height: toRem(2);
+	@include adaptiveValue("width", 414, 207);
+	background: linear-gradient(to left, #343045 0%, #c0b7e8 34.9%, #8176af 68.75%, #343045 100%);
+	margin-bottom: toRem(21);
+}
+
+.content-join-hydra__text {
+	font-weight: 300;
+	@include adaptiveValue("font-size", 36, 14);
+}
+.form-join-hydra__element {
+	color: $mainWhiteColor;
+	@include adaptiveValue("border-radius", 40, 20);
+	outline: toRem(2) solid #fff;
+	@include adaptiveValue("padding-inline", 44, 22);
+	height: toRem(72);
+	padding-block: 0;
+	&:focus {
+		outline: toRem(2) solid $focusOutline;
+		box-shadow: 0 toRem(4) toRem(4) 0 rgba(0, 0, 0, 0.25);
+	}
+	&::placeholder {
+		color: $mainWhiteColor;
+		@include adaptiveValue("font-size", 14, 10);
+		font-weight: 400;
+		line-height: 1.2;
+		text-transform: capitalize;
+		opacity: 1;
+		transition: all 0.3s;
+	}
+
+	&:focus::placeholder,
+	&:focus-visible::placeholder {
+		opacity: 0;
+	}
+}
+.form-join-hydra__element--text-area {
+	resize: none;
+	overflow: auto;
+}
+.form-join-hydra {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(toRem(224), toRem(524)));
+	// grid-template-rows: repeat(4, minmax(toRem(72), 1fr));
+	gap: toRem(33) toRem(12);
+	& .form-join-hydra__element--subject,
+	.form-join-hydra__element--text-area {
+		grid-column: span 2;
+	}
+	& .form-join-hydra__element--text-area {
+		height: toRem(210);
+		padding-block: toRem(27);
+	}
+	.form-join-hydra__button {
+		justify-self: center;
+		grid-column: span 2;
+		min-width: toRem(214);
+	}
+}
+
+@media (max-width: toEm(550.98)) {
+	.form-join-hydra {
+		grid-template-columns: 1fr;
+		& .form-join-hydra__element--subject,
+		.form-join-hydra__element--text-area {
+			grid-column: auto;
+		}
+
+		.form-join-hydra__button {
+			grid-column: auto;
+		}
 	}
 }

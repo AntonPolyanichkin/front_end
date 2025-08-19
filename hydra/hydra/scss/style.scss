@@ -1,12 +1,12 @@
-@use "_reset.scss" ;
+@use "_reset.scss";
 @use "_var.scss" as *;
-@use 'sass:math';
+@use "sass:math";
 @use "_header.scss";
 @use "_footer.scss";
 @use "_main.scss";
-body{
+body {
 	background-color: $mainBackgroundColor;
-	&.scroll-lock{
+	&.scroll-lock {
 		overflow: hidden;
 		touch-action: none;
 		overscroll-behavior: none;
@@ -15,15 +15,15 @@ body{
 .wrapper {
 	overflow: clip;
 	min-height: 100%;
-	font-family: "Montserrat",sans-serif;
+	font-family: "Montserrat", sans-serif;
 	display: flex;
 	flex-direction: column;
-	& .page{
+	& .page {
 		flex-grow: 1;
 	}
 }
-[class*="__container"]{
-	padding-left: .9375rem;
-	padding-right: .9375rem;
+[class*="__container"] {
+	padding-left: 0.9375rem;
+	padding-right: 0.9375rem;
 	margin: 0 auto;
 }

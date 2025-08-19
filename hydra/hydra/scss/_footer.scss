@@ -76,6 +76,11 @@
 .main-footer__logo {
 	@include adaptiveValue("width", 185, 100);
 	aspect-ratio: 1 / 1;
+	&:focus {
+		outline: toRem(2) solid $focusOutline;
+		outline-offset: toRem(5);
+		border-radius: toRem(10);
+	}
 }
 
 .main-footer__logo img {
@@ -89,7 +94,11 @@
 
 .list-main-footer__link {
 	position: relative;
-
+	&:focus {
+		outline: toRem(2) solid $focusOutline;
+outline-offset: toRem(5);
+border-radius: toRem(10);
+	}
 	&::after {
 		content: "";
 		position: absolute;
@@ -130,7 +139,11 @@
 	width: toRem(32);
 	aspect-ratio: 1 / 1;
 	transition: transform 0.5s;
-
+	&:focus {
+		outline: toRem(2) solid $focusOutline;
+outline-offset: toRem(5);
+border-radius: toRem(10);
+	}
 	@media (any-hover: hover) and (pointer: fine) {
 		&:hover {
 			transform: scale(1.2);
