@@ -1086,6 +1086,7 @@ main {
 
 .contacts-information__container {
   max-width: 81.375rem;
+  position: relative;
 }
 
 .contacts-information__content {
@@ -1100,6 +1101,9 @@ main {
           box-shadow: 0 0.25rem 0.25rem 0 rgba(192, 183, 232, 0.01);
   color: #fff;
   overflow: auto;
+}
+.contacts-information__content::-webkit-scrollbar {
+  display: none;
 }
 
 .contacts-information__slider-wrapper {
@@ -1314,6 +1318,31 @@ main {
   pointer-events: none;
 }
 
+@media (max-width: 66.62375em) {
+  .element-information::before {
+    display: none;
+  }
+}
+@media (max-width: 61.31125em) {
+  .contacts-information__slider-wrapper {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .element-information {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-preferred-size: 20rem;
+        flex-basis: 20rem;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    padding-left: 1.25rem;
+  }
+  .element-information:last-of-type {
+    padding-right: 1.25rem;
+  }
+}
 @media (max-width: 60.06125em) {
   .hero-section__content-wrapper {
     -webkit-box-orient: vertical;
@@ -1341,31 +1370,6 @@ main {
     padding-top: 6.875rem;
   }
 }
-@media (max-width: 66.62375em) {
-  .element-information::before {
-    display: none;
-  }
-}
-@media (max-width: 61.31125em) {
-  .contacts-information__slider-wrapper {
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-  }
-  .element-information {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -ms-flex-preferred-size: 20rem;
-        flex-basis: 20rem;
-    -ms-flex-negative: 0;
-        flex-shrink: 0;
-    padding-left: 1.25rem;
-  }
-  .element-information:last-of-type {
-    padding-right: 1.25rem;
-  }
-}
 @media (max-width: 46.93625em) {
   .element-information__title {
     display: none;
@@ -1389,6 +1393,7 @@ main {
     cursor: pointer;
     width: 1.875rem;
     height: 1.875rem;
+    z-index: 40;
   }
 }
 @media (max-width: 34.43625em) and (min-width: 81.375em) {
@@ -1411,12 +1416,12 @@ main {
 }
 @media (max-width: 34.43625em) {
   .contacts-information__prev-btn {
-    left: 0.6875rem;
+    left: 1.5625rem;
     background: url("../img/arrow-contacts-icon.svg") no-repeat;
     background-size: cover;
   }
   .contacts-information__next-btn {
-    right: 0.6875rem;
+    right: 1.5625rem;
     background: url("../img/arrow-contacts-icon2.svg") no-repeat;
     background-size: cover;
   }

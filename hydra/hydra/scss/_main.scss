@@ -129,6 +129,7 @@ main {
 
 .contacts-information__container {
 	max-width: toRem(1302);
+	position: relative;
 }
 
 .contacts-information__content {
@@ -140,6 +141,10 @@ main {
 	box-shadow: 0 toRem(4) toRem(4) 0 rgba(192, 183, 232, 0.01);
 	color: $mainWhiteColor;
 	overflow: auto;
+	&::-webkit-scrollbar{
+		display: none;
+	}
+//====================
 }
 
 .contacts-information__slider-wrapper {
@@ -239,7 +244,28 @@ main {
 	}
 }
 
-// ===== MEDIA =====
+@media (max-width: toEm(1065.98)) {
+	.element-information::before {
+		display: none;
+	}
+}
+
+@media (max-width: toEm(980.98)) {
+	.contacts-information__slider-wrapper {
+		justify-content: flex-start;
+	}
+
+	.element-information {
+		justify-content: center;
+		flex-basis: toRem(320);
+		flex-shrink: 0;
+		padding-left: toRem(20);
+
+		&:last-of-type {
+			padding-right: toRem(20);
+		}
+	}
+}
 
 @media (max-width: toEm(960.98)) {
 	.hero-section__content-wrapper {
@@ -270,28 +296,6 @@ main {
 	}
 }
 
-@media (max-width: toEm(1065.98)) {
-	.element-information::before {
-		display: none;
-	}
-}
-
-@media (max-width: toEm(980.98)) {
-	.contacts-information__slider-wrapper {
-		justify-content: flex-start;
-	}
-
-	.element-information {
-		justify-content: center;
-		flex-basis: toRem(320);
-		flex-shrink: 0;
-		padding-left: toRem(20);
-
-		&:last-of-type {
-			padding-right: toRem(20);
-		}
-	}
-}
 
 @media (max-width: toEm(750.98)) {
 	.element-information__title {
@@ -319,17 +323,18 @@ main {
 		cursor: pointer;
 		width: toRem(30);
 		height: toRem(30);
+		z-index: 40;
 	}
 
 	.contacts-information__prev-btn {
-		left: toRem(11);
+		left: toRem(25);
 
 		background: url("../img/arrow-contacts-icon.svg") no-repeat;
 		background-size: cover;
 	}
 
 	.contacts-information__next-btn {
-		right: toRem(11);
+		right: toRem(25);
 
 		background: url("../img/arrow-contacts-icon2.svg") no-repeat;
 		background-size: cover;

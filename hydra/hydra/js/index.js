@@ -3,7 +3,6 @@ window.addEventListener("load", () => {
   let mediaDynamicBurger = window.matchMedia("(max-width: 950.98px)");
   let mediaHeaderActionBtn = window.matchMedia("(max-width: 550.98px)");
   let sliderActivated = window.matchMedia("(max-width: 550.98px)");
-  let swiperAppear = mediaHeaderActionBtn;
   const burgerMenu = document.querySelector(".button-burger");
   const actionButton = document.querySelector(".header__action-button");
   const headerMenu = document.querySelector(".menu-header");
@@ -33,7 +32,7 @@ window.addEventListener("load", () => {
       }
     } else {
       if (actionButton.parentElement !== headerWrapper) {
-        headerWrapper.insertAdjacentElement("beforeend", actionButton);
+        headerMenu.insertAdjacentElement("afterend", actionButton);
       }
     }
     if (burgerMenu.parentElement === actionButton) {
@@ -55,6 +54,7 @@ window.addEventListener("load", () => {
     });
   }
   getBurgerActive();
+
   function createSlider(mql) {
     if (mql.matches) {
       const sliderWrapper = document.querySelector(".contacts-information__slider-wrapper");
@@ -66,8 +66,16 @@ window.addEventListener("load", () => {
         return;
         //Якщо хоч один з елементів відсутній - покинути функцію
       } else {
+			let curIndex = 0
         console.log("active");
-        let curIndex = 0;
+		  function sliderReset() {
+			sliderElements[0].scrollIntoView({
+				behavior: "smooth",
+				inline: "start"
+			 });
+		  }
+		  sliderReset()
+		//   nextSliderBtn.classList.remove("disable");
         function getSlideWidthWithGap() {
           let slideWidth = sliderElements[0].offsetWidth; // ширина одного із елементів слайдера
           let sliderWrapperStyles = window.getComputedStyle(sliderWrapper); // беремо стилі враппера
@@ -94,7 +102,7 @@ window.addEventListener("load", () => {
           const slideWithGap = getSlideWidthWithGap(); //отримали слайдер із урахуванням гепу
           let shift;
 
-          if (mql) {
+          if (windowWidth) {
             shift = curIndex * slideWithGap; //отримали зсув слайду
           }
 
@@ -129,26 +137,14 @@ window.addEventListener("load", () => {
             prevSliderBtn.classList.add("disable");
           }
         });
-        window.addEventListener("resize", updateSliderPosition);
       }
     }
+	 else{
+		const sliderWrapper = document.querySelector(".contacts-information__slider-wrapper");
+		  sliderWrapper.style.transform = `translateX(0px)`;
+	 }
   }
   createSlider(sliderActivated);
   dynamicAdap(createSlider, sliderActivated);
 
-//   function sliderHardware() {
-//     const hardwareSlider = new Swiper(".content-hardware", {
-//       slidesPerView: "auto", // скільки влізе по ширині
-//       spaceBetween: 20, // відстань між картинками
-//       loop: true, // зациклення
-//       speed: 6000, // чим більше число → тим плавніше і повільніше
-//       autoplay: {
-//         delay: 0, // без пауз
-//         disableOnInteraction: false,
-//       },
-//       freeMode: true, // вільний рух
-//       freeModeMomentum: false, // без інерції/ривків
-//     });
-//   }
-//   sliderHardware();
 });
