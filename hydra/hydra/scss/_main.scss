@@ -522,6 +522,7 @@ main {
 	justify-content: space-between;
 	gap: toRem(20);
 	align-items: center;
+	overflow: auto;
 }
 .advantages__information {
 	padding-bottom: toRem(102);
@@ -532,7 +533,10 @@ main {
 	align-items: center;
 	background: $cardGradient;
 	border-radius: toRem(40);
-	max-width: toRem(310);
+	// max-width: toRem(310);
+	flex-basis: toRem(310);
+	flex-shrink: 1;
+	flex-grow: 1;
 	min-height: toRem(511);
 	padding: toRem(23) toRem(25) toRem(40);
 }
@@ -590,7 +594,7 @@ main {
 	}
 
 	.cards-advantages__item {
-		flex: 0 0 auto;
+		flex-shrink: 0;
 		scroll-snap-align: start;
 	}
 
@@ -764,6 +768,10 @@ main {
 }
 
 // =====  JOIN-HYDRA-FORM SECTION  =====
+
+.join-hydra-form{
+	scroll-margin-top: toRem(170);
+}
 
 .join-hydra-form__container {
 	max-width: toRem(1302);

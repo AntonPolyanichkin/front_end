@@ -76,7 +76,7 @@
 .main-footer__logo {
 	@include adaptiveValue("width", 185, 100);
 	aspect-ratio: 1 / 1;
-	&:focus {
+	&:focus-visible {
 		outline: toRem(2) solid $focusOutline;
 		outline-offset: toRem(5);
 		border-radius: toRem(10);
@@ -88,13 +88,19 @@
 	object-fit: contain;
 }
 
-.list-main-footer__item:not(:last-child) {
-	@include adaptiveValue("margin-bottom", 25, 10);
+// .list-main-footer__item:not(:last-child) {
+// 	@include adaptiveValue("padding-block", 12.5, 6.2);
+// 	// @include adaptiveValue("margin-bottom", 25, 10);
+// }
+
+.list-main-footer__item{
+	@include adaptiveValue("padding-block", 12.5, 6.2);
+	// @include adaptiveValue("margin-bottom", 25, 10);
 }
 
 .list-main-footer__link {
 	position: relative;
-	&:focus {
+	&:focus-visible {
 		outline: toRem(2) solid $focusOutline;
 outline-offset: toRem(5);
 border-radius: toRem(10);
@@ -111,14 +117,13 @@ border-radius: toRem(10);
 	}
 
 	@media (any-hover: hover) and (pointer: fine) {
-		&:hover::after {
+		.list-main-footer__item:hover &::after {
 			width: 100%;
 			transition: width 0.5s;
 		}
 	}
 }
 
-// === SOCIAL MEDIA ===
 
 .social-media-footer {
 	display: flex;
@@ -139,7 +144,7 @@ border-radius: toRem(10);
 	width: toRem(32);
 	aspect-ratio: 1 / 1;
 	transition: transform 0.5s;
-	&:focus {
+	&:focus-visible {
 		outline: toRem(2) solid $focusOutline;
 outline-offset: toRem(5);
 border-radius: toRem(10);
@@ -161,7 +166,7 @@ border-radius: toRem(10);
 	max-width: toRem(214);
 }
 
-// === MEDIA QUERIES ===
+
 
 @media (max-width: toEm(730.98)) {
 	.main-footer__line {

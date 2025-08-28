@@ -66,16 +66,16 @@ window.addEventListener("load", () => {
         return;
         //Якщо хоч один з елементів відсутній - покинути функцію
       } else {
-			let curIndex = 0
         console.log("active");
-		  function sliderReset() {
-			sliderElements[0].scrollIntoView({
-				behavior: "smooth",
-				inline: "start"
-			 });
-		  }
-		  sliderReset()
-		//   nextSliderBtn.classList.remove("disable");
+        nextSliderBtn.classList.remove("disable");
+        let curIndex = 0;
+        function sliderReset() {
+          sliderElements[0].scrollIntoView({
+            behavior: "smooth",
+            inline: "start",
+          });
+        }
+        sliderReset();
         function getSlideWidthWithGap() {
           let slideWidth = sliderElements[0].offsetWidth; // ширина одного із елементів слайдера
           let sliderWrapperStyles = window.getComputedStyle(sliderWrapper); // беремо стилі враппера
@@ -115,19 +115,23 @@ window.addEventListener("load", () => {
         nextSliderBtn.addEventListener("click", () => {
           const maxIndex = getMaxIndex();
           if (curIndex < maxIndex) {
-            curIndex++;
+            curIndex += 1;
+            console.log(curIndex);
             updateSliderPosition();
             if (prevSliderBtn.classList.contains("disable")) {
               prevSliderBtn.classList.remove("disable");
             }
           }
-          if (curIndex === maxIndex) {
+          if (curIndex === sliderElements.length - 1) {
             nextSliderBtn.classList.add("disable");
+          } else {
+            nextSliderBtn.classList.remove("disable");
           }
         });
         prevSliderBtn.addEventListener("click", () => {
-          if (curIndex > 0) {
-            curIndex--;
+          if (curIndex >= 0) {
+            curIndex -= 1;
+            console.log(curIndex);
             updateSliderPosition();
             if (nextSliderBtn.classList.contains("disable")) {
               nextSliderBtn.classList.remove("disable");
@@ -138,13 +142,72 @@ window.addEventListener("load", () => {
           }
         });
       }
+    } else {
+      const sliderWrapper = document.querySelector(".contacts-information__slider-wrapper");
+      sliderWrapper.style.transform = `translateX(0px)`;
     }
-	 else{
-		const sliderWrapper = document.querySelector(".contacts-information__slider-wrapper");
-		  sliderWrapper.style.transform = `translateX(0px)`;
-	 }
   }
   createSlider(sliderActivated);
   dynamicAdap(createSlider, sliderActivated);
 
+  const joinHydraBtn = document.querySelector(".button-action__join");
+  const joinHydraForm = document.querySelector(".join-hydra-form");
+  const contactsHydraBtn = document.querySelector(".button-action__contacts");
+  const contactsBlock = document.querySelector(".contacts-information");
+  const heroSectionBuildBtn = document.querySelector(".hero-section__button");
+  const footerSectionBuildBtn = document.querySelector(".social-media-footer__link");
+  const mainSectionGetInTochBtn = document.querySelector(".about__link");
+  const advantagesTryBtn = document.querySelectorAll(".item-cards__button");
+  const linkAbout = document.querySelectorAll(".link-about");
+  const linkServices = document.querySelectorAll(".link-services");
+  const linkTechnologies = document.querySelectorAll(".link-technologies");
+  const linkHow = document.querySelectorAll(".link-how");
+  const linkJoin = document.querySelectorAll(".link-join");
+  const aboutSection = document.querySelector(".about");
+  const servicesSection = document.querySelector(".advantages");
+  const technologiesSection = document.querySelector(".technology-hardware");
+  const howToSection = document.querySelector(".build-process");
+  function moveToObject(targetElement, showElement, block, inline, behavor) {
+    if (!targetElement || !showElement) return;
+    else {
+      if (targetElement instanceof NodeList) {
+        targetElement.forEach((el) => {
+          el.addEventListener("click", function (e) {
+            e.preventDefault();
+            showElement.scrollIntoView({
+              block: block,
+              inline: inline,
+              behavior: behavor,
+            });
+          });
+        });
+        {
+        }
+      } else {
+        targetElement.addEventListener("click", function (e) {
+          e.preventDefault();
+          if (e.target && document.body.classList.contains("active")) {
+            document.body.classList.remove("active");
+            document.body.classList.remove("scroll-lock");
+          }
+          showElement.scrollIntoView({
+            block: block,
+            inline: inline,
+            behavior: behavor,
+          });
+        });
+      }
+    }
+  }
+  moveToObject(joinHydraBtn, joinHydraForm, "start", "center", "smooth");
+  moveToObject(heroSectionBuildBtn, joinHydraForm, "start", "center", "smooth");
+  moveToObject(footerSectionBuildBtn, joinHydraForm, "start", "center", "smooth");
+  moveToObject(advantagesTryBtn, joinHydraForm, "start", "center", "smooth");
+  moveToObject(contactsHydraBtn, contactsBlock, "center", "center", "smooth");
+  moveToObject(mainSectionGetInTochBtn, joinHydraForm, "start", "center", "smooth");
+  moveToObject(linkAbout, aboutSection, "end", "center", "smooth");
+  moveToObject(linkServices, servicesSection, "end", "center", "smooth");
+  moveToObject(linkTechnologies, technologiesSection, "end", "center", "smooth");
+  moveToObject(linkHow, howToSection, "end", "center", "smooth");
+  moveToObject(linkJoin, joinHydraForm, "start", "center", "smooth");
 });
