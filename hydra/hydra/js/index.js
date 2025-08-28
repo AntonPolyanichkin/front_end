@@ -174,6 +174,10 @@ window.addEventListener("load", () => {
         targetElement.forEach((el) => {
           el.addEventListener("click", function (e) {
             e.preventDefault();
+            if (e.target && document.body.classList.contains("active")) {
+              document.body.classList.remove("active");
+              document.body.classList.remove("scroll-lock");
+            }
             showElement.scrollIntoView({
               block: block,
               inline: inline,
