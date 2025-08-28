@@ -212,6 +212,6 @@ window.addEventListener("load", () => {
   moveToObject(linkAbout, aboutSection, "end", "center", "smooth");
   moveToObject(linkServices, servicesSection, "end", "center", "smooth");
   moveToObject(linkTechnologies, technologiesSection, "end", "center", "smooth");
-  moveToObject(linkHow, howToSection, "end", "center", "smooth");
+  moveToObject(linkHow, howToSection, "start", "center", "smooth");
   moveToObject(linkJoin, joinHydraForm, "start", "center", "smooth");
 });
